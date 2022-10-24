@@ -1,8 +1,8 @@
 const StatisticsPreview = () => {
     return (
         <article className="statisctics-preview">
-            <section>
-                <p>Stats</p>
+            <section className="statisctics-preview-content">
+                <p className='tagline'>Stats</p>
                 <h2>Millions of satisfied users</h2>
                 <p>Dozens of actual stories about Expenseless’
                     role in finance that changed people’s lives. Whatever reasons you got, we are here to back you up and support you on the way</p>

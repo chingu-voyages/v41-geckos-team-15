@@ -9,7 +9,7 @@ import './landing.css'
 
 const Landing = () => {
     return (
-        <main>
+        <main className="landing-main">
             <Hero />
             <Features />
             <Cta />

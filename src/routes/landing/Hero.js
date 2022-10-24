@@ -4,18 +4,18 @@ const Hero = () => {
     return (
         <article className='hero'>
             <section className='hero-content'>
-                <p>Expenseless</p>
-                <h1>Save more, Spend less</h1>
+                <p className='tagline'>Expenseless</p>
+                <h1>Save more, Spend <span className='highlight-title'>less</span></h1>
                 <p>
                     Espensless helps you to manage your money and track all your income & expenses effortlessly to reach your financial goals faster
                 </p>
-                <form className='hero-signup'>
-                    <label for="sign-up">
-                        <input type="text" for="sign-up" name="sign-up" />
-                    </label>
-                    <button type="button">Sign Up</button>
+                <section className='hero-form'>
+                    <form className='hero-signup'>
+                        <input type="text" for="sign-up" name="sign-up" placeholder='Enter your email' />
+                        <button type="button">Sign Up</button>
+                    </form>
                     <span>By clicking Sign Up you're confirming that you agree with our Terms and Conditions.</span>
-                </form>
+                </section>
 
             </section>
             <img src={HeaderCover} alt="Girl counting statistics" />
