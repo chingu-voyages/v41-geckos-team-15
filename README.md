@@ -17,6 +17,14 @@ in your `readme` feel free to replace the text we've provided here.
 # Dependencies
 - react-router-dom
 
+# Project Structure
+- assets - images, documents, fonts, etc
+- components - separate components which can be used in many places. For example, a button component which will be same in many places but can conditionally change its functionality depending where it it.
+- core-ui - the root CSS files for reset, styles and variables and so on
+- data - should consist of json files or similar which contain data
+- helpers - almost same as component folder but when they have even smaller functionality and don't chnage conditionality like buttons. They kind of help with the functionality, for example, scroll to top button which available everywhere.
+- routes - here we have components that represent a separate route/page. Inside of each of them is respective components and CSS
+ 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
