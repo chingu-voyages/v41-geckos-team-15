@@ -11,4 +11,5 @@
 
 body {
   font-family: var(--manrope-font);
+  background-color: var(--primary-bg);
 }
