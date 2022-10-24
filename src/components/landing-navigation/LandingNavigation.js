@@ -7,8 +7,9 @@ const LandingNavigation = () => {
     return (
         <header className='landing-header'>
             <img src={ExpenselessLogo} alt="Expenseless" />
-            <NavigationMenu />
-            <NavAction />
+            <section className='nav-section'><NavigationMenu />
+                <NavAction /></section>
+
         </header>
     )
 }

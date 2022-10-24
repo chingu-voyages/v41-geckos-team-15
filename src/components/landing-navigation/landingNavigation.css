@@ -15,10 +15,15 @@ a {
 }
 
 .landing-header img {
-    width: 9rem;
+    width: 13rem;
     max-width: 100%;
 }
-
+.nav-section {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
 .navigation-menu {
     gap: 1rem;
 }
@@ -29,4 +34,20 @@ a {
 
 .nav-action {
     gap: 1rem;
+}
+
+.nav-action button {
+    border-radius: 5px;
+    border: 1px solid var(--primary-font);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.nav-action button:first-child {
+    background-color: var(--primary-bg);
+    color: var(--primary-font);
+}
+
+.nav-action button:last-child {
+    background-color: var(--primary-font);
+    color: var(--primary-bg);
 }
