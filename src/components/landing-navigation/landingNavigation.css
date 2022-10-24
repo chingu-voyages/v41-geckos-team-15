@@ -1,0 +1,32 @@
+a {
+    text-decoration: none;
+}
+
+.landing-header,
+.navigation-menu,
+.nav-action {
+    display: flex;
+    flex-direction: row;
+}
+
+.landing-header {
+    padding: 1.5rem;
+    justify-content: space-between;
+}
+
+.landing-header img {
+    width: 9rem;
+    max-width: 100%;
+}
+
+.navigation-menu {
+    gap: 1rem;
+}
+
+.navigation-menu li a {
+    color: var(--primary-black);
+}
+
+.nav-action {
+    gap: 1rem;
+}

@@ -1,6 +1,15 @@
 const Landing = () => {
     return (
-        <div>I am Landing</div>
+        <main>
+            { /* Hero */}
+            { /* Features */}
+            { /* CTA */}
+            { /* App features */}
+            { /* Statistics */}
+            { /* Testimonials */}
+            { /* Pricing */}
+
+        </main>
     )
 }
 
