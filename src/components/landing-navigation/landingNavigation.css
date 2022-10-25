@@ -18,12 +18,14 @@ a {
     width: 13rem;
     max-width: 100%;
 }
+
 .nav-section {
     display: flex;
     flex-direction: row;
     gap: 2rem;
     align-items: center;
 }
+
 .navigation-menu {
     gap: 1rem;
 }
@@ -42,12 +44,19 @@ a {
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
+
 .nav-action button:first-child {
     background-color: var(--primary-bg);
+}
+
+.nav-action button:first-child a {
     color: var(--primary-font);
 }
 
 .nav-action button:last-child {
     background-color: var(--primary-font);
+}
+
+.nav-action button:last-child a {
     color: var(--primary-bg);
 }
