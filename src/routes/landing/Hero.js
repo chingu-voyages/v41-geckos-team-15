@@ -12,7 +12,7 @@ const Hero = () => {
                 <section className='hero-form'>
                     <form className='hero-signup'>
                         <input type="text" for="sign-up" name="sign-up" placeholder='Enter your email' />
-                        <button type="button">Sign Up</button>
+                        <button type="button">Sign up</button>
                     </form>
                     <span>By clicking Sign Up you're confirming that you agree with our Terms and Conditions.</span>
                 </section>

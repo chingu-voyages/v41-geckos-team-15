@@ -1,3 +1,4 @@
+import StatsPreview from '../../assets/images/landing/stats-preview.jpg'
 const StatisticsPreview = () => {
     return (
         <article className="statisctics-preview">
@@ -6,6 +7,7 @@ const StatisticsPreview = () => {
                 <h2>Millions of satisfied users</h2>
                 <p>Dozens of actual stories about Expenseless’
                     role in finance that changed people’s lives. Whatever reasons you got, we are here to back you up and support you on the way</p>
+                <img src={StatsPreview} alt="Statistics" />
             </section>
             <section class="timeline">
                 <div class="timeline-outer">
