@@ -3,12 +3,14 @@ import NavigationMenu from './NavigationMenu';
 import NavAction from './NavAction';
 import './landingNavigation.css';
 
-const LandingNavigation = () => {
+const LandingNavigation = (props) => {
     return (
         <header className='landing-header'>
             <img src={ExpenselessLogo} alt="Expenseless" />
-            <section className='nav-section'><NavigationMenu />
-                <NavAction /></section>
+            <section className='nav-section'>
+                <NavigationMenu />
+                <NavAction isLoggedIn={props.isLoggedIn} />
+            </section>
 
         </header>
     )

@@ -16,11 +16,18 @@ import ProfileDashboard from "./routes/profile-dashboard/ProfileDashboard";
 import StatisticsDashboard from "./routes/statistics-dashboard/StatiscticsDashboard";
 import Terms from "./routes/terms/Terms";
 import LandingFooter from "./components/landing-footer/LandingFooter";
+import { useState, useEffect } from "react";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    setIsLoggedIn(false)
+  }, []);
+
   return (
+
     <Router>
-      <LandingNavigation />
+      <LandingNavigation isLoggedIn={isLoggedIn} />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
