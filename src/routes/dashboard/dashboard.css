@@ -1,0 +1,15 @@
+.dashboard {
+    min-height: 100vh;
+    background-color: var(--secondary-bg);
+}
+
+.content {
+    margin-left: 250px;
+    padding: 1px 16px;
+}
+
+@media screen and (max-width: 700px) {
+    div.content {
+        margin-left: 0;
+    }
+}

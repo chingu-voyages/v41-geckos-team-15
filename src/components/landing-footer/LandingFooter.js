@@ -8,12 +8,10 @@ import FemaleIcon from '../../assets/images/socials/female-icon.png';
 import { useLocation } from 'react-router-dom';
 
 
-
-
 const LandingFooter = () => {
     const { pathname } = useLocation();
     /*footer doesn't show when user go to dashboard*/
-    if (pathname === "/dashboard")
+    if (pathname.includes("dashboard"))
         return <></>
     else
         return (

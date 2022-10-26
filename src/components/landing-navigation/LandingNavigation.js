@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 const LandingNavigation = (props) => {
     const { pathname } = useLocation();
     /*landing nav bar doesn't show when user go to dashboard*/
-    if (pathname === "/dashboard" && props.user)
+    if (pathname.includes("dashboard") && props.user)
         return <></>
     else
         return (

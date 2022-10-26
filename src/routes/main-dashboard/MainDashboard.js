@@ -1,18 +1,17 @@
+import "./mainDashboard.css"
+
 const MainDashboard = ({ user }) => {
     return (
-        <div>
-            {user
-                ? <>
-                    <h1>Hello {user}, </h1>
-                    <h3>take a look at your current balance</h3>
-                </>
-                : <>
-                    You need to Register or log in
-                </>
+        <div className="home">
 
-            }
+            <div className="header">
+                <div>
+                    <h1>Hello {user},</h1>
+                    <p>Take a look at your current balance</p>
+                </div>
+            </div>
         </div>
     )
 }
 
-export default MainDashboard;
+export default MainDashboard
