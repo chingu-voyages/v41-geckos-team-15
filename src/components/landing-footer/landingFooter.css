@@ -1,0 +1,121 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.footer-article-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-menus {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer-logo {
+    width: 13rem;
+    max-width: 100%;
+}
+
+.footer-menu,
+.socials-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+.footer-menu li a {
+    color: var(--primary-black);
+}
+.socials-menu img {
+    width: 1.5rem;
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-form label {
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.footer-form span {
+    font-size: 0.8rem;
+}
+.footer-form span a {
+    color: var(--primary-black);
+}
+
+.form-input {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.form-input input,
+.form-input button {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.form-input button {
+    background-color: transparent;
+    color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+}
+
+.form-input input {
+    border: 1px solid var(--primary-black);
+    outline-color: var(--primary-font);
+}
+.footer-article-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-article-two ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+.footer-article-two ul li a {
+    color: var(--primary-black);
+}
+
+/* ! Transitions */
+.footer-menu li a,
+.footer-article-two ul li a,
+.form-input button,
+.footer-form span a {
+    transition: var(--hover-transition);
+}
+
+@media (hover: hover) {
+    .footer-menu li a:hover,
+    .footer-article-two ul li a:hover,
+    .form-input button :hover,
+    .footer-form span a :hover {
+        transition: var(--hover-transition);
+    }
+
+    .footer-menu li a:hover,
+    .footer-article-two ul li a:hover,
+    .footer-form span a:hover {
+        color: var(--primary-font);
+    }
+    .form-input button:hover {
+        background-color: var(--primary-font);
+        color: var(--primary-bg);
+    }
+}

@@ -47,16 +47,48 @@ a {
 
 .nav-action button:first-child {
     background-color: var(--primary-bg);
+    color: var(--primary-font);
 }
 
 .nav-action button:first-child a {
-    color: var(--primary-font);
+    color: inherit;
 }
 
 .nav-action button:last-child {
     background-color: var(--primary-font);
+    color: var(--primary-bg);
 }
 
 .nav-action button:last-child a {
-    color: var(--primary-bg);
+    color: inherit;
+}
+
+/* ! Transitions */
+.navigation-menu li a,
+.nav-action button:first-child:hover,
+.nav-action button:last-child:hover {
+    transition: var(--hover-transition);
+}
+
+@media (hover: hover) {
+
+    .navigation-menu li a:hover,
+    .nav-action button:first-child:hover,
+    .nav-action button:last-child:hover {
+        transition: var(--hover-transition);
+    }
+
+    .navigation-menu li a:hover {
+        color: var(--primary-font);
+    }
+
+    .nav-action button:first-child:hover {
+        background-color: var(--primary-font);
+        color: var(--primary-bg);
+    }
+
+    .nav-action button:last-child:hover {
+        background-color: var(--primary-bg);
+        color: var(--primary-font);
+    }
 }

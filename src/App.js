@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 //Routes
 import LandingNavigation from "./components/landing-navigation/LandingNavigation";
 import Landing from "./routes/landing/Landing";
@@ -19,15 +18,12 @@ import Terms from "./routes/terms/Terms";
 import LandingFooter from "./components/landing-footer/LandingFooter";
 import SignIn from "./components/sign-in-modal/SignIn";
 import Register from "./components/register-modal/Register";
+import { useState, useEffect } from "react";
 
 const App = () => {
 
   const [user, setUser] = useState(null);
-
   const login = (user) => {
-    setUser(user)
-  }
-  const register = (user) => {
     setUser(user)
   }
   const logout = () => {
@@ -35,10 +31,11 @@ const App = () => {
   }
 
   return (
+
     <Router>
       <LandingNavigation user={user} onLogout={logout} />
       <Routes>
-        <Route path="/register" element={<Register onRegister={register} />} />
+        <Route path="/register" element={<Register onRegister={login} />} />
         <Route path="/login" element={<SignIn onLogin={login} />} />
         <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
@@ -48,8 +45,6 @@ const App = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/term" element={<Terms />} />
-
-        {/*routes that requuires login*/}
         <Route path="/dashboard" element={<MainDashboard user={user} />} />
         <Route path="/dashboard/expenses" element={<ExpensesDashboard />} />
         <Route path="/dashboard/accounts" element={<AccountsDashboard />} />

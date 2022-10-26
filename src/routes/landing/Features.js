@@ -4,13 +4,13 @@ const Features = () => {
     return (
         <article className='features'>
             <section className='feature-content'>
-                <section>
+                <section >
                     <p className='tagline'>Expenseless features</p>
                     <h2>
                         What <span className='highlight-title'>Expenseless</span> brings to the table
                     </h2>
                     <p>With our personal finance app you do not need any experience! Just open the app, enter you income and add new expenses on the way! Very simple registration and tons of benefits lifetime!</p>
-                    <Link to="./about">Read more &gt;</Link>
+                    <Link className='feature-btn' to="./about">Read more &gt;</Link>
                 </section>
                 <section className='features-list'>
                     <section>
