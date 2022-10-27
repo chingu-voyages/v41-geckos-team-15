@@ -18,12 +18,14 @@ a {
     width: 13rem;
     max-width: 100%;
 }
+
 .nav-section {
     display: flex;
     flex-direction: row;
     gap: 2rem;
     align-items: center;
 }
+
 .navigation-menu {
     gap: 1rem;
 }
@@ -42,14 +44,23 @@ a {
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
+
 .nav-action button:first-child {
     background-color: var(--primary-bg);
     color: var(--primary-font);
 }
 
+.nav-action button:first-child a {
+    color: inherit;
+}
+
 .nav-action button:last-child {
     background-color: var(--primary-font);
     color: var(--primary-bg);
+}
+
+.nav-action button:last-child a {
+    color: inherit;
 }
 
 /* ! Transitions */
@@ -60,18 +71,22 @@ a {
 }
 
 @media (hover: hover) {
+
     .navigation-menu li a:hover,
     .nav-action button:first-child:hover,
     .nav-action button:last-child:hover {
         transition: var(--hover-transition);
     }
+
     .navigation-menu li a:hover {
         color: var(--primary-font);
     }
+
     .nav-action button:first-child:hover {
         background-color: var(--primary-font);
         color: var(--primary-bg);
     }
+
     .nav-action button:last-child:hover {
         background-color: var(--primary-bg);
         color: var(--primary-font);

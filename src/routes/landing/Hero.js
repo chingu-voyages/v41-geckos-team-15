@@ -1,4 +1,5 @@
 import HeaderCover from '../../assets/images/landing/header-cover.jpg'
+import { Link } from "react-router-dom"
 
 const Hero = () => {
     return (
@@ -12,7 +13,9 @@ const Hero = () => {
                 <section className='hero-form'>
                     <form className='hero-signup'>
                         <input type="text" for="sign-up" name="sign-up" placeholder='Enter your email' />
-                        <button type="button">Sign up</button>
+                        <button type="button">
+                            <Link to="/register">Sign Up</Link>
+                        </button>
                     </form>
                     <span>By clicking Sign Up you're confirming that you agree with our Terms and Conditions.</span>
                 </section>

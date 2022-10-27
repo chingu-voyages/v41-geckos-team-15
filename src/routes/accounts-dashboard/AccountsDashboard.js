@@ -1,6 +1,11 @@
+import "./accountsDashboard.css"
+
 const AccountsDashboard = () => {
     return (
-        <div>I am AccountsDashboard</div>
+
+        <div>
+            I am accounts
+        </div>
     )
 }
 

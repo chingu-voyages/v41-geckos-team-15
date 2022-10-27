@@ -13,6 +13,7 @@
     font-weight: 800;
     letter-spacing: 1px;
 }
+
 /* ! Hero */
 
 .hero {
@@ -21,12 +22,14 @@
     align-items: center;
     padding: 2rem;
 }
+
 .hero-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     font-size: 1.5rem;
 }
+
 .hero-content h1 {
     font-size: 3rem;
 }
@@ -36,30 +39,39 @@
     flex-direction: column;
     gap: 1rem;
 }
+
 .hero-form span {
     font-size: 0.7rem;
     font-weight: 600;
 }
+
 .hero-signup {
     font-size: 1rem;
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
+
 .hero-signup button,
 .hero-signup input {
     border: 1px solid var(--primary-black);
     border-radius: 5px;
     padding: 0.3rem 1rem;
 }
+
 .hero-signup button {
     background-color: var(--primary-font);
     border: 1px solid var(--primary-font);
     color: var(--primary-bg);
     cursor: pointer;
 }
+
 .hero-signup input {
     outline-color: var(--primary-font);
+}
+
+.hero-signup button a {
+    color: inherit;
 }
 
 /* ! Features */
@@ -68,6 +80,7 @@
     flex-direction: column;
     gap: 5rem;
 }
+
 .feature-content {
     display: flex;
     flex-direction: row;
@@ -75,11 +88,13 @@
     padding: 2rem;
     font-size: 1.5rem;
 }
+
 .feature-content section:first-child {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 .feature-btn {
     background-color: var(--primary-font);
     border: 1px solid var(--primary-font);
@@ -89,6 +104,7 @@
     width: max-content;
     font-size: 1rem;
 }
+
 .features-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -113,6 +129,7 @@
     background-color: var(--secondary-bg);
     padding: 3rem;
 }
+
 .cta-content {
     display: flex;
     flex-direction: column;
@@ -127,9 +144,11 @@
     background-color: var(--secondary-bg);
     gap: 2rem;
 }
+
 .partners img {
     width: 8rem;
 }
+
 .cta a {
     color: var(--primary-bg);
     background-color: var(--primary-font);
@@ -149,6 +168,7 @@
     letter-spacing: 1px;
     font-size: 1.5rem;
 }
+
 .app-icons {
     display: flex;
     flex-direction: row;
@@ -166,12 +186,14 @@
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
 }
+
 .statisctics-preview-content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     font-size: 1.5rem;
 }
+
 .timeline {
     background: var(--primary-color);
     margin: 1.5rem auto;
@@ -192,6 +214,7 @@
     color: var(--primary-black);
     border-radius: 8px;
 }
+
 .title {
     color: var(--primary-black);
     position: relative;
@@ -211,6 +234,7 @@
     flex-direction: column;
     gap: 2rem;
 }
+
 .testimonials-preview-content {
     text-align: center;
     line-height: 3rem;
@@ -223,6 +247,7 @@
     gap: 2rem;
     padding: 2rem;
 }
+
 .single-testimonial {
     display: flex;
     flex-direction: column;
@@ -232,9 +257,11 @@
     padding: 2rem;
     border-radius: 5px;
 }
+
 .testimonial-rating {
     width: 7rem;
 }
+
 .testimonial-icon {
     width: 3rem;
     max-width: 100%;
@@ -261,6 +288,7 @@
     flex-direction: row;
     justify-content: center;
 }
+
 .billing-buttons button {
     background-color: transparent;
     border-color: var(--primary-font);
@@ -270,13 +298,16 @@
     padding: 0.7rem 1.2rem;
     cursor: pointer;
 }
+
 .billing-buttons button:first-child {
     border-radius: 5px 0 0 5px;
     border-right: 0;
 }
+
 .billing-buttons button:last-child {
     border-radius: 0 5px 5px 0;
 }
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -285,6 +316,7 @@
     width: 75%;
     margin: 0 auto;
 }
+
 .basic-plan,
 .business-plan {
     display: flex;
@@ -304,6 +336,7 @@
     letter-spacing: 1px;
     align-items: center;
 }
+
 .pricing-features li img {
     width: 1rem;
     height: 1.5rem;
@@ -336,7 +369,9 @@
 .business-plan button {
     transition: var(--hover-transition);
 }
+
 @media (hover: hover) {
+
     .hero-signup button:hover,
     .feature-btn:hover,
     .cta a:hover,
@@ -349,14 +384,17 @@
         background-color: var(--primary-bg);
         color: var(--primary-font);
     }
+
     .feature-btn:hover {
         background-color: var(--primary-bg);
         color: var(--primary-font);
     }
+
     .cta a:hover {
         color: var(--primary-font);
         background-color: var(--primary-bg);
     }
+
     .basic-plan button:hover,
     .business-plan button:hover {
         background-color: var(--primary-bg);
