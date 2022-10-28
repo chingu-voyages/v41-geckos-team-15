@@ -432,9 +432,9 @@
 .view-category-buttons button {
     border-radius: 5px;
     padding: 0.3rem 1rem;
-    color: var(--primary-font);
+    background-color: var(--primary-font);
     border: 1px solid var(--primary-font);
-    background-color: var(--primary-bg);
+    color: var(--primary-bg);
     cursor: pointer;
     width: max-content;
 }
