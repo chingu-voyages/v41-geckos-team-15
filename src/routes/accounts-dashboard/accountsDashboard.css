@@ -450,3 +450,40 @@
     cursor: pointer;
     width: max-content;
 }
+
+/* ! Hover Effects */
+
+.account-card,
+.categories-card,
+.add-card-popup form button,
+.add-category-popup form button,
+.view-category-buttons button,
+.close-modal {
+    transition: var(--hover-transition);
+}
+
+@media (hover: hover) {
+    .account-card:hover,
+    .categories-card:hover,
+    .add-card-popup form button:hover,
+    .add-category-popup form button:hover,
+    .view-category-buttons button:hover,
+    .close-modal:hover {
+        transition: var(--hover-transition);
+    }
+    .account-card:hover,
+    .categories-card:hover {
+        box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
+        -webkit-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
+        -moz-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
+    }
+    .add-card-popup form button:hover,
+    .add-category-popup form button:hover,
+    .view-category-buttons button:hover {
+        color: var(--primary-font);
+        background-color: var(--primary-bg);
+    }
+    .close-modal:hover {
+        font-weight: 800;
+    }
+}

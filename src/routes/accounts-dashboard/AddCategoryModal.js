@@ -11,7 +11,6 @@ const AddCategoryModal = (props) => {
                     <textarea type="textarea" placeholder="Description" rows="5" />
                     <button>Create</button>
                 </form>
-
             </section>
         </article>
     )
