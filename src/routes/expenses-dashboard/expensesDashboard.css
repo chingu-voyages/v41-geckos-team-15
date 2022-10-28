@@ -1,0 +1,358 @@
+.expenses-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    position: relative;
+}
+.expenses-dashboard article {
+    padding: 2rem;
+}
+.expenses-action-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.expenses-action-btns button {
+    border-radius: 5px;
+    border: 1px solid var(--primary-font);
+    padding: 1rem 1rem;
+    cursor: pointer;
+    color: var(--secondary-bg);
+    background-color: var(--primary-font);
+}
+
+.expenses-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.expenses-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.expenses-tabs button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 300;
+    position: relative;
+}
+.active-tab::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 200%;
+    top: 150%;
+    left: -50%;
+    height: 2px;
+    background-color: var(--primary-font);
+}
+.expense-amount {
+    color: red;
+}
+.income-amount {
+    color: green;
+}
+
+/* ! Expenses Table  */
+
+table.greyGridTable {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+table.greyGridTable td:first-child {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+table.greyGridTable td:first-child img {
+    width: 4rem;
+}
+table.greyGridTable td:last-child {
+    font-weight: 800;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+table.greyGridTable td,
+table.greyGridTable th {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+
+table.greyGridTable thead th {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 2rem;
+}
+
+/* ! Expenses Pagination */
+.expenses-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-items: center;
+}
+.expenses-pagination ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.expenses-pagination button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--primary-black);
+}
+
+/* ! Add Expense Modal */
+
+.add-expense-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.add-expense-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+.add-expense-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 5%;
+    padding: 2rem;
+    height: max-content;
+    width: 30rem;
+    background-color: var(--primary-bg);
+}
+.add-expense-popup h2 {
+    font-weight: 400;
+}
+
+.add-expense-popup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    width: 80%;
+    gap: 2rem;
+}
+
+.add-expense-popup input,
+.add-expense-popup textarea {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+.add-expense-popup input::placeholder,
+.add-expense-popup textarea::placeholder {
+    color: var(--primary-black);
+    font-family: ar(--manrope-font);
+}
+.add-expense-popup form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--secondary-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+
+.add-expense-popup form select::-ms-expand {
+    display: none;
+}
+
+.add-expense-popup form button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    background-color: var(--primary-bg);
+    cursor: pointer;
+    width: max-content;
+}
+
+/* ! Add Income Modal */
+
+.add-income-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.add-income-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+.add-income-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 5%;
+    padding: 2rem;
+    height: max-content;
+    width: 30rem;
+    background-color: var(--primary-bg);
+}
+.add-income-popup h2 {
+    font-weight: 400;
+}
+
+.add-income-popup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    width: 80%;
+    gap: 2rem;
+}
+
+.add-income-popup input,
+.add-income-popup textarea {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+.add-income-popup input::placeholder,
+.add-income-popup textarea::placeholder {
+    color: var(--primary-black);
+    font-family: ar(--manrope-font);
+}
+.add-income-popup form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--secondary-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+
+.add-income-popup form select::-ms-expand {
+    display: none;
+}
+
+.add-income-popup form button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    background-color: var(--primary-bg);
+    cursor: pointer;
+    width: max-content;
+}
+
+/* ! Add Income Modal */
+
+.add-existing-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.add-existing-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+.add-existing-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 5%;
+    padding: 2rem;
+    height: max-content;
+    width: 30rem;
+    background-color: var(--primary-bg);
+}
+.add-existing-popup h2 {
+    font-weight: 400;
+}
+.recording-data {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    word-spacing: 2px;
+}
+.recording-data span {
+    font-weight: 300;
+}
+
+.existing-record-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.existing-record-buttons button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    background-color: var(--primary-bg);
+    cursor: pointer;
+    width: max-content;
+}
+
+/* ! Transitions */
+.expenses-action-btns button,
+.existing-record-buttons button {
+    transition: var(--hover-transition);
+}
+@media (hover: hover) {
+    .expenses-action-btns button:hover,
+    .existing-record-buttons button:hover {
+        transition: var(--hover-transition);
+    }
+    .expenses-action-btns button:hover {
+        background-color: var(--primary-bg);
+        color: var(--primary-font);
+    }
+    .existing-record-buttons button:hover {
+        color: var(--primary-bg);
+        background-color: var(--primary-font);
+    }
+}
