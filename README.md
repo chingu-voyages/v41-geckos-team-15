@@ -24,6 +24,9 @@ in your `readme` feel free to replace the text we've provided here.
 - data - should consist of json files or similar which contain data
 - helpers - almost same as component folder but when they have even smaller functionality and don't chnage conditionality like buttons. They kind of help with the functionality, for example, scroll to top button which available everywhere.
 - routes - here we have components that represent a separate route/page. Inside of each of them is respective components and CSS
+
+# Recources
+- [Category icons](https://icons8.com/icon/set/investments/clouds)
  
 # Getting Started with Create React App
 

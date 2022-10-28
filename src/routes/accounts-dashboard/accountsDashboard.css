@@ -1,0 +1,489 @@
+.accounts-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding-bottom: 3rem;
+    position: relative;
+}
+.close-modal {
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: 600;
+    right: 2%;
+    top: 2%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.accounts-and-cards {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.accounts {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.account-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 22rem;
+    height: 12rem;
+    background-color: rgb(171, 171, 248);
+    box-shadow: 0px 0px 5px -3px #000000;
+    position: relative;
+}
+
+.empty-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 22rem;
+    height: 12rem;
+    background-color: var(--primary-bg);
+    box-shadow: 0px 0px 5px -3px #000000;
+    border-style: dashed;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.empty-card img {
+    width: 3rem;
+}
+
+.account-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.account-header section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.account-header img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+.account-current-balance {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+
+/* ! Categories */
+.accounts-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+}
+
+.empty-category {
+    background-color: var(--primary-bg);
+    box-shadow: 0px 0px 5px -3px #000000;
+    border-style: dashed;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-category img {
+    width: 1.5rem;
+}
+.categories-card {
+    background-color: var(--primary-bg);
+    box-shadow: 0px 0px 5px -3px #000000;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.categories-card img {
+    width: 100%;
+    object-fit: cover;
+}
+.categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 8rem;
+}
+
+/* ! Add Card Modal */
+
+.add-card-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.add-card-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+.add-card-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 20%;
+    padding: 2rem;
+    height: max-content;
+    width: 35rem;
+    background-color: var(--primary-bg);
+}
+.add-card-popup h2 {
+    font-weight: 400;
+}
+
+.add-card-popup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    width: 75%;
+    gap: 2rem;
+}
+.form-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-color: var(--secondary-bg);
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+}
+
+.form-inner > input {
+    background-color: var(--primary-input-bg);
+    border: 1px solid var(--primary-input-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: max-content;
+}
+.form-inner input::placeholder {
+    color: var(--primary-black);
+    font-family: ar(--manrope-font);
+}
+.form-inner .card-cover {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.add-card-amount {
+    background-color: var(--primary-input-bg);
+    border: 1px solid var(--primary-input-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: max-content;
+}
+
+.add-card-popup form > section select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--primary-input-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+}
+
+.add-card-popup form > section select::-ms-expand {
+    display: none;
+}
+
+.add-card-popup form button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    background-color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    color: var(--primary-bg);
+    cursor: pointer;
+    width: max-content;
+}
+
+/* ! Colors */
+.add-card-colors {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add-card-color {
+    margin: 10px;
+}
+
+.add-card-color {
+    display: inline-block;
+    font-size: 0;
+}
+.sb-checkbox__input {
+    display: none;
+}
+.sb-checkbox__input:checked + .sb-checkbox__label:after {
+    opacity: 1;
+}
+.sb-checkbox__label {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    cursor: pointer;
+}
+.sb-checkbox__label:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+.sb-checkbox__label:after {
+    content: "✔️";
+    font-size: 13px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    opacity: 0;
+    transition: 0.2s opacity;
+    color: white;
+}
+.sb-checkbox__label--blue:before {
+    border-color: #7aa0da;
+}
+.sb-checkbox__label--blue:after {
+    background-color: #7aa0da;
+}
+.sb-checkbox__label--purple:before {
+    border-color: #b796d9;
+}
+.sb-checkbox__label--purple:after {
+    background-color: #b796d9;
+}
+.sb-checkbox__label--light-pink:before {
+    border-color: #e36cbb;
+}
+.sb-checkbox__label--light-pink:after {
+    background-color: #e36cbb;
+}
+.sb-checkbox__label--pink:before {
+    border-color: #dc5d8b;
+}
+.sb-checkbox__label--pink:after {
+    background-color: #dc5d8b;
+}
+.sb-checkbox__label--red:before {
+    border-color: #fa4242;
+}
+.sb-checkbox__label--red:after {
+    background-color: #fa4242;
+}
+.sb-checkbox__label--orange:before {
+    border-color: #fe9256;
+}
+.sb-checkbox__label--orange:after {
+    background-color: #fe9256;
+}
+.sb-checkbox__label--yellow:before {
+    border-color: #fae98f;
+}
+.sb-checkbox__label--yellow:after {
+    background-color: #fae98f;
+}
+.sb-checkbox__label--green:before {
+    border-color: #75e762;
+}
+.sb-checkbox__label--green:after {
+    background-color: #75e762;
+}
+
+/* ! Add Category */
+
+.add-category-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.add-category-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+.add-category-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 20%;
+    padding: 2rem;
+    height: max-content;
+    width: 35rem;
+    background-color: var(--primary-bg);
+}
+.add-category-popup h2 {
+    font-weight: 400;
+}
+
+.add-category-popup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    width: 80%;
+    gap: 2rem;
+}
+
+.add-category-popup input,
+.add-category-popup textarea {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+.add-category-popup input::placeholder,
+.add-category-popup textarea::placeholder {
+    color: var(--primary-black);
+    font-family: ar(--manrope-font);
+}
+
+.add-category-popup form button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    background-color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    color: var(--primary-bg);
+    cursor: pointer;
+    width: max-content;
+}
+
+/* ! View Category */
+
+.view-category-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.view-category-modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+.view-category-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 20%;
+    padding: 2rem;
+    height: max-content;
+    width: 35rem;
+    background-color: var(--primary-bg);
+}
+.view-category-popup h2 {
+    font-weight: 400;
+}
+.view-category-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.view-category-buttons button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    background-color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    color: var(--primary-bg);
+    cursor: pointer;
+    width: max-content;
+}
+
+/* ! Hover Effects */
+
+.account-card,
+.categories-card,
+.add-card-popup form button,
+.add-category-popup form button,
+.view-category-buttons button,
+.close-modal {
+    transition: var(--hover-transition);
+}
+
+@media (hover: hover) {
+    .account-card:hover,
+    .categories-card:hover,
+    .add-card-popup form button:hover,
+    .add-category-popup form button:hover,
+    .view-category-buttons button:hover,
+    .close-modal:hover {
+        transition: var(--hover-transition);
+    }
+    .account-card:hover,
+    .categories-card:hover {
+        box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
+        -webkit-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
+        -moz-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
+    }
+    .add-card-popup form button:hover,
+    .add-category-popup form button:hover,
+    .view-category-buttons button:hover {
+        color: var(--primary-font);
+        background-color: var(--primary-bg);
+    }
+    .close-modal:hover {
+        font-weight: 800;
+    }
+}
