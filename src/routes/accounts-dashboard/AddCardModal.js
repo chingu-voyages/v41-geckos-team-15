@@ -1,7 +1,10 @@
-const AddCardModal = () => {
+import CloseModal from "./CloseModal";
+
+const AddCardModal = (props) => {
     return (
-        <article className="add-card-modal">
+        <article className="add-card-modal" >
             <section className="add-card-popup">
+                <CloseModal closeModal={props.closeModal} />
                 <h2>New account</h2>
                 <form>
                     <section className="form-inner">

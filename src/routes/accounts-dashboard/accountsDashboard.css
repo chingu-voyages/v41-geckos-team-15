@@ -5,10 +5,22 @@
     padding-bottom: 3rem;
     position: relative;
 }
+.close-modal {
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: 600;
+    right: 2%;
+    top: 2%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
 
 .accounts-and-cards {
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     gap: 2rem;
     padding: 3rem;
 }
@@ -172,8 +184,8 @@
 }
 
 .form-inner > input {
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--secondary-bg);
+    background-color: var(--primary-input-bg);
+    border: 1px solid var(--primary-input-bg);
     border-radius: 5px;
     padding: 0.4rem 0.5rem;
     width: max-content;
@@ -189,8 +201,8 @@
 }
 
 .add-card-amount {
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--secondary-bg);
+    background-color: var(--primary-input-bg);
+    border: 1px solid var(--primary-input-bg);
     border-radius: 5px;
     padding: 0.4rem 0.5rem;
     width: max-content;
@@ -201,7 +213,7 @@
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-input-bg);
     border: none;
     border-radius: 5px;
     padding: 0.4rem 0.5rem;
