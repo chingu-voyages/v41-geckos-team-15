@@ -1,6 +1,18 @@
+
+import HaveQuestions from './HaveQuestions';
+import './pricing.css';
+import PricingComparison from './PricingComparison';
+import PricingFeatures from './PricingFeatures';
+import PricingPlans from './PricingPlans';
+
 const Pricing = () => {
     return (
-        <div>I am Pricing</div>
+        <main className="pricing">
+            <PricingPlans />
+            <PricingFeatures />
+            <PricingComparison />
+            <HaveQuestions />
+        </main>
     )
 }
 
