@@ -1,6 +1,15 @@
+import "./faq.css"
+import FaqsQuestions from "./FaqsQuestions.js"
+import HaveQuestions from "../pricing/HaveQuestions"
+import FaqsCTA from "./FaqsCTA"
+
 const Faq = () => {
     return (
-        <div>I am Faq</div>
+        <div>
+            <FaqsQuestions />
+            <HaveQuestions />
+            <FaqsCTA />
+        </div>
     )
 }
 

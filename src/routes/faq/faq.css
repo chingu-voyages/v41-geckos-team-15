@@ -1,0 +1,65 @@
+.questions-header {
+    margin: 20px 60px;
+}
+
+.questions-header h1 {
+    font-size: 3rem;
+    margin: 20px auto;
+}
+
+table.faqsQuestions {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+
+
+table.faqsQuestions td {
+    border: 1px solid black;
+    padding: 10px 0 30px 0;
+}
+
+table.faqsQuestions tr td {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+table.faqsQuestions tr td:first-child {
+    width: 40%;
+    font-weight: bold;
+}
+
+.CTA-content {
+    margin: 60px;
+    width: 50%;
+}
+
+.CTA-content a {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    color: var(--primary-bg);
+    cursor: pointer;
+    transition: var(--hover-transition);
+}
+
+.CTA-button {
+    margin: 30px auto;
+}
+
+.faqs-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+@media (hover: hover) {
+    .CTA-content a:hover {
+        transition: var(--hover-transition);
+        background-color: var(--primary-bg);
+        color: var(--primary-font);
+    }
+}
