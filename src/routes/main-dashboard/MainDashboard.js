@@ -2,6 +2,7 @@ import "./mainDashboard.css"
 import ProgressBar from "./charts/progressbar/ProgressBar";
 import { Link } from "react-router-dom";
 import { BubbleChart } from "./charts/BubbleChart";
+import MicroCharts from "./charts/microcharts/MicroCharts";
 
 const MainDashboard = ({ user }) => {
     return (
@@ -44,6 +45,7 @@ const MainDashboard = ({ user }) => {
                     </div>
                 </div>
                 <div className="months-stat card">
+                    <MicroCharts />
                 </div>
             </div>
         </div >
