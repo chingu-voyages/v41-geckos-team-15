@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { Pie, measureTextWidth } from '@ant-design/plots';
+import expensesByCategory from '../../../data/ExpensesByCategory';
+
 
 export const PieChart = () => {
+
+    const data = expensesByCategory
+
     function renderStatistic(containerWidth, text, style) {
         const { width: textWidth, height: textHeight } = measureTextWidth(text, style);
         const R = containerWidth / 2;
@@ -16,37 +19,11 @@ export const PieChart = () => {
         return `<div style="${textStyleStr};font-size:${scale}em;line-height:${scale < 1 ? 1 : 'inherit'};">${text}</div>`;
     }
 
-    const data = [
-        {
-            type: 'Housing',
-            value: 28,
-        },
-        {
-            type: 'Transportation',
-            value: 25,
-        },
-        {
-            type: 'Food',
-            value: 18,
-        },
-        {
-            type: 'Utilities',
-            value: 15,
-        },
-        {
-            type: 'Insurance',
-            value: 10,
-        },
-        {
-            type: 'Medical & Healthcare',
-            value: 5,
-        },
-    ];
     const config = {
         appendPadding: 10,
         data,
         angleField: 'value',
-        colorField: 'type',
+        colorField: 'name',
         radius: 1,
         innerRadius: 0.64,
         meta: {
@@ -89,7 +66,6 @@ export const PieChart = () => {
                 },
             },
         },
-        // 添加 中心统计文本 交互
         interactions: [
             {
                 type: 'element-selected',

@@ -1,52 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { CirclePacking } from '@ant-design/plots';
+import expensesByCategory from '../../../data/ExpensesByCategory';
 
 export const BubbleChart = () => {
     const [data, setData] = useState([]);
 
     const dataSet = {
         "name": "root",
-        "children": [
-            {
-                "name": "Housing",
-                "value": 1046790
-            },
-            {
-                "name": "Transportation",
-                "value": 1039358
-            },
-            {
-                "name": "Food",
-                "value": 461880
-            },
-            {
-                "name": "Utilities",
-                "value": 308136
-            },
-            {
-                "name": "Insurance",
-                "value": 270578
-            },
-            {
-                "name": "Medical & Healthcare",
-                "value": 226334
-            },
-            {
-                "name": "Saving",
-                "value": 197342
-            },
-            {
-                "name": "Investing",
-                "value": 189739
-            }]
+        "children": expensesByCategory
     }
 
     useEffect(() => {
         setData(dataSet);
     }, []);
 
-    /*--- Use This instead when fetching data from server---*/
+    /*--- Use This when fetching data from server---*/
     /*
     useEffect(() => {
         asyncFetch();
