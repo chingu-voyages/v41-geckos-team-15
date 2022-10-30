@@ -1,0 +1,65 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    width: 60%;
+}
+
+.profile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+.profile ul li button {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    color: var(--primary-bg);
+}
+
+.profile-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.profile-buttons button {
+    color: red;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* ! Hover */
+
+.profile-buttons button,
+.profile ul li button {
+    transition: var(--hover-transition);
+}
+
+@media (hover: hover) {
+    .profile-buttons button:hover,
+    .profile ul li button:hover {
+        transition: var(--hover-transition);
+    }
+    .profile-buttons button:hover {
+        color: rgb(184, 23, 23);
+    }
+    .profile ul li button:hover {
+        color: var(--primary-font);
+        background-color: var(--primary-bg);
+    }
+}
