@@ -1,0 +1,151 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+}
+
+/* ! Contact Us Form */
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+.contact-us-form h2 {
+    font-size: 2.5rem;
+}
+.contact-us-form-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.contact-us-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+}
+.contact-us-form-section form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+.contact-us-form-section form input,
+.contact-us-form-section form textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--primary-black);
+    border-radius: 5px;
+}
+
+.terms-checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.terms-checkbox a {
+    color: var(--primary-black);
+}
+.contact-us-form-section img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact-us-form-section button {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--primary-bg);
+    background-color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    width: max-content;
+}
+
+/* ! Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--secondary-bg);
+    justify-content: space-between;
+}
+
+.contact-info img {
+    width: 3rem;
+}
+.contact-info section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 2rem;
+}
+.contact-info section h3 {
+    font-size: 1.5rem;
+}
+.contact-info-detail {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ! Location */
+.location {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.location h3 {
+    font-size: 2.5rem;
+}
+
+.locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.locations-list section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.locations-list section h4 {
+    font-size: 1.5rem;
+}
+
+.locations-list section a {
+    color: var(--primary-black);
+    font-weight: 600;
+}
+.locations-list section:first-child {
+    position: relative;
+}
+.locations-list section:first-child::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 2px;
+    background-color: var(--primary-black);
+    height: 100%;
+    top: 0;
+    left: -1.5%;
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.map {
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
