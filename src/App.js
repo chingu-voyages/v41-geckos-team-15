@@ -39,7 +39,7 @@ const App = () => {
         <Route path="/faq" element={<Faq />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="/term" element={<Terms />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/dashboard/*" element={<Dashboard user={user} onLogout={logout} />} />
       </Routes>
       <LandingFooter />
