@@ -15,7 +15,9 @@ in your `readme` feel free to replace the text we've provided here.
 
 
 # Dependencies
-- react-router-dom
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [react-scripts](https://www.npmjs.com/package/react-scripts)
+- [ant-design](https://www.npmjs.com/package/@ant-design/charts)
 
 # Project Structure
 - assets - images, documents, fonts, etc
