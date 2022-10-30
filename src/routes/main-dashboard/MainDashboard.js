@@ -1,20 +1,17 @@
 import "./mainDashboard.css"
-import ProgressBar from "../../components/progressbar/ProgressBar";
+import ProgressBar from "./charts/progressbar/ProgressBar";
 import { Link } from "react-router-dom";
+import { BubbleChart } from "./charts/BubbleChart";
+import MicroCharts from "./charts/microcharts/MicroCharts";
 
 const MainDashboard = ({ user }) => {
-
     return (
-        <div className="main">
-
+        <div className="mainDashboard">
             <div className="header">
                 <h1>Hello {user},</h1>
                 <p>Take a look at your current balance</p>
-
             </div>
-
             <div className="sections">
-
                 <div className="buttons">
                     <button>Add expense &#65291;</button>
                     <button>Add Income &#65291;</button>
@@ -44,12 +41,12 @@ const MainDashboard = ({ user }) => {
                     <div className="card-content">
                         Popular categories
                         <span className="card-year">2022</span>
+                        <BubbleChart />
                     </div>
                 </div>
                 <div className="months-stat card">
-
+                    <MicroCharts />
                 </div>
-
             </div>
         </div >
     )
