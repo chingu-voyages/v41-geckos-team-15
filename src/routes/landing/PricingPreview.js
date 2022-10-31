@@ -23,7 +23,7 @@ const PricingPreview = () => {
                     <h4>$0/mo</h4>
                     <button type="button">Get Started</button>
                     <hr />
-                    <ul className='pricing-features'>
+                    <ul className='pricing-features-preview'>
                         <li><img src={Check} alt="" /> <p>App Store or Play Store</p></li>
                         <li><img src={Check} alt="" /> <p>All Countries</p></li>
                         <li><img src={Check} alt="" /> <p>Connect banks for auto-sync</p></li>
@@ -38,7 +38,7 @@ const PricingPreview = () => {
                     <h4>$29/mo</h4>
                     <button type="button">Get Started</button>
                     <hr />
-                    <ul className='pricing-features'>
+                    <ul className='pricing-features-preview'>
                         <li><img src={Check} alt="" /> <p>App Store or Play Store</p></li>
                         <li><img src={Check} alt="" /> <p>All Countries</p></li>
                         <li><img src={Check} alt="" /> <p>Connect banks for auto-sync</p></li>

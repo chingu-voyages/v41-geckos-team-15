@@ -7,19 +7,19 @@ const NavAction = (props) => {
             {props.user
                 ? <>
                     <button type="button">
-                        <Link to='/dashboard'>Dashboard</Link>
+                        <Link to='/dashboard' onClick={props.toggleOffMenu}>Dashboard</Link>
                     </button>
                     <button type="button"
                         onClick={props.onLogout}>
-                        <Link to='/'>Log out</Link>
+                        <Link to='/' onClick={props.toggleOffMenu}>Log out</Link>
                     </button>
                 </>
                 : <>
                     <button type="button">
-                        <Link to='/register'>Register</Link>
+                        <Link to='/register' onClick={props.toggleOffMenu}>Register</Link>
                     </button>
                     <button type="button">
-                        <Link to='/login'>Log in</Link>
+                        <Link to='/login' onClick={props.toggleOffMenu}>Log in</Link>
                     </button>
                 </>
             }
