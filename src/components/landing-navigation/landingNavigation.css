@@ -25,6 +25,7 @@ a {
     z-index: 1;
     padding: 1.5rem;
     justify-content: space-between;
+    top: 0;
 }
 .landing-header img:first-child {
     width: 13rem;
@@ -45,7 +46,7 @@ a {
     position: fixed;
     height: 100vh;
     z-index: 1;
-    top: 10%;
+    top: 11%;
     right: 0;
     left: 0;
     padding-top: 2rem;

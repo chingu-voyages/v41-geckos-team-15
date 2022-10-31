@@ -13,7 +13,7 @@ import LandingFooter from "./components/landing-footer/LandingFooter";
 import SignIn from "./components/sign-in-modal/SignIn";
 import Register from "./components/register-modal/Register";
 import Dashboard from "./routes/dashboard/Dashboard"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const App = () => {
 
@@ -22,7 +22,7 @@ const App = () => {
     setUser(user)
   }
   const logout = () => {
-    setUser(null)
+    setUser(null);
   }
 
   return (
