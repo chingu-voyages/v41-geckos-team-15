@@ -17,7 +17,7 @@ const DashboardNavigation = (props) => {
                 <img src={ExpenselessLogo} alt="" />
             </div>
 
-            <div class="sidebar-items">
+            <div className="sidebar-items">
                 <ul>
                     <li>
                         <Link to="">
@@ -56,14 +56,10 @@ const DashboardNavigation = (props) => {
                         </Link>
                     </li>
                 </ul>
-
-
-                {/* <div class="bottom-content"> */}
                 <button className="logout-button" onClick={props.logout}>
                     <Logout className="icon" />
-                    <span class="item-name">Logout</span>
+                    <span className="item-name">Logout</span>
                 </button>
-                {/* </div> */}
             </div>
         </div>
     )
