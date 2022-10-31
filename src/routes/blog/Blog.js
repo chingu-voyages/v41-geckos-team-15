@@ -13,8 +13,8 @@ const Blog = () => {
                 </section>
                 <section className="blog-grid">
                     {blogPosts.map(post =>
-                        <section className="blog-post">
-                            <img src={post.img} alt={post.title} />
+                        <section className="blog-post" key={post.id}>
+                            <img className="blog-cover" src={post.img} alt={post.title} />
                             <h3>{post.title}</h3>
                             <p>{post.snippet}</p>
                             <section className="blog-info">
