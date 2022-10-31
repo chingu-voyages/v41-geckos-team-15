@@ -63,3 +63,29 @@
         background-color: var(--primary-bg);
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .profile {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 970px) {
+    .profile {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .profile {
+        width: 100%;
+        padding: 1rem;
+    }
+    .profile ul {
+        gap: 3rem;
+    }
+    .profile ul li {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
