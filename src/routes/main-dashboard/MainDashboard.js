@@ -10,7 +10,7 @@ const MainDashboard = ({ user }) => {
 
             <div className="header">
                 <h1>Hello {user},</h1>
-                <p>Take a look at your current balance</p>
+                <p>Take a look at your current balance 👀</p>
             </div>
 
             <div className="sections">

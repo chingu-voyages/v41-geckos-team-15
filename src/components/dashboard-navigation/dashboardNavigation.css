@@ -17,12 +17,13 @@
 
 .sidebar-items {
     margin-top: 30px;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: calc(100% - 90px);
-    display: flex;
     cursor: pointer;
     align-items: center;
+    gap: 2rem;
 }
 .sidebar-items ul {
     display: flex;
@@ -70,6 +71,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 16px;
 }
 .logout-button .icon {
     color: var(--primary-font);
@@ -78,7 +80,9 @@
 @media screen and (max-width: 700px) {
     .sidebar {
         width: 100%;
-        height: auto;
+        gap: 2rem;
+        /* height: auto; */
+        /* align-items: center; */
         position: relative;
     }
 
