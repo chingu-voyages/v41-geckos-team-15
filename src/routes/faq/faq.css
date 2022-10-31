@@ -13,7 +13,6 @@ table.faqsQuestions {
     margin: 50px auto;
 }
 
-
 table.faqsQuestions td {
     border: 1px solid black;
     padding: 10px 0 30px 0;
@@ -50,10 +49,8 @@ table.faqsQuestions tr td:first-child {
 }
 
 .faqs-pic {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    margin: 0 auto;
+    width: 80%;
 }
 
 @media (hover: hover) {
@@ -61,5 +58,20 @@ table.faqsQuestions tr td:first-child {
         transition: var(--hover-transition);
         background-color: var(--primary-bg);
         color: var(--primary-font);
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .faqsQuestions tr {
+        display: flex;
+        flex-direction: column;
+    }
+    .faqsQuestions tr td,
+    table.faqsQuestions tr td:first-child {
+        width: 100%;
+    }
+    .CTA-content {
+        margin: 60px;
+        width: 80%;
     }
 }
