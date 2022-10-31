@@ -95,6 +95,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
+    gap: 1rem;
 }
 .pricing-features img {
     height: 100%;
@@ -134,8 +135,8 @@ table.pricingComparison {
     border-collapse: collapse;
     margin: 0 auto;
 }
-.th-1,
-.th-2 {
+.pricingComparison .th-1,
+.pricingComparison .th-2 {
     gap: 1rem;
     border-left: 1px solid black;
     padding: 1rem;
@@ -143,18 +144,18 @@ table.pricingComparison {
     line-height: 2rem;
     width: 30%;
 }
-.th-1 h3,
-.th-2 h3,
-.th-price {
+.pricingComparison .th-1 h3,
+.pricingComparison .th-2 h3,
+.pricingComparison .th-price {
     font-size: 1.5rem;
     font-weight: 800;
 }
-.th-note {
+.pricingComparison .th-note {
     font-size: 0.9rem;
     font-weight: 600;
 }
-.th-1 button,
-.th-2 button {
+.pricingComparison .th-1 button,
+.pricingComparison .th-2 button {
     border-radius: 5px;
     padding: 0.3rem 1rem;
     background-color: var(--primary-font);
@@ -203,8 +204,10 @@ table.pricingComparison tbody tr td:last-child {
 /* ! Transitions */
 .main-pricing-grid .basic-plan button,
 .main-pricing-grid .business-plan button,
-.th-1 button,
-.th-2 button,
+.pricingComparisonResponsive .th-1 button:hover,
+.pricingComparisonResponsive .th-2 button:hover,
+.pricingComparison .th-1 button:hover,
+.pricingComparison .th-2 button:hover,
 .have-questions a {
     transition: var(--hover-transition);
 }
@@ -212,18 +215,109 @@ table.pricingComparison tbody tr td:last-child {
 @media (hover: hover) {
     .main-pricing-grid .basic-plan button:hover,
     .main-pricing-grid .business-plan button:hover,
-    .th-1 button:hover,
-    .th-2 button:hover,
+    .pricingComparisonResponsive .th-1 button:hover,
+    .pricingComparisonResponsive .th-2 button:hover,
+    .pricingComparison .th-1 button:hover,
+    .pricingComparison .th-2 button:hover,
     .have-questions a:hover {
         transition: var(--hover-transition);
     }
 
     .main-pricing-grid .basic-plan button:hover,
     .main-pricing-grid .business-plan button:hover,
-    .th-1 button:hover,
-    .th-2 button:hover,
+    .pricingComparisonResponsive .th-1 button:hover,
+    .pricingComparisonResponsive .th-2 button:hover,
+    .pricingComparison .th-1 button:hover,
+    .pricingComparison .th-2 button:hover,
     .have-questions a:hover {
         background-color: var(--primary-bg);
         color: var(--primary-font);
     }
+}
+.pricingComparisonResponsive {
+    display: none;
+}
+@media screen and (max-width: 1200px) {
+    .main-pricing-grid {
+        width: 90%;
+        gap: 1rem;
+    }
+    table.pricingComparison {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .main-pricing-grid {
+        width: 100%;
+    }
+    .pricing-content .tagline {
+        display: none;
+    }
+    .pricing-features {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 770px) {
+    .main-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table.pricingComparison {
+        display: none;
+    }
+    .pricing-responsive {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    table.pricingComparisonResponsive {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    .pricingComparisonResponsive .th-1,
+    .pricingComparisonResponsive .th-2 {
+        gap: 1rem;
+        border-left: 1px solid black;
+        padding: 1rem;
+        text-align: left;
+        line-height: 2rem;
+        width: 100%;
+    }
+
+    .pricingComparisonResponsive .th-1 h3,
+    .pricingComparisonResponsive .th-2 h3,
+    .pricingComparisonResponsive .th-price {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+    .pricingComparisonResponsive .th-note {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .pricingComparisonResponsive .th-1 button,
+    .pricingComparisonResponsive .th-2 button {
+        border-radius: 5px;
+        padding: 0.3rem 1rem;
+        background-color: var(--primary-font);
+        border: 1px solid var(--primary-font);
+        color: var(--primary-bg);
+        cursor: pointer;
+        width: 100%;
+    }
+    table.pricingComparisonResponsive td {
+        border: 1px solid black;
+        padding: 1rem;
+    }
+    table.pricingComparisonResponsive tr td:first-child {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 500px) {
 }
