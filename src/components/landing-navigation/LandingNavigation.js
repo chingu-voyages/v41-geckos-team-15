@@ -26,7 +26,7 @@ const LandingNavigation = (props) => {
                     <NavigationMenu toggleOffMenu={toggleOffMenu} />
                     <NavAction user={props.user} onLogout={props.onLogout} toggleOffMenu={toggleOffMenu} />
                 </section>
-            </header >
+            </header>
         )
 }
 
