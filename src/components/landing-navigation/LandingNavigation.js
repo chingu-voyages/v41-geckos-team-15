@@ -20,7 +20,7 @@ const LandingNavigation = (props) => {
     else
         return (
             <header className={`landing-header${!toggleMenu ? `` : ` active-header`}`}>
-                <img src={ExpenselessLogo} alt="Expenseless" />
+                <img src={ExpenselessLogo} alt="Expenseless" onClick={toggleOffMenu} />
                 <img className='hamburger' src={Hamburger} alt="" onClick={toggleHamMenu} />
                 <section className={`nav-section${!toggleMenu ? `` : ` active-menu`}`}>
                     <NavigationMenu toggleOffMenu={toggleOffMenu} />
