@@ -19,8 +19,8 @@ const MainDashboard = ({ user }) => {
                 <PopularCategories />
                 <MonthlyExpenses />
             </div>
-        </div >
+        </div>
     )
 }
 
-export default MainDashboard
+export default MainDashboard;

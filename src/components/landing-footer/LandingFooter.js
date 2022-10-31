@@ -38,7 +38,7 @@ const LandingFooter = () => {
                         </nav>
                     </section>
                     <form className='footer-form'>
-                        <label for="subscribe">Subscribe</label>
+                        <label htmlFor="subscribe">Subscribe</label>
                         <section className='form-input'>
                             <input name='subscribe' type="text" placeholder='Enter your email' />
                             <button type='button'>Subscribe</button>
@@ -51,7 +51,6 @@ const LandingFooter = () => {
                     <ul>
                         <li><Link to='/privacy'>Privacy Policy</Link></li>
                         <li><Link to='/terms'>Terms of Service</Link></li>
-
                     </ul>
                     <p>2022 Expenseless. All rights reserved.</p>
                 </article>
