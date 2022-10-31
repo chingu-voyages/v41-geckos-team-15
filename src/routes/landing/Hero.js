@@ -12,7 +12,7 @@ const Hero = () => {
                 </p>
                 <section className='hero-form'>
                     <form className='hero-signup'>
-                        <input type="text" for="sign-up" name="sign-up" placeholder='Enter your email' />
+                        <input type="text" htmlFor="sign-up" name="sign-up" placeholder='Enter your email' />
                         <button type="button">
                             <Link to="/register">Sign Up</Link>
                         </button>
@@ -22,8 +22,6 @@ const Hero = () => {
 
             </section>
             <img src={HeaderCover} alt="Girl counting statistics" />
-
-
         </article>
     )
 }

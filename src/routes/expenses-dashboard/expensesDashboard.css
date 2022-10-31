@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
     position: relative;
 }
 .expenses-dashboard article {
@@ -64,13 +66,13 @@ table.greyGridTable {
     text-align: left;
     border-collapse: collapse;
 }
-table.greyGridTable td:first-child {
+table.greyGridTable span {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     align-items: center;
 }
-table.greyGridTable td:first-child img {
+table.greyGridTable span img {
     width: 4rem;
 }
 table.greyGridTable td:last-child {
@@ -354,5 +356,83 @@ table.greyGridTable thead th {
     .existing-record-buttons button:hover {
         color: var(--primary-bg);
         background-color: var(--primary-font);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .expenses-dashboard article {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .greyGridTable {
+        border: 0;
+    }
+
+    .greyGridTable caption {
+        font-size: 1.3em;
+    }
+
+    .greyGridTable thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .greyGridTable tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+
+    .greyGridTable td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+    table.greyGridTable td:first-child {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    table.greyGridTable td span {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    table.greyGridTable td:last-child {
+        font-size: 0.8em;
+    }
+
+    .greyGridTable td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .expenses-action-btns {
+        justify-content: space-between;
+    }
+    .expenses-action-btns button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .active-tab::after {
+        width: 100%;
+        left: 0;
     }
 }

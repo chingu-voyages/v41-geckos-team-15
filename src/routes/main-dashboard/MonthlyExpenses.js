@@ -26,7 +26,7 @@ const MonthlyExpenses = () => {
                 {expenses.map((m, index) => {
                     if (m.value >= income[index].value) {
                         return (
-                            <div className={(currentMonth === m.label) ? "current-month red" : null}>
+                            <div key={index} className={(currentMonth === m.label) ? "current-month red" : null}>
                                 <div className="sum red">{m.value} $</div>
                                 <h3>{m.label}</h3>
                                 <RedChart />
@@ -35,7 +35,7 @@ const MonthlyExpenses = () => {
                     }
                     if (m.value <= average) {
                         return (
-                            <div className={(currentMonth === m.label) ? "current-month green" : null}>
+                            <div key={index} className={(currentMonth === m.label) ? "current-month green" : null}>
                                 <div className="sum green">{m.value} $</div>
                                 <h3>{m.label}</h3>
                                 <GreenChart />
@@ -43,7 +43,7 @@ const MonthlyExpenses = () => {
                     }
                     else {
                         return (
-                            <div className={(currentMonth === m.label) ? "current-month yellow" : null}>
+                            <div key={index} className={(currentMonth === m.label) ? "current-month yellow" : null}>
                                 <div className="sum yellow">{m.value}  $</div>
                                 <h3>{m.label}</h3>
                                 <YellowChart />

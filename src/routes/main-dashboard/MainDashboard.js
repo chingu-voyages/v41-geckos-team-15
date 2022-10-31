@@ -10,7 +10,7 @@ const MainDashboard = ({ user }) => {
 
             <div className="header">
                 <h1>Hello {user},</h1>
-                <p>Take a look at your current balance</p>
+                <p>Take a look at your current balance 👀</p>
             </div>
 
             <div className="sections">
@@ -19,8 +19,8 @@ const MainDashboard = ({ user }) => {
                 <PopularCategories />
                 <MonthlyExpenses />
             </div>
-        </div >
+        </div>
     )
 }
 
-export default MainDashboard
+export default MainDashboard;

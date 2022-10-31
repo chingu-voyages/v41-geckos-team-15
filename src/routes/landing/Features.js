@@ -4,7 +4,7 @@ const Features = () => {
     return (
         <article className='features'>
             <section className='feature-content'>
-                <section >
+                <section className='features-description'>
                     <p className='tagline'>Expenseless features</p>
                     <h2>
                         What <span className='highlight-title'>Expenseless</span> brings to the table

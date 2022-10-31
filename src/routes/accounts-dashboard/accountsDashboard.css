@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 8rem;
-    padding-bottom: 3rem;
+    padding: 3rem;
     position: relative;
 }
 .close-modal {
@@ -20,15 +20,17 @@
 .accounts-and-cards {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
-    gap: 2rem;
-    padding: 3rem;
+    gap: 4rem;
+}
+.accounts-and-cards h2 {
+    font-size: 2.5rem;
 }
 
 .accounts {
     display: flex;
     flex-direction: row;
     gap: 3rem;
+    flex-wrap: wrap;
 }
 
 .account-card {
@@ -37,7 +39,8 @@
     padding: 1rem;
     width: 22rem;
     height: 12rem;
-    background-color: rgb(171, 171, 248);
+    background-color: var(--primary-font);
+    opacity: 0.8;
     box-shadow: 0px 0px 5px -3px #000000;
     position: relative;
 }
@@ -56,7 +59,7 @@
     cursor: pointer;
 }
 .empty-card img {
-    width: 3rem;
+    width: 2.5rem;
 }
 
 .account-header {
@@ -85,8 +88,10 @@
 .accounts-categories {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    padding: 3rem;
+    gap: 8rem;
+}
+.accounts-categories h2 {
+    font-size: 2.5rem;
 }
 
 .empty-category {
@@ -485,5 +490,16 @@
     }
     .close-modal:hover {
         font-weight: 800;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .accounts,
+    .accounts-and-cards {
+        align-items: center;
+        justify-content: center;
+    }
+    .accounts-categories {
+        text-align: center;
     }
 }

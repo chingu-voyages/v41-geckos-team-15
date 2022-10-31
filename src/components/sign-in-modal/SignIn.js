@@ -32,16 +32,18 @@ const SignIn = (props) => {
                     <form onSubmit={HandleSignIn}>
                         <ul>
                             <li>
-                                <label>Username:<span class="required">*</span></label>
+                                <label htmlFor="username">Username:<span className="required">*</span></label>
                                 <input
+                                    name="username"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
                             </li>
                             <li>
-                                <label>Password:<span class="required">*</span></label>
+                                <label htmlFor="password">Password:<span className="required">*</span></label>
                                 <input
                                     value={password}
+                                    name="password"
                                     type="password"
                                     onChange={(e) => setPassword(e.target.value)}
                                 />

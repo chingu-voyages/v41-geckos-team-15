@@ -49,14 +49,13 @@
     padding: 10px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 970px) {
     .sections {
         grid-template-columns: auto;
-
     }
 
     .sub-sections {
         grid-template-columns: auto;
-
+        gap: 4rem;
     }
 }

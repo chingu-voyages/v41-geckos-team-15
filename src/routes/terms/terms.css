@@ -33,3 +33,9 @@
     height: 100%;
     background-color: var(--primary-black);
 }
+
+@media screen and (max-width: 970px) {
+    .terms-content {
+        width: 90%;
+    }
+}

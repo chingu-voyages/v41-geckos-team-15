@@ -36,7 +36,6 @@
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 5px -3px #000000;
-
 }
 
 .card-content {
@@ -71,6 +70,7 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
 }
 
 .micro-charts h3 {
@@ -99,13 +99,18 @@
     border-color: #ffc043;
 }
 
-
-@media (max-width: 750px) {
+@media screen and (max-width: 1200px) {
     .sections {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    /* .sections {
         grid-template-columns: auto;
     }
 
     .buttons {
         grid-template-columns: auto auto;
-    }
+    } */
 }

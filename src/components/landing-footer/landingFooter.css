@@ -119,3 +119,15 @@ footer {
         color: var(--primary-bg);
     }
 }
+
+@media screen and (max-width: 770px) {
+    .footer-article-one,
+    .footer-article-two {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5rem;
+    }
+    .footer-article-two {
+        gap: 2rem;
+    }
+}
