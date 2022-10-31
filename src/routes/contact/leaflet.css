@@ -234,7 +234,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 /* visual tweaks */
 
 .leaflet-container {
-    background: #ddd;
+    /* background: #ddd; */
     outline: 0;
 }
 .leaflet-container a {
