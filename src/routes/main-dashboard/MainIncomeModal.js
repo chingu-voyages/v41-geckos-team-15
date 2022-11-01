@@ -1,11 +1,11 @@
 
-import CloseExpenseModal from "./CloseExpenseModal";
+import CloseExpenseModal from "../expenses-dashboard/CloseExpenseModal";
 import categories from '../../data/Categories.js';
 
-const IncomeModal = (props) => {
+const MainIncomeModal = (props) => {
     return (
-        <article className="add-income-modal">
-            <section className="add-income-popup">
+        <article className="add-income-modal-main">
+            <section className="add-income-popup-main">
                 <CloseExpenseModal closeModal={props.closeModal} />
                 <h2>New Income</h2>
                 <form onSubmit={props.addIncome}>
@@ -24,4 +24,4 @@ const IncomeModal = (props) => {
     )
 }
 
-export default IncomeModal;
+export default MainIncomeModal;

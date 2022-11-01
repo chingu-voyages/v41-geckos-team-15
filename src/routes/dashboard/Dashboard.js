@@ -6,9 +6,23 @@ import ExpensesDashboard from "../expenses-dashboard/ExpensesDashboard";
 import BudgetDashboard from "../budget-dashboard/BudgetDashboard";
 import AccountsDashboard from "../accounts-dashboard/AccountsDashboard";
 import MainDashboard from "../main-dashboard/MainDashboard";
-import "./dashboard.css"
+import "./dashboard.css";
+import incomes from "../../data/Incomes";
+import { useState } from "react";
 
 const Dashboard = (props) => {
+    const [formValue, setFormValue] = useState({ id: "", name: '', amount: '', category: "", created: '', note: '' });
+    const [submit, setSubmit] = useState(false);
+    const handleValidation = (e) => {
+        const { name, value } = e.target;
+        setFormValue({ ...formValue, id: incomes.length + 1, [name]: value });
+    }
+    const addIncome = (e) => {
+        e.preventDefault();
+        setSubmit(true);
+        incomes.push(formValue);
+        console.log(incomes)
+    }
     return (
         <div className="dashboard">
             {props.user
@@ -16,8 +30,8 @@ const Dashboard = (props) => {
                     <DashboardNavigation logout={props.onLogout} />
                     <div className="content">
                         <Routes>
-                            <Route path="/" element={<MainDashboard user={props.user} />} />
-                            <Route path="expenses" element={<ExpensesDashboard />} />
+                            <Route path="/" element={<MainDashboard user={props.user} addIncome={addIncome} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
+                            <Route path="expenses" element={<ExpensesDashboard addIncome={addIncome} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
                             <Route path="accounts" element={<AccountsDashboard />} />
                             <Route path="statistics" element={<StatisticsDashboard />} />
                             <Route path="budget" element={<BudgetDashboard />} />
