@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import users from "../../data/Users"
 
-
 const Register = (props) => {
     const [values, setValues] = useState({ username: '', email: '', password: '' })
     const [validations, setValidations] = useState({ username: '', email: '', password: '' })
@@ -85,6 +84,7 @@ const Register = (props) => {
         }
         allusers.push(newUser)
         localStorage.setItem('users', JSON.stringify(allusers))
+        localStorage.setItem('token-info', JSON.stringify(username));
         props.closeSignup()
         props.onRegister(username)
         navigate('/dashboard')

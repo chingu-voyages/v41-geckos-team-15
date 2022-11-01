@@ -51,6 +51,7 @@ const SignIn = (props) => {
             return false
         }
         props.closeLogin()
+        localStorage.setItem('token-info', JSON.stringify(username));
         props.onLogin(username)
         navigate('/dashboard')
     }
