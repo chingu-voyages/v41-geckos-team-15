@@ -2,19 +2,66 @@ import React from "react";
 import "./signIn.css"
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import users from "../../data/Users"
 
 const SignIn = (props) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate()
+    const [values, setValues] = useState({ username: '', password: '' })
+    const [validations, setValidations] = useState({ username: '', password: '' })
+    const navigate = useNavigate();
 
-    {/*passes the user info and redirect the user to dashboard*/ }
-    const HandleSignIn = (event) => {
-        event.preventDefault()
+    const validateAll = () => {
+        const { username, password } = values
+        const validations = { username: '', password: '' }
+        let isValid = true
+
+        if (!username) {
+            validations.username = 'username is required'
+            isValid = false
+        }
+        if (!password) {
+            validations.password = 'Password is required'
+            isValid = false
+        }
+
+        const allusers = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [users]
+        const isUserExist = allusers.find(
+            x => x.username === username && x.password === password
+        );
+
+        if (!isUserExist) {
+            validations.username = 'Username or password is incorrect'
+            isValid = false
+        }
+
+        if (!isValid) {
+            setValidations(validations)
+        }
+        return isValid
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setValues({ ...values, [name]: value })
+    }
+
+    const HandleSignIn = (e) => {
+        e.preventDefault()
+        const isValid = validateAll()
+        if (!isValid) {
+            return false
+        }
         props.closeLogin()
+        localStorage.setItem('token-info', JSON.stringify(username));
         props.onLogin(username)
         navigate('/dashboard')
     }
+
+    const { username, password } = values
+
+    const {
+        username: usernameVal,
+        password: passwordVal
+    } = validations
 
     return (
         <div className="modal">
@@ -37,8 +84,9 @@ const SignIn = (props) => {
                                 <input
                                     name="username"
                                     value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
+                                    onChange={handleChange}
                                 />
+                                <div className="error-msg">{usernameVal}</div>
                             </li>
                             <li>
                                 <label htmlFor="password">Password:<span className="required">*</span></label>
@@ -46,8 +94,9 @@ const SignIn = (props) => {
                                     value={password}
                                     name="password"
                                     type="password"
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={handleChange}
                                 />
+                                <div className="error-msg">{passwordVal}</div>
                             </li>
                             <li>
                                 <button className="submit-btn" type="submit">Log in</button>

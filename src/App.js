@@ -18,10 +18,13 @@ import { useState } from "react";
 const App = () => {
   const [isLoginModalOpen, setLoginModal] = useState(false);
   const [isSignupModalOpen, setSignupModal] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(localStorage.getItem('token-info'));
 
   const login = (user) => setUser(user)
-  const logout = () => setUser(null);
+  const logout = () => {
+    localStorage.removeItem('token-info');
+    setUser(null);
+  }
   const openLogin = () => setLoginModal(true);
   const openSignup = () => setSignupModal(true);
   const closeModal = () => {
