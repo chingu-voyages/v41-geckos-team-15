@@ -1,14 +1,15 @@
 
-import CloseExpenseModal from "./CloseExpenseModal";
-import categories from '../../data/Categories.js'
-const ExpenseModal = (props) => {
+import CloseExpenseModal from "../expenses-dashboard/CloseExpenseModal";
+import categories from '../../data/Categories.js';
+
+const MainIncomeModal = (props) => {
     return (
-        <article className="add-expense-modal">
-            <section className="add-expense-popup">
-                <CloseExpenseModal closeModal={props.closeModal} />
-                <h2>New Expense</h2>
-                {props.submit && Object.keys(props.formError).length === 0 ? <p>Successfully added expense! 💸</p> : <form onSubmit={props.addExpense}>
-                    <input onChange={props.handleValidation} value={props.formValue.name} name="name" type="text" placeholder="Expense name" />
+        <article className="add-income-modal-main">
+            <section className="add-income-popup-main">
+                <CloseExpenseModal closeModal={props.closeModal} resetForm={props.resetForm} />
+                <h2>New Income</h2>
+                {props.submit && Object.keys(props.formError).length === 0 ? <p>Successfully added income! 🤑</p> : <form onSubmit={props.addIncome}>
+                    <input onChange={props.handleValidation} value={props.formValue.name} name="name" type="text" placeholder="Income name" />
                     {props.formError.name ? <span className="modal-input-err">{props.formError.name}</span> : null}
                     <input onChange={props.handleValidation} value={props.formValue.amount} name="amount" type="text" placeholder="Amount" />
                     {props.formError.amount ? <span className="modal-input-err">{props.formError.amount}</span> : null}
@@ -27,4 +28,4 @@ const ExpenseModal = (props) => {
     )
 }
 
-export default ExpenseModal;
+export default MainIncomeModal;

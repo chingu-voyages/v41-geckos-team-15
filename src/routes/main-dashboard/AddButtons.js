@@ -1,11 +1,12 @@
 import React from 'react'
 import "./mainDashboard.css"
 
-const AddButtons = () => {
+const AddButtons = (props) => {
+
     return (
         <div className="buttons">
-            <button>Add expense &#65291;</button>
-            <button>Add income &#65291;</button>
+            <button onClick={() => { props.toggleExpenseModal() }}>Add expense &#65291;</button>
+            <button onClick={() => { props.toggleIncomeModal(); }}>Add income &#65291;</button>
             <button>Add account &#65291;</button>
             <button>Add category &#65291;</button>
         </div>

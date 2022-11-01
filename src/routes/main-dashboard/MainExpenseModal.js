@@ -1,11 +1,12 @@
 
-import CloseExpenseModal from "./CloseExpenseModal";
+import CloseExpenseModal from "../expenses-dashboard/CloseExpenseModal";
 import categories from '../../data/Categories.js'
-const ExpenseModal = (props) => {
+
+const MainExpenseModal = (props) => {
     return (
         <article className="add-expense-modal">
             <section className="add-expense-popup">
-                <CloseExpenseModal closeModal={props.closeModal} />
+                <CloseExpenseModal closeModal={props.closeModal} resetForm={props.resetForm} />
                 <h2>New Expense</h2>
                 {props.submit && Object.keys(props.formError).length === 0 ? <p>Successfully added expense! 💸</p> : <form onSubmit={props.addExpense}>
                     <input onChange={props.handleValidation} value={props.formValue.name} name="name" type="text" placeholder="Expense name" />
@@ -27,4 +28,4 @@ const ExpenseModal = (props) => {
     )
 }
 
-export default ExpenseModal;
+export default MainExpenseModal;
