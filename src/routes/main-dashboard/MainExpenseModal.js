@@ -8,16 +8,16 @@ const MainExpenseModal = (props) => {
             <section className="add-expense-popup">
                 <CloseExpenseModal closeModal={props.closeModal} />
                 <h2>New Expense</h2>
-                <form>
-                    <input type="text" placeholder="Expense name" />
-                    <input type="text" placeholder="Amount" />
-                    <select>
+                <form onSubmit={props.addExpense}>
+                    <input onChange={props.handleValidation} value={props.formValue.name} name="name" type="text" placeholder="Expense name" />
+                    <input onChange={props.handleValidation} value={props.formValue.amount} name="amount" type="text" placeholder="Amount" />
+                    <select onChange={props.handleValidation} value={props.formValue.category} name="category">
                         <option defaultChecked>Select category</option>
-                        {categories.map((category) => <option>{category.name}</option>)}
+                        {categories.map((category) => <option key={category.id} >{category.name}</option>)}
                     </select>
-                    <input type="date" id="date" name="date" />
-                    <textarea type="textarea" placeholder="Note" rows="5" />
-                    <button>Add</button>
+                    <input onChange={props.handleValidation} value={props.formValue.created} name="created" type="date" id="date" />
+                    <textarea onChange={props.handleValidation} value={props.formValue.note} name="note" type="textarea" placeholder="Note" rows="5" />
+                    <button type="submit">Add</button>
                 </form>
             </section>
         </article>

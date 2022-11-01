@@ -7,7 +7,7 @@ import ExpensesTable from './ExpensesTable';
 import IncomeModal from './IncomeModal';
 import IncomesTable from './IncomesTable';
 
-const ExpensesDashboard = ({ submit, addIncome, handleValidation, formValue }) => {
+const ExpensesDashboard = ({ submit, addIncome, addExpense, handleValidation, formValue }) => {
     const [expenseTable, setExpenseTable] = useState(true);
     const [toggleAddExpense, setToggleAddToExpense] = useState(false);
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
@@ -55,7 +55,7 @@ const ExpensesDashboard = ({ submit, addIncome, handleValidation, formValue }) =
                 {expenseTable ? <ExpensesTable toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} /> : <IncomesTable toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} />}
                 <ExpensesPagination />
             </article>
-            {toggleAddExpense ? <ExpenseModal closeModal={closeModal} /> : null}
+            {toggleAddExpense ? <ExpenseModal closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> : null}
             {toggleAddIncome ? <IncomeModal closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> : null}
             {toggleExistingExpenseIncome ? <ExistingExpenseincome closeModal={closeModal} recordInfo={recordInfo} /> : null}
         </main>

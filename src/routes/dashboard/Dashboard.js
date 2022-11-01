@@ -8,6 +8,7 @@ import AccountsDashboard from "../accounts-dashboard/AccountsDashboard";
 import MainDashboard from "../main-dashboard/MainDashboard";
 import "./dashboard.css";
 import incomes from "../../data/Incomes";
+import expenses from "../../data/Expenses";
 import { useState } from "react";
 
 const Dashboard = (props) => {
@@ -21,7 +22,13 @@ const Dashboard = (props) => {
         e.preventDefault();
         setSubmit(true);
         incomes.push(formValue);
-        console.log(incomes)
+        // console.log(incomes)
+    }
+    const addExpense = (e) => {
+        e.preventDefault();
+        setSubmit(true);
+        expenses.push(formValue);
+        console.log(expenses)
     }
     return (
         <div className="dashboard">
@@ -30,8 +37,8 @@ const Dashboard = (props) => {
                     <DashboardNavigation logout={props.onLogout} />
                     <div className="content">
                         <Routes>
-                            <Route path="/" element={<MainDashboard user={props.user} addIncome={addIncome} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
-                            <Route path="expenses" element={<ExpensesDashboard addIncome={addIncome} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
+                            <Route path="/" element={<MainDashboard user={props.user} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
+                            <Route path="expenses" element={<ExpensesDashboard addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
                             <Route path="accounts" element={<AccountsDashboard />} />
                             <Route path="statistics" element={<StatisticsDashboard />} />
                             <Route path="budget" element={<BudgetDashboard />} />
