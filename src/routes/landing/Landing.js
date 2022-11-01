@@ -7,10 +7,10 @@ import StatisticsPreview from "./StatisticsPreview";
 import TestimonialsPreview from "./TestimonialsPreview";
 import './landing.css'
 
-const Landing = () => {
+const Landing = (props) => {
     return (
         <main className="landing-main">
-            <Hero />
+            <Hero openSignup={props.openSignup} />
             <Features />
             <Cta />
             <AppFeatures />

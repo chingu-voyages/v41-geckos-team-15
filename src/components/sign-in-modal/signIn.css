@@ -75,9 +75,12 @@
     right: 20px;
     transition: transform 250ms ease-in-out;
     transform-origin: 50% 50%;
-    background-color: var(--primary-bg);
+}
+
+.modal__close button {
     border: none;
     text-decoration: none;
+    background-color: var(--primary-bg);
 }
 
 .modal__close:hover {

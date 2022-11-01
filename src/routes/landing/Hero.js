@@ -1,7 +1,7 @@
 import HeaderCover from '../../assets/images/landing/header-cover.jpg'
 import { Link } from "react-router-dom"
 
-const Hero = () => {
+const Hero = (props) => {
     return (
         <article className='hero'>
             <section className='hero-content'>
@@ -11,10 +11,10 @@ const Hero = () => {
                     Espensless helps you to manage your money and track all your income & expenses effortlessly to reach your financial goals faster
                 </p>
                 <section className='hero-form'>
-                    <form className='hero-signup'>
+                    <form className='hero-signup' onSubmit={(e) => e.preventDefault()}>
                         <input type="text" htmlFor="sign-up" name="sign-up" placeholder='Enter your email' />
-                        <button type="button">
-                            <Link to="/register">Sign Up</Link>
+                        <button onClick={props.openSignup}>
+                            Sign Up
                         </button>
                     </form>
                     <span>By clicking Sign Up you're confirming that you agree with our Terms and Conditions.</span>

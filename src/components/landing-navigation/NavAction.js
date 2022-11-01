@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 const NavAction = (props) => {
     return (
         <section className="nav-action">
-            {/*Condition to change the buttons if the user is logged in or out*/}
             {props.user
                 ? <>
                     <button type="button">
@@ -15,11 +14,11 @@ const NavAction = (props) => {
                     </button>
                 </>
                 : <>
-                    <button type="button">
-                        <Link to='/register' onClick={props.toggleOffMenu}>Register</Link>
+                    <button onClick={() => { props.toggleOffMenu(); props.openSignup() }}>
+                        Register
                     </button>
-                    <button type="button">
-                        <Link to='/login' onClick={props.toggleOffMenu}>Log in</Link>
+                    <button type="button" onClick={() => { props.toggleOffMenu(); props.openSignup() }}>
+                        Login
                     </button>
                 </>
             }

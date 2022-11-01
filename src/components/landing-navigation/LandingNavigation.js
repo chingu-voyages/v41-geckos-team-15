@@ -24,7 +24,11 @@ const LandingNavigation = (props) => {
                 <img className='hamburger' src={Hamburger} alt="" onClick={toggleHamMenu} />
                 <section className={`nav-section${!toggleMenu ? `` : ` active-menu`}`}>
                     <NavigationMenu toggleOffMenu={toggleOffMenu} />
-                    <NavAction user={props.user} onLogout={props.onLogout} toggleOffMenu={toggleOffMenu} />
+                    <NavAction user={props.user} 
+                    onLogout={props.onLogout}
+                     toggleOffMenu={toggleOffMenu}
+                     openLogin={props.openLogin}
+                     openSignup={props.openSignup} />
                 </section>
             </header>
         )

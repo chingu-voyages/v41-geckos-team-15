@@ -22,7 +22,7 @@ const Register = (props) => {
             <div className={'modal__overlay'} />
             <div className={'modal__box'}>
                 <div className="modal__close">
-                    <Link to="/"><span>&#10005;</span></Link>
+                    <button onClick={props.closeSignup}><span>&#10005;</span></button>
                 </div>
                 <div className={'modal__title'}>
                     Sign Up
