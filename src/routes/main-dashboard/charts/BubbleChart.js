@@ -1,34 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import { CirclePacking } from '@ant-design/plots';
 import expensesByCategory from '../../../data/ExpensesByCategory';
 
 export const BubbleChart = () => {
-    const [data, setData] = useState([]);
 
-    const dataSet = {
+    const data = {
         "name": "root",
         "children": expensesByCategory
     }
 
-    useEffect(() => {
-        setData(dataSet);
-    }, []);
-
-    /*--- Use This when fetching data from server---*/
-    /*
-    useEffect(() => {
-        asyncFetch();
-    }, []);
-   
-        const asyncFetch = () => {
-            fetch('https://gw.alipayobjects.com/os/antfincdn/%24m0nDoQYqH/basic-packing.json')
-                .then((response) => response.json())
-                .then((json) => setData(json))
-                .catch((error) => {
-                    console.log('fetch data failed', error);
-                });
-        };
-    */
     const config = {
         autoFit: true,
         padding: 0,
