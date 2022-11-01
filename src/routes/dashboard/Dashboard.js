@@ -35,7 +35,6 @@ const Dashboard = (props) => {
         setFormError(validateForm(formValue))
         setSubmit(true);
         expenses.push(formValue);
-        // if (formError) return;
         if (!formError && Object.keys(props.formError).length === 0) {
             setFormValue({ id: "", name: '', amount: '', category: "", created: '', note: '' });
         }
@@ -54,13 +53,15 @@ const Dashboard = (props) => {
         if (!value.amount) {
             errors.amount = "Please enter amount";
         }
+        else if (isNaN(value.amount)) {
+            errors.amount = "Please enter a valid amount in numbers";
+        }
         if (!value.category) {
             errors.category = "Please enter category";
         }
         if (!value.created) {
             errors.created = "Please enter date";
         }
-        console.log(errors)
         return errors;
     }
     return (
