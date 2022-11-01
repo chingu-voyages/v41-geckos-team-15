@@ -3,20 +3,99 @@ import "./register.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import users from "../../data/Users"
+
 
 const Register = (props) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEamil] = useState('');
+    const [values, setValues] = useState({ username: '', email: '', password: '' })
+    const [validations, setValidations] = useState({ username: '', email: '', password: '' })
+    const allusers = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [users]
     const navigate = useNavigate();
 
-    {/*passes the user info and redirect to dashboard*/ }
-    const HandleSignUp = (event) => {
-        event.preventDefault()
+    const validateAll = () => {
+        const { username, email, password } = values
+        const validations = { username: '', email: '', password: '' }
+        let isValid = true
+
+        if (!username) {
+            validations.username = 'username is required'
+            isValid = false
+        }
+
+        if (username && username.length < 3) {
+            validations.username = 'username must be at least 3 characters'
+            isValid = false
+        }
+        const isUsernameExist = users.find(
+            x => x.username === username
+        )
+        if (isUsernameExist) {
+            validations.username = 'Username already exist'
+            isValid = false
+        }
+
+        if (!email) {
+            validations.email = 'Email is required'
+            isValid = false
+        }
+
+        if (email && !/\S+@\S+\.\S+/.test(email)) {
+            validations.email = 'Email format must be as example@mail.com'
+            isValid = false
+        }
+        const isEmailExist = users.find(
+            x => x.email === email
+        )
+        if (isEmailExist) {
+            validations.email = 'Email already exist'
+            isValid = false
+        }
+
+        if (!password) {
+            validations.password = 'Password is required'
+            isValid = false
+        }
+        if (password && password.length < 6) {
+            validations.password = 'Password must be at least 6 characters long'
+            isValid = false
+        }
+
+        if (!isValid) {
+            setValidations(validations)
+        }
+        return isValid
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setValues({ ...values, [name]: value })
+    }
+
+    const HandleSignUp = (e) => {
+        e.preventDefault()
+        const isValid = validateAll()
+        if (!isValid) {
+            return false
+        }
+
+        const newUser = {
+            id: allusers[allusers.length - 1].id + 1,
+            username: username,
+            password: password
+        }
+        allusers.push(newUser)
+        localStorage.setItem('users', JSON.stringify(allusers))
         props.closeSignup()
         props.onRegister(username)
         navigate('/dashboard')
     }
+
+    const { username, email, password } = values
+    const {
+        username: usernameVal,
+        email: emailVal,
+        password: passwordVal
+    } = validations
 
     return (
         <div className={'modal'}>
@@ -35,20 +114,26 @@ const Register = (props) => {
                     <form onSubmit={HandleSignUp}>
                         <label>Username:</label>
                         <input
+                            name="username"
                             value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={handleChange}
                         />
+                        <div className="error-msg">{usernameVal}</div>
                         <label>Email:</label>
                         <input
+                            name="email"
                             value={email}
-                            onChange={(e) => setEamil(e.target.value)}
+                            onChange={handleChange}
                         />
+                        <div className="error-msg">{emailVal}</div>
                         <label>Password:</label>
                         <input
                             value={password}
                             type="password"
-                            onChange={(e) => setPassword(e.target.value)}
+                            name="password"
+                            onChange={handleChange}
                         />
+                        <div className="error-msg">{passwordVal}</div>
                         <button className="submit-btn" type="submit">Sign up</button>
                     </form>
                     <div>Already have an account?
