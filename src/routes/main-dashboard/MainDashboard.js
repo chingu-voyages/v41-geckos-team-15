@@ -8,7 +8,7 @@ import { useState } from "react";
 import MainExpenseModal from "./MainExpenseModal";
 
 
-const MainDashboard = ({ submit, user, addIncome, addExpense, handleValidation, formValue }) => {
+const MainDashboard = ({ submit, user, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
     const [toggleAddExpense, setToggleAddToExpense] = useState(false);
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
 
@@ -35,8 +35,8 @@ const MainDashboard = ({ submit, user, addIncome, addExpense, handleValidation, 
                 <PopularCategories />
                 <MonthlyExpenses />
             </div>
-            {toggleAddIncome ? <MainIncomeModal closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> : null}
-            {toggleAddExpense ? <MainExpenseModal closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> : null}
+            {toggleAddIncome ? <MainIncomeModal resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> : null}
+            {toggleAddExpense ? <MainExpenseModal resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> : null}
         </div>
     )
 }

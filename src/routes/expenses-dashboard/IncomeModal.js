@@ -6,9 +6,9 @@ const IncomeModal = (props) => {
     return (
         <article className="add-income-modal">
             <section className="add-income-popup">
-                <CloseExpenseModal closeModal={props.closeModal} />
+                <CloseExpenseModal closeModal={props.closeModal} resetForm={props.resetForm} />
                 <h2>New Income</h2>
-                <form onSubmit={props.addIncome}>
+                {props.submit ? <p>Successfully added income! 🤑</p> : <form onSubmit={props.addIncome}>
                     <input onChange={props.handleValidation} value={props.formValue.name} name="name" type="text" placeholder="Income name" />
                     <input onChange={props.handleValidation} value={props.formValue.amount} name="amount" type="text" placeholder="Amount" />
                     <select onChange={props.handleValidation} value={props.formValue.category} name="category">
@@ -18,7 +18,7 @@ const IncomeModal = (props) => {
                     <input onChange={props.handleValidation} value={props.formValue.created} name="created" type="date" id="date" />
                     <textarea onChange={props.handleValidation} value={props.formValue.note} name="note" type="textarea" placeholder="Note" rows="5" />
                     <button type="submit">Add</button>
-                </form>
+                </form>}
             </section>
         </article>
     )

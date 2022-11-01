@@ -22,13 +22,16 @@ const Dashboard = (props) => {
         e.preventDefault();
         setSubmit(true);
         incomes.push(formValue);
-        // console.log(incomes)
+        setFormValue({ id: "", name: '', amount: '', category: "", created: '', note: '' });
     }
     const addExpense = (e) => {
         e.preventDefault();
         setSubmit(true);
         expenses.push(formValue);
-        console.log(expenses)
+        setFormValue({ id: "", name: '', amount: '', category: "", created: '', note: '' });
+    }
+    const resetForm = () => {
+        setSubmit(false);
     }
     return (
         <div className="dashboard">
@@ -37,8 +40,8 @@ const Dashboard = (props) => {
                     <DashboardNavigation logout={props.onLogout} />
                     <div className="content">
                         <Routes>
-                            <Route path="/" element={<MainDashboard user={props.user} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
-                            <Route path="expenses" element={<ExpensesDashboard addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
+                            <Route path="/" element={<MainDashboard resetForm={resetForm} user={props.user} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
+                            <Route path="expenses" element={<ExpensesDashboard resetForm={resetForm} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
                             <Route path="accounts" element={<AccountsDashboard />} />
                             <Route path="statistics" element={<StatisticsDashboard />} />
                             <Route path="budget" element={<BudgetDashboard />} />
