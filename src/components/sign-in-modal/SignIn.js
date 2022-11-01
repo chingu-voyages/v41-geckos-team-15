@@ -11,6 +11,7 @@ const SignIn = (props) => {
     {/*passes the user info and redirect the user to dashboard*/ }
     const HandleSignIn = (event) => {
         event.preventDefault()
+        props.closeLogin()
         props.onLogin(username)
         navigate('/dashboard')
     }
@@ -49,12 +50,14 @@ const SignIn = (props) => {
                                 />
                             </li>
                             <li>
-                                <button type="submit">Log in</button>
+                                <button className="submit-btn" type="submit">Log in</button>
                             </li>
                         </ul>
                     </form>
                     <div><Link to="/forgotPassword">forgot your password?</Link></div>
-                    <div>Don't have an account? <Link to="/Register">Sign Up</Link></div>
+                    <div>Don't have an account?  <button className="signup-btn"
+                        onClick={() => { props.closeLogin(); props.openSignup() }}>
+                        Sign Up</button></div>
                 </div>
             </div>
         </div >

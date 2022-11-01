@@ -17,7 +17,7 @@ const NavAction = (props) => {
                     <button onClick={() => { props.toggleOffMenu(); props.openSignup() }}>
                         Register
                     </button>
-                    <button type="button" onClick={() => { props.toggleOffMenu(); props.openSignup() }}>
+                    <button type="button" onClick={() => { props.toggleOffMenu(); props.openLogin() }}>
                         Login
                     </button>
                 </>

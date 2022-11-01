@@ -32,8 +32,8 @@ const App = () => {
   return (
 
     <Router>
-      {isLoginModalOpen && <SignIn onLogin={login} closeLogin={closeModal} />}
-      {isSignupModalOpen && <Register onRegister={login} closeSignup={closeModal} />}
+      {isLoginModalOpen && <SignIn onLogin={login} openSignup={openSignup} closeLogin={closeModal} />}
+      {isSignupModalOpen && <Register onRegister={login} openLogin={openLogin} closeSignup={closeModal} />}
 
       <LandingNavigation user={user} onLogout={logout} openLogin={openLogin} openSignup={openSignup} />
       <Routes>
