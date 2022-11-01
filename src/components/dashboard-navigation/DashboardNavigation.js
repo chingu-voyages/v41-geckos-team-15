@@ -29,48 +29,48 @@ const DashboardNavigation = (props) => {
             <div className="sidebar-items">
                 <ul className="menu">
                     <li>
-                        <Link to="" onClick={toggleMenu}>
+                        <Link to="" onClick={() => { toggleMenu(); props.resetForm() }}>
                             <Home className="icon" />
                             <span className="item-name">Home</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="accounts" onClick={toggleMenu}>
+                        <Link to="accounts" onClick={() => { toggleMenu(); props.resetForm() }}>
                             <Accounts className="icon" />
                             <span className="item-name">accounts</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="expenses" onClick={toggleMenu}>
+                        <Link to="expenses" onClick={() => { toggleMenu(); props.resetForm() }}>
                             <Expenses className="icon" />
                             <span className="item-name">expenses</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="budget" onClick={toggleMenu}>
+                        <Link to="budget" onClick={() => { toggleMenu(); props.resetForm() }}>
                             <Budget className="icon" />
                             <span className="item-name">budget</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="statistics" onClick={toggleMenu}>
+                        <Link to="statistics" onClick={() => { toggleMenu(); props.resetForm() }}>
                             <Statistics className="icon" />
                             <span className="item-name">statistics</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="profile" onClick={toggleMenu}>
+                        <Link to="profile" onClick={() => { toggleMenu(); props.resetForm() }}>
                             <Profile className="icon" />
                             <span className="item-name">profile</span>
                         </Link>
                     </li>
                 </ul>
-                <div class="bottom-content">
-                    <li class="">
+                <div className="bottom-content">
+                    <li className="">
                         <Link to="/" onClick={props.logout}>
-                            <button className="logout-button" onClick={() => { props.logout(); toggleMenu() }}>
+                            <button className="logout-button" onClick={() => { props.logout(); toggleMenu(); props.resetForm(); }}>
                                 <Logout className="icon" />
-                                <span class="item-name">Logout</span>
+                                <span className="item-name">Logout</span>
                             </button>
                         </Link>
                     </li>

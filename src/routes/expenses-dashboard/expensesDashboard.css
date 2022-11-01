@@ -142,7 +142,7 @@ table.greyGridTable thead th {
     top: 5%;
     padding: 2rem;
     height: max-content;
-    width: 30rem;
+    width: 80%;
     background-color: var(--primary-bg);
 }
 .add-expense-popup h2 {
@@ -224,7 +224,7 @@ table.greyGridTable thead th {
     top: 5%;
     padding: 2rem;
     height: max-content;
-    width: 30rem;
+    width: 80%;
     background-color: var(--primary-bg);
 }
 .add-income-popup h2 {

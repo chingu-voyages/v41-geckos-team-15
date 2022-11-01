@@ -6,15 +6,11 @@ import "./mainDashboard.css";
 import expensesByMonth from '../../data/ExpensesByMonth';
 
 const MonthlyExpenses = () => {
-
-
     //get current month
     const currentMonth = new Date().toLocaleString('en-US', { month: 'short' });
-
     //get total expenses & income 
     const expenses = expensesByMonth.filter(e => { return e.type === "Expenses" });
     const income = expensesByMonth.filter(e => { return e.type === "Income" });
-
     //get average for all expenses 
     const sum = expenses.reduce((sum, a) => sum + Number(a.value), 0);
     const average = sum / 12;

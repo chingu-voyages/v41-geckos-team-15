@@ -8,6 +8,10 @@
     padding: 1px 16px;
 }
 
+.modal-input-err {
+    color: red;
+}
+
 @media screen and (max-width: 700px) {
     div.content {
         margin-left: 0;
