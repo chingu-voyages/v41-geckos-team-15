@@ -13,6 +13,7 @@ const Register = (props) => {
     {/*passes the user info and redirect to dashboard*/ }
     const HandleSignUp = (event) => {
         event.preventDefault()
+        props.closeSignup()
         props.onRegister(username)
         navigate('/dashboard')
     }
@@ -22,7 +23,7 @@ const Register = (props) => {
             <div className={'modal__overlay'} />
             <div className={'modal__box'}>
                 <div className="modal__close">
-                    <Link to="/"><span>&#10005;</span></Link>
+                    <button onClick={props.closeSignup}><span>&#10005;</span></button>
                 </div>
                 <div className={'modal__title'}>
                     Sign Up
@@ -48,9 +49,12 @@ const Register = (props) => {
                             type="password"
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <button type="submit">Sign up</button>
+                        <button className="submit-btn" type="submit">Sign up</button>
                     </form>
-                    <div>Already have an account? <Link to="/login">Log in</Link></div>
+                    <div>Already have an account?
+                        <button className="login-btn"
+                            onClick={() => { props.closeSignup(); props.openLogin() }}>
+                            Log in</button></div>
                 </div>
             </div>
         </div>

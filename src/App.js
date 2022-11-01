@@ -16,23 +16,28 @@ import Dashboard from "./routes/dashboard/Dashboard"
 import { useState } from "react";
 
 const App = () => {
-
+  const [isLoginModalOpen, setLoginModal] = useState(false);
+  const [isSignupModalOpen, setSignupModal] = useState(false);
   const [user, setUser] = useState(null);
-  const login = (user) => {
-    setUser(user)
-  }
-  const logout = () => {
-    setUser(null);
+
+  const login = (user) => setUser(user)
+  const logout = () => setUser(null);
+  const openLogin = () => setLoginModal(true);
+  const openSignup = () => setSignupModal(true);
+  const closeModal = () => {
+    setLoginModal(false);
+    setSignupModal(false);
   }
 
   return (
 
     <Router>
-      <LandingNavigation user={user} onLogout={logout} />
+      {isLoginModalOpen && <SignIn onLogin={login} openSignup={openSignup} closeLogin={closeModal} />}
+      {isSignupModalOpen && <Register onRegister={login} openLogin={openLogin} closeSignup={closeModal} />}
+
+      <LandingNavigation user={user} onLogout={logout} openLogin={openLogin} openSignup={openSignup} />
       <Routes>
-        <Route path="/register" element={<Register onRegister={login} />} />
-        <Route path="/login" element={<SignIn onLogin={login} />} />
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Landing openSignup={openSignup} />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
