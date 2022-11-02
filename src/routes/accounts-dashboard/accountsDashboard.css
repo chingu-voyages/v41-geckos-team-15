@@ -328,11 +328,11 @@
     background-color: #b796d9;
 }
 
-.sb-checkbox__label--light-pink:before {
+.sb-checkbox__label--lightpink:before {
     border-color: #e36cbb;
 }
 
-.sb-checkbox__label--light-pink:after {
+.sb-checkbox__label--lightpink:after {
     background-color: #e36cbb;
 }
 
