@@ -23,6 +23,7 @@ const ExistingExpenseincome = (props) => {
                                 Amount:
                                 <input onChange={props.handleEditValidation} name="amount" type="text" placeholder={`${props.recordInfo.amount} ${props.recordInfo.currency}`} />
                             </label>
+                            {props.editFormError.amount ? <span className="modal-input-err">{props.editFormError.amount}</span> : null}
                             <label htmlFor="created">
                                 Date:
                                 <input onChange={props.handleEditValidation} name="created" type="date" />
@@ -48,7 +49,7 @@ const ExistingExpenseincome = (props) => {
                         <p>Note: <span>{props.recordInfo.note}</span></p>
                     </section>
                     <section className="existing-record-buttons">
-                        <button onClick={() => { props.editExpenseRecord(); props.identifyRecord(props.recordInfo.id) }}>Edit</button>
+                        <button onClick={() => { props.editExpenseRecord(); props.identifyRecord(props.recordInfo.id, props.recordInfo.type) }}>Edit</button>
                         <button onClick={props.deleteExistingRecord}>Delete</button>
                     </section>
                 </section>

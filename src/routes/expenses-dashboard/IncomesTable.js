@@ -21,7 +21,7 @@ const IncomesTable = (props) => {
                         <td data-label="Amount" className="income-amount">{income.amount}{income.currency}</td>
                         <td data-label="More" onClick={() => {
                             props.toggleExistingRecords();
-                            props.getRecordInfo(income.name, income.category, income.amount, income.currency, income.created, income.note);
+                            props.getRecordInfo(income.id, income.type, income.name, income.category, income.amount, income.currency, income.created, income.note);
                         }}>...</td>
                     </tr>)}
             </tbody>

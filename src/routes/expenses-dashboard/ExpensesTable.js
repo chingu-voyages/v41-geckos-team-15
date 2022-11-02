@@ -21,7 +21,7 @@ const ExpensesTable = (props) => {
                         <td data-label="Amount" className="expense-amount">-{expense.amount}{expense.currency}</td>
                         <td data-label="More" onClick={() => {
                             props.toggleExistingRecords();
-                            props.getRecordInfo(expense.id, expense.name, expense.category, expense.amount, expense.currency, expense.created, expense.note);
+                            props.getRecordInfo(expense.id, expense.type, expense.name, expense.category, expense.amount, expense.currency, expense.created, expense.note);
 
                         }}>...</td>
                     </tr>)}
