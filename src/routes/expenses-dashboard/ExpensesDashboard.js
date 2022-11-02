@@ -6,6 +6,7 @@ import './expensesDashboard.css';
 import ExpensesTable from './ExpensesTable';
 import IncomeModal from './IncomeModal';
 import IncomesTable from './IncomesTable';
+import expenses from '../../data/Expenses';
 
 const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
     return (
@@ -24,7 +25,7 @@ const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeM
                 {expenseTable ?
                     <ExpensesTable identifyRecord={identifyRecord} toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} /> :
                     <IncomesTable toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} />}
-                <ExpensesPagination />
+
             </article>
             {toggleAddExpense ?
                 <ExpenseModal formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> :

@@ -40,7 +40,6 @@ const Dashboard = (props) => {
                     setTargetRecord(expense.id);
                     setTargetRecordIndex(expenses.indexOf(expense));
                     setTargetRecordType(expense.type);
-                    console.log('expenses', type, expenses.indexOf(expense))
                 }
             })
         }
@@ -50,7 +49,6 @@ const Dashboard = (props) => {
                     setTargetRecord(income.id);
                     setTargetRecordIndex(incomes.indexOf(income));
                     setTargetRecordType(income.type);
-                    console.log('incomes', type, incomes.indexOf(income))
                 }
             })
         }
@@ -147,12 +145,14 @@ const Dashboard = (props) => {
     const deleteExistingRecord = () => {
         if (targetRecordType === 'expense') {
             expenses.splice(targetRecordIndex, 1);
+
         }
         if (targetRecordType === 'income') {
             incomes.splice(targetRecordIndex, 1);
         }
         resetForm();
         closeModal();
+
     }
     const handleEditValidation = (e) => {
         const { name, value } = e.target;
@@ -168,7 +168,7 @@ const Dashboard = (props) => {
                     if (editFormValue.name.length > 0) {
                         expense.name = editFormValue.name;
                     }
-                    if (editFormValue.amount.length > 0) {
+                    if (editFormValue.amount.length > 0 && !isNaN(editFormValue.amount)) {
                         expense.amount = editFormValue.amount;
                     }
                     if (editFormValue.category.length > 0 && expense.category !== editFormValue.category) {
@@ -187,7 +187,7 @@ const Dashboard = (props) => {
                     if (editFormValue.name.length > 0) {
                         income.name = editFormValue.name;
                     }
-                    if (editFormValue.amount.length > 0) {
+                    if (editFormValue.amount.length > 0 && !isNaN(editFormValue.amount)) {
                         income.amount = editFormValue.amount;
                     }
                     if (editFormValue.category.length > 0 && income.category !== editFormValue.category) {
