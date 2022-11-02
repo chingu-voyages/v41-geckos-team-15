@@ -16,7 +16,7 @@ import Investments from "../assets/images/accounts-dashboard/categories/investme
 
 const expenses = [
     {
-        id: 1,
+        id: 1, type: 'expense',
         name: "Taxi to work",
         category: "Transport",
         created: "2022-06-16",
@@ -26,7 +26,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 2,
+        id: 2, type: 'expense',
         name: "Supermarket shopping for fruits",
         category: "Groceries",
         created: "2022-06-16",
@@ -36,7 +36,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 3,
+        id: 3, type: 'expense',
         name: "Movies night",
         category: "Entertainment",
         created: "2022-06-17",
@@ -46,7 +46,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 4,
+        id: 4, type: 'expense',
         name: "Burgers and fries",
         category: "Restaurants",
         created: "2022-06-17",
@@ -56,7 +56,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 5,
+        id: 5, type: 'expense',
         name: "Visit Alex",
         category: "Transport",
         created: "2022-06-18",
@@ -67,7 +67,7 @@ const expenses = [
     },
 
     {
-        id: 6,
+        id: 6, type: 'expense',
         name: "Presents for Alex",
         category: "Gifts",
         created: "2022-06-18",
@@ -77,7 +77,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 7,
+        id: 7, type: 'expense',
         name: "Taxi to work",
         category: "Transport",
         created: "2022-06-19",
@@ -87,7 +87,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 8,
+        id: 8, type: 'expense',
         name: "Eating out",
         category: "Restaurants",
         created: "2022-06-19",
@@ -97,7 +97,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 9,
+        id: 9, type: 'expense',
         name: "Haircut",
         category: "Services",
         created: "2022-06-19",
@@ -107,7 +107,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 10,
+        id: 10, type: 'expense',
         name: "Rental",
         category: "Services",
         created: "2022-06-20",
@@ -117,7 +117,7 @@ const expenses = [
         note: '',
     },
     {
-        id: 11,
+        id: 11, type: 'expense',
         name: "Telephone & Internet",
         category: "Utilities",
         created: "2022-06-20",
