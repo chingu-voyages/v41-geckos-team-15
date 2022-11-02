@@ -1,9 +1,6 @@
 .mainDashboard {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
     position: relative;
 }
 
@@ -15,6 +12,7 @@
     width: 100%;
     height: 100%;
 }
+
 .add-income-modal-main {
     position: absolute;
     display: flex;
@@ -26,6 +24,7 @@
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
 }
+
 .add-income-popup-main {
     position: absolute;
     display: flex;
@@ -37,6 +36,7 @@
     width: 80%;
     background-color: var(--primary-bg);
 }
+
 .add-income-popup-main h2 {
     font-weight: 400;
 }
@@ -58,11 +58,13 @@
     padding: 0.4rem 0.5rem;
     width: 80%;
 }
+
 .add-income-popup-main input::placeholder,
 .add-income-popup textarea::placeholder {
     color: var(--primary-black);
     font-family: ar(--manrope-font);
 }
+
 .add-income-popup-main form select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -89,7 +91,7 @@
     width: max-content;
 }
 
-.header {
+.mainDashboard .header {
     margin: 25px;
     font-size: 20px;
 }

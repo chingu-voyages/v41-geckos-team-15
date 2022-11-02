@@ -5,11 +5,11 @@
     padding: 3rem;
     position: relative;
 }
+
 .close-modal {
     position: absolute;
-    font-size: 1.7rem;
-    font-weight: 600;
-    right: 2%;
+    font-size: 2.5rem;
+    right: 5%;
     top: 2%;
     background-color: transparent;
     border: none;
@@ -22,6 +22,7 @@
     flex-direction: column;
     gap: 4rem;
 }
+
 .accounts-and-cards h2 {
     font-size: 2.5rem;
 }
@@ -39,7 +40,6 @@
     padding: 1rem;
     width: 22rem;
     height: 12rem;
-    background-color: var(--primary-font);
     opacity: 0.8;
     box-shadow: 0px 0px 5px -3px #000000;
     position: relative;
@@ -58,6 +58,7 @@
     justify-content: center;
     cursor: pointer;
 }
+
 .empty-card img {
     width: 2.5rem;
 }
@@ -67,16 +68,19 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
 .account-header section {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
+
 .account-header img {
     width: 2rem;
     height: 2rem;
     cursor: pointer;
 }
+
 .account-current-balance {
     font-size: 1.3rem;
     position: absolute;
@@ -90,6 +94,7 @@
     flex-direction: column;
     gap: 8rem;
 }
+
 .accounts-categories h2 {
     font-size: 2.5rem;
 }
@@ -111,6 +116,7 @@
 .empty-category img {
     width: 1.5rem;
 }
+
 .categories-card {
     background-color: var(--primary-bg);
     box-shadow: 0px 0px 5px -3px #000000;
@@ -124,10 +130,12 @@
     justify-content: center;
     gap: 1rem;
 }
+
 .categories-card img {
     width: 100%;
     object-fit: cover;
 }
+
 .categories {
     display: flex;
     flex-direction: row;
@@ -144,6 +152,7 @@
     width: 100%;
     height: 100%;
 }
+
 .add-card-modal {
     position: absolute;
     display: flex;
@@ -155,6 +164,7 @@
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
 }
+
 .add-card-popup {
     position: absolute;
     display: flex;
@@ -166,6 +176,7 @@
     width: 35rem;
     background-color: var(--primary-bg);
 }
+
 .add-card-popup h2 {
     font-weight: 400;
 }
@@ -178,6 +189,7 @@
     width: 75%;
     gap: 2rem;
 }
+
 .form-inner {
     display: flex;
     flex-direction: column;
@@ -188,17 +200,19 @@
     gap: 1.5rem;
 }
 
-.form-inner > input {
+.form-inner>input {
     background-color: var(--primary-input-bg);
     border: 1px solid var(--primary-input-bg);
     border-radius: 5px;
     padding: 0.4rem 0.5rem;
     width: max-content;
 }
+
 .form-inner input::placeholder {
     color: var(--primary-black);
     font-family: ar(--manrope-font);
 }
+
 .form-inner .card-cover {
     display: flex;
     flex-direction: row;
@@ -213,7 +227,7 @@
     width: max-content;
 }
 
-.add-card-popup form > section select {
+.add-card-popup form>section select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -224,7 +238,7 @@
     padding: 0.4rem 0.5rem;
 }
 
-.add-card-popup form > section select::-ms-expand {
+.add-card-popup form>section select::-ms-expand {
     display: none;
 }
 
@@ -253,12 +267,15 @@
     display: inline-block;
     font-size: 0;
 }
+
 .sb-checkbox__input {
     display: none;
 }
-.sb-checkbox__input:checked + .sb-checkbox__label:after {
+
+.sb-checkbox__input:checked+.sb-checkbox__label:after {
     opacity: 1;
 }
+
 .sb-checkbox__label {
     display: inline-block;
     width: 16px;
@@ -266,6 +283,7 @@
     position: relative;
     cursor: pointer;
 }
+
 .sb-checkbox__label:before {
     content: "";
     width: 20px;
@@ -278,6 +296,7 @@
     left: 0;
     border-radius: 50%;
 }
+
 .sb-checkbox__label:after {
     content: "✔️";
     font-size: 13px;
@@ -292,51 +311,67 @@
     transition: 0.2s opacity;
     color: white;
 }
+
 .sb-checkbox__label--blue:before {
     border-color: #7aa0da;
 }
+
 .sb-checkbox__label--blue:after {
     background-color: #7aa0da;
 }
+
 .sb-checkbox__label--purple:before {
     border-color: #b796d9;
 }
+
 .sb-checkbox__label--purple:after {
     background-color: #b796d9;
 }
+
 .sb-checkbox__label--light-pink:before {
     border-color: #e36cbb;
 }
+
 .sb-checkbox__label--light-pink:after {
     background-color: #e36cbb;
 }
+
 .sb-checkbox__label--pink:before {
     border-color: #dc5d8b;
 }
+
 .sb-checkbox__label--pink:after {
     background-color: #dc5d8b;
 }
+
 .sb-checkbox__label--red:before {
     border-color: #fa4242;
 }
+
 .sb-checkbox__label--red:after {
     background-color: #fa4242;
 }
+
 .sb-checkbox__label--orange:before {
     border-color: #fe9256;
 }
+
 .sb-checkbox__label--orange:after {
     background-color: #fe9256;
 }
+
 .sb-checkbox__label--yellow:before {
     border-color: #fae98f;
 }
+
 .sb-checkbox__label--yellow:after {
     background-color: #fae98f;
 }
+
 .sb-checkbox__label--green:before {
     border-color: #75e762;
 }
+
 .sb-checkbox__label--green:after {
     background-color: #75e762;
 }
@@ -349,6 +384,7 @@
     width: 100%;
     height: 100%;
 }
+
 .add-category-modal {
     position: absolute;
     display: flex;
@@ -360,6 +396,7 @@
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
 }
+
 .add-category-popup {
     position: absolute;
     display: flex;
@@ -371,6 +408,7 @@
     width: 35rem;
     background-color: var(--primary-bg);
 }
+
 .add-category-popup h2 {
     font-weight: 400;
 }
@@ -392,6 +430,7 @@
     padding: 0.4rem 0.5rem;
     width: 80%;
 }
+
 .add-category-popup input::placeholder,
 .add-category-popup textarea::placeholder {
     color: var(--primary-black);
@@ -416,6 +455,7 @@
     width: 100%;
     height: 100%;
 }
+
 .view-category-modal {
     position: absolute;
     display: flex;
@@ -427,6 +467,7 @@
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
 }
+
 .view-category-popup {
     position: absolute;
     display: flex;
@@ -438,14 +479,17 @@
     width: 35rem;
     background-color: var(--primary-bg);
 }
+
 .view-category-popup h2 {
     font-weight: 400;
 }
+
 .view-category-buttons {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
+
 .view-category-buttons button {
     border-radius: 5px;
     padding: 0.3rem 1rem;
@@ -468,6 +512,7 @@
 }
 
 @media (hover: hover) {
+
     .account-card:hover,
     .categories-card:hover,
     .add-card-popup form button:hover,
@@ -476,29 +521,34 @@
     .close-modal:hover {
         transition: var(--hover-transition);
     }
+
     .account-card:hover,
     .categories-card:hover {
         box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
         -webkit-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
         -moz-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
     }
+
     .add-card-popup form button:hover,
     .add-category-popup form button:hover,
     .view-category-buttons button:hover {
         color: var(--primary-font);
         background-color: var(--primary-bg);
     }
+
     .close-modal:hover {
         font-weight: 800;
     }
 }
 
 @media screen and (max-width: 700px) {
+
     .accounts,
     .accounts-and-cards {
         align-items: center;
         justify-content: center;
     }
+
     .accounts-categories {
         text-align: center;
     }

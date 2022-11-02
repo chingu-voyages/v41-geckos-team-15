@@ -11,13 +11,11 @@ const AccountsDashboard = () => {
     const [toggleAddCategory, setToggleAddCategory] = useState(false);
     const [toggleExistingCategory, setExistingCategory] = useState(false);
     const [categoryInfo, setCategoryInfo] = useState([{ name: "", description: "" }]);
-
     const closeModal = () => {
         setToggleAddToCard(false);
         setToggleAddCategory(false);
         setExistingCategory(false);
     }
-
     const toggleCardModal = () => {
         setToggleAddToCard(true);
     }

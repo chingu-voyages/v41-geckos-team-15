@@ -28,7 +28,6 @@ const Dashboard = (props) => {
         if (!formError && Object.keys(props.formError).length === 0) {
             setFormValue({ id: "", name: '', amount: '', category: "", created: '', note: '' });
         }
-
     }
     const addExpense = (e) => {
         e.preventDefault();

@@ -1,4 +1,3 @@
-
 import bankAccounts from "../../data/Accounts";
 import PlusIcon from "../../assets/images/accounts-dashboard/plus-icon.png"
 import CardIcon from "../../assets/images/accounts-dashboard/card-icon.png";
@@ -10,7 +9,9 @@ const BankAccounts = (props) => {
             <h2>Accounts & Cards</h2>
             <section className="accounts">
                 {bankAccounts.map(account =>
-                    <section className="account-card" key={account.id}>
+                    <section className="account-card"
+                        style={{ backgroundColor: account.color }}
+                        key={account.id}>
                         <section className="account-header">
                             <section>
                                 <img src={CardIcon} alt="Card icon" />
@@ -19,9 +20,8 @@ const BankAccounts = (props) => {
                             <img src={EditIcon} alt="Edit card icon" />
                         </section>
                         <section className="account-current-balance">
-                            <h3 >{account.currentBalance} {account.dollarCurrency}</h3>
+                            <h3 >{account.currentBalance} {account.currency}</h3>
                         </section>
-
                     </section>
                 )}
                 <button onClick={props.toggleCardModal} className="empty-card">
