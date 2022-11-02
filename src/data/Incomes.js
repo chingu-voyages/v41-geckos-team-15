@@ -5,6 +5,7 @@ import Investments from "../assets/images/accounts-dashboard/categories/investme
 const incomes = [
     {
         id: 1,
+        type: 'income',
         name: "Salary",
         category: "Investments",
         created: "2022-06-16",
@@ -13,7 +14,7 @@ const incomes = [
         cover: Investments,
     },
     {
-        id: 2,
+        id: 2, type: 'income',
         name: "Saved for gifts",
         category: "Savings",
         created: "2022-06-29",
@@ -23,7 +24,7 @@ const incomes = [
     },
     {
 
-        id: 3,
+        id: 3, type: 'income',
         name: "Salary",
         category: "Investments",
         created: "2022-07-16",
@@ -34,7 +35,7 @@ const incomes = [
 
     {
 
-        id: 4,
+        id: 4, type: 'income',
         name: "Capital Gain (Property)",
         category: "Investments",
         created: "2022-07-17",
@@ -43,7 +44,7 @@ const incomes = [
         cover: Investments,
     },
     {
-        id: 5,
+        id: 5, type: 'income',
         name: "Business income",
         category: "Investments",
         created: "2022-07-29",
@@ -53,7 +54,7 @@ const incomes = [
     },
 
     {
-        id: 6,
+        id: 6, type: 'income',
         name: "Dividends (Shares)",
         category: "Investments",
         created: "2022-07-30",
@@ -62,7 +63,7 @@ const incomes = [
         cover: Investments,
     },
     {
-        id: 7,
+        id: 7, type: 'income',
         name: "Salary",
         category: "Investments",
         created: "2022-08-16",
@@ -72,7 +73,7 @@ const incomes = [
     },
     {
 
-        id: 8,
+        id: 8, type: 'income',
         name: "Moved to savings",
         category: "Savings",
         created: "2022-08-21",
@@ -81,7 +82,7 @@ const incomes = [
         cover: Savings,
     },
     {
-        id: 9,
+        id: 9, type: 'income',
         name: "Interest Recerved",
         category: "Services",
         created: "2022-08-29",
@@ -90,7 +91,7 @@ const incomes = [
         cover: Services,
     },
     {
-        id: 10,
+        id: 10, type: 'income',
         name: "Salary",
         category: "Investments",
         created: "2022-09-16",
@@ -99,7 +100,7 @@ const incomes = [
         cover: Investments,
     },
     {
-        id: 11,
+        id: 11, type: 'income',
         name: "Dividends (Shares)",
         category: "Investments",
         created: "2022-09-30",
