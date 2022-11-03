@@ -95,6 +95,11 @@
     display: inline-block;
 }
 
+.error-msg {
+    color: red;
+    font-size: 14px;
+}
+
 @media screen and (min-width: 800px) {
     .modal__box {
         max-width: 600px;
