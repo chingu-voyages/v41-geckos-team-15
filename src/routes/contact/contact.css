@@ -20,6 +20,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
+.contact-input-err {
+    color: red;
+}
 
 .contact-us-form-section form {
     display: flex;
