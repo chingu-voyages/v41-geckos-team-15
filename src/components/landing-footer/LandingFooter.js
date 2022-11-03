@@ -6,10 +6,28 @@ import Website from '../../assets/images/socials/website.png';
 import MaleIcon from '../../assets/images/socials/male-icon.png';
 import FemaleIcon from '../../assets/images/socials/female-icon.png';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
-
-const LandingFooter = () => {
+const LandingFooter = (props) => {
+    const [inputValue, setInputValue] = useState('');
+    const [invalidInput, setInvalidInput] = useState(false);
     const { pathname } = useLocation();
+
+    const saveInputValues = (e) => {
+        e.preventDefault();
+        setInputValue(e.target.value);
+    }
+    const submitForm = (e) => {
+        e.preventDefault();
+        const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+        if (!emailRegex.test(inputValue) || inputValue.length === 0) {
+
+            setInvalidInput(true);
+        }
+        else {
+            setInvalidInput(false);
+        }
+    }
     /*footer doesn't show when user go to dashboard*/
     if (pathname.includes("dashboard"))
         return <></>
@@ -37,11 +55,15 @@ const LandingFooter = () => {
                             </ul>
                         </nav>
                     </section>
-                    <form className='footer-form'>
+                    <form className='footer-form' onSubmit={submitForm}>
                         <label htmlFor="subscribe">Subscribe</label>
-                        <section className='form-input'>
-                            <input name='subscribe' type="text" placeholder='Enter your email' />
-                            <button type='button'>Subscribe</button>
+                        <section className='form-input' >
+                            <input name='subscribe' type="text" placeholder='Enter your email' onChange={saveInputValues} />
+                            {invalidInput ? <p className='footer-input-error'>Please enter a valid email</p> : null
+
+                            }
+                            {/* <p className='footer-input-success'>You've successfully subscribed!</p> */}
+                            <button type='submit'>Subscribe</button>
                         </section>
                         <span>By subscribing you agree with our <Link to='/privacy'>Privacy Policy</Link></span>
                     </form>

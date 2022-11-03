@@ -46,7 +46,7 @@ const App = () => {
         <Route path="/terms" element={<Terms />} />
         <Route path="/dashboard/*" element={<Dashboard user={user} onLogout={logout} />} />
       </Routes>
-      <LandingFooter />
+      <LandingFooter openSignup={openSignup} />
     </Router>
   );
 };

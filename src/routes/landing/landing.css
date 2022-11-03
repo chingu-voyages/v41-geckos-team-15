@@ -290,6 +290,10 @@
     line-height: 3rem;
     font-size: 1.5rem;
 }
+.old-pricing {
+    color: orange;
+    text-decoration: line-through;
+}
 
 .billing-buttons {
     display: flex;
@@ -305,6 +309,10 @@
     border-width: 1px;
     padding: 0.7rem 1.2rem;
     cursor: pointer;
+}
+.plan-btn.active {
+    background-color: var(--primary-font);
+    color: var(--primary-bg);
 }
 
 .billing-buttons button:first-child {

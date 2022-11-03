@@ -1,6 +1,11 @@
 import Check from '../../assets/images/vectors/check.jpg'
-
+import { useState } from 'react';
 const PricingPlans = () => {
+    const [activePlan, setActivePlan] = useState('monthly');
+
+    const setPricingPlan = (plan) => {
+        setActivePlan(plan);
+    }
     return (
         <article >
             <section className='pricing-content'>
@@ -9,8 +14,8 @@ const PricingPlans = () => {
                 <p>Two options, enless benefits. Choose your option</p>
             </section>
             <section className="billing">
-                <button type="button">Monthly billing</button>
-                <button type="button">Annual billing</button>
+                <button type="button" onClick={() => setPricingPlan('monthly')} className={`plan-btn${activePlan === 'monthly' ? ` active` : ``}`}>Monthly billing</button>
+                <button type="button" onClick={() => setPricingPlan('annual')} className={`plan-btn${activePlan === 'annual' ? ` active` : ``}`}>Annual billing</button>
             </section>
             <section className="main-pricing-grid">
                 <section className="basic-plan">
@@ -35,7 +40,7 @@ const PricingPlans = () => {
                         <p>More Space to Grow</p>
                     </section>
                     <hr />
-                    <h4>$29/mo</h4>
+                    {activePlan === 'monthly' ? <h4>$29/mo</h4> : <h4><span className='old-pricing'>$348/y </span> $260/y</h4>}
                     <button type="button">Get Started</button>
                     <hr />
                     <ul className='pricing-list'>

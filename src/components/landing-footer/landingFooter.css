@@ -40,7 +40,19 @@ footer {
 .footer-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+    position: relative;
+}
+.footer-input-error,
+.footer-input-success {
+    position: absolute;
+    top: 70%;
+}
+.footer-input-error {
+    color: red;
+}
+.footer-input-success {
+    color: rgb(18, 160, 18);
 }
 
 .footer-form label {
