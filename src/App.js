@@ -19,7 +19,6 @@ const App = () => {
   const [isLoginModalOpen, setLoginModal] = useState(false);
   const [isSignupModalOpen, setSignupModal] = useState(false);
   const [user, setUser] = useState(null);
-
   const login = (user) => setUser(user)
   const logout = () => setUser(null);
   const openLogin = () => setLoginModal(true);
@@ -37,7 +36,7 @@ const App = () => {
 
       <LandingNavigation user={user} onLogout={logout} openLogin={openLogin} openSignup={openSignup} />
       <Routes>
-        <Route path="/" element={<Landing openSignup={openSignup} />} />
+        <Route path="/" element={<Landing openSignup={openSignup} isSignupModalOpen={isSignupModalOpen} />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
