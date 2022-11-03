@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+
 const BlogNewsletter = () => {
     const [inputValue, setInputValue] = useState('');
     const [invalidInput, setInvalidInput] = useState(false);
