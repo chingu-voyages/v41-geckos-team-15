@@ -28,6 +28,7 @@ const ExpensesTable = (props) => {
                                         <td data-label="Amount" className="expense-amount">-{expense.amount}{expense.currency}</td>
                                         <td data-label="More" onClick={() => {
                                             props.toggleExistingRecords();
+                                            //set an object instead of proprites and de-structred it only when needed inside a method or compnent 
                                             props.getRecordInfo(expense.id, expense.type, expense.name, expense.category, expense.amount, expense.currency, expense.created, expense.note);
 
                                         }}>...</td>

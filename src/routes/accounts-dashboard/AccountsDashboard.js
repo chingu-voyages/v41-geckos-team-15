@@ -10,7 +10,8 @@ const AccountsDashboard = () => {
     const [toggleAddToCard, setToggleAddToCard] = useState(false);
     const [toggleAddCategory, setToggleAddCategory] = useState(false);
     const [toggleExistingCategory, setExistingCategory] = useState(false);
-    const [categoryInfo, setCategoryInfo] = useState([{ name: "", description: "" }]);
+    const [categoryInfo, setCategoryInfo] = useState({});
+
     const closeModal = () => {
         setToggleAddToCard(false);
         setToggleAddCategory(false);
@@ -22,10 +23,9 @@ const AccountsDashboard = () => {
     const toggleCategoryModal = () => {
         setToggleAddCategory(true);
     }
-    const toggleExistingCategoryModal = (categoryName, categoryDescription) => {
-        setCategoryInfo({ name: categoryName, description: categoryDescription })
+    const toggleExistingCategoryModal = (category) => {
+        setCategoryInfo(category)
         setExistingCategory(true);
-
     }
     return (
         <main className="accounts-dashboard" >
@@ -37,7 +37,6 @@ const AccountsDashboard = () => {
                 <AddCategoryModal closeModal={closeModal} /> : null}
             {toggleExistingCategory ?
                 <ExistingCategoryModal closeModal={closeModal} categoryInfo={categoryInfo} /> : null}
-
         </main>
     )
 }
