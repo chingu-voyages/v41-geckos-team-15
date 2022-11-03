@@ -28,6 +28,14 @@
     padding: 0.7rem 1.2rem;
     cursor: pointer;
 }
+.old-pricing {
+    color: orange;
+    text-decoration: line-through;
+}
+.plan-btn.active {
+    background-color: var(--primary-font);
+    color: var(--primary-bg);
+}
 
 .billing button:first-child {
     border-radius: 5px 0 0 5px;

@@ -1,4 +1,4 @@
-const PricingComparison = () => {
+const PricingComparison = (props) => {
     return (
         <>
             <table className='pricingComparison'>
@@ -9,13 +9,13 @@ const PricingComparison = () => {
                             <h3>Basic Plan</h3>
                             <p className='th-price'>$0</p>
                             <p className='th-note'>Per month</p>
-                            <button>Get started</button>
+                            <button type="button" onClick={props.openSignup}>Get started</button>
                         </th>
                         <th className='th-2'>
                             <h3>Business Plan</h3>
                             <p className='th-price'>$29</p>
                             <p className='th-note'>Per month</p>
-                            <button>Get started</button>
+                            <button type="button" onClick={props.openSignup}>Get started</button>
                         </th>
                     </tr>
                 </thead>
@@ -104,7 +104,7 @@ const PricingComparison = () => {
                             <h3>Basic Plan</h3>
                             <p className='th-price'>$0</p>
                             <p className='th-note'>Per month</p>
-                            <button>Get started</button>
+                            <button type="button" onClick={props.openSignup} >Get started</button>
                         </th>
 
                     </tr>
@@ -187,7 +187,7 @@ const PricingComparison = () => {
                             <h3>Business Plan</h3>
                             <p className='th-price'>$29</p>
                             <p className='th-note'>Per month</p>
-                            <button>Get started</button>
+                            <button type="button" onClick={props.openSignup}>Get started</button>
                         </th>
                     </tr>
                     <tr>

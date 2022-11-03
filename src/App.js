@@ -18,7 +18,7 @@ import { useState } from "react";
 const App = () => {
   const [isLoginModalOpen, setLoginModal] = useState(false);
   const [isSignupModalOpen, setSignupModal] = useState(false);
-  const [user, setUser] = useState(localStorage.getItem('token-info'));
+  const [user, setUser] = useState(null);
 
   const login = (user) => setUser(user)
   const logout = () => {
@@ -40,17 +40,17 @@ const App = () => {
 
       <LandingNavigation user={user} onLogout={logout} openLogin={openLogin} openSignup={openSignup} />
       <Routes>
-        <Route path="/" element={<Landing openSignup={openSignup} />} />
+        <Route path="/" element={<Landing openSignup={openSignup} isSignupModalOpen={isSignupModalOpen} />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing" element={<Pricing openSignup={openSignup} />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/dashboard/*" element={<Dashboard user={user} onLogout={logout} />} />
       </Routes>
-      <LandingFooter />
+      <LandingFooter openSignup={openSignup} />
     </Router>
   );
 };
