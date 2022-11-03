@@ -10,7 +10,7 @@ const AccountsCategories = (props) => {
                 </button>
 
                 {categories.map(category =>
-                    <section className="categories-card" key={category.id} onClick={(e) => props.toggleExistingCategoryModal(category.name, category.description, e)}>
+                    <section className="categories-card" key={category.id} onClick={(e) => props.toggleExistingCategoryModal(category)}>
                         <h3>{category.name}</h3>
                         <img src={category.cover} alt="Add card icon" />
                         <p>0 USD</p>

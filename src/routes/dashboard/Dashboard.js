@@ -78,6 +78,7 @@ const Dashboard = (props) => {
     const toggleExistingRecords = () => {
         setExistingExpenseIncome(true);
     }
+    //set an object instead of proprites and de-structred it only when needed inside a method or compnent 
     const getRecordInfo = (id, type, name, category, amount, currency, date, note) => {
         identifyRecord(id, type);
         setRecordInfo({ id: id, type: type, name: name, category: category, amount: amount, currency: currency, date: date, note: note });
@@ -98,7 +99,6 @@ const Dashboard = (props) => {
         if (!formError && Object.keys(props.formError).length === 0) {
             setFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
         }
-
     }
     const addExpense = (e) => {
         e.preventDefault();
