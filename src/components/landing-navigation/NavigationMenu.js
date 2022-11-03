@@ -4,6 +4,7 @@ const NavigationMenu = (props) => {
     return (
         <nav>
             <ul className='navigation-menu'>
+                <li><Link to='/' onClick={props.toggleOffMenu}>Home</Link></li>
                 <li><Link to='/about' onClick={props.toggleOffMenu}>About</Link></li>
                 <li><Link to='/pricing' onClick={props.toggleOffMenu}>Pricing</Link></li>
                 <li><Link to='/faq' onClick={props.toggleOffMenu}>FAQ</Link></li>

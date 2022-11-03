@@ -5,12 +5,12 @@ import PricingComparison from './PricingComparison';
 import PricingFeatures from './PricingFeatures';
 import PricingPlans from './PricingPlans';
 
-const Pricing = () => {
+const Pricing = (props) => {
     return (
         <main className="pricing">
-            <PricingPlans />
+            <PricingPlans openSignup={props.openSignup} />
             <PricingFeatures />
-            <PricingComparison />
+            <PricingComparison openSignup={props.openSignup} />
             <HaveQuestions />
         </main>
     )

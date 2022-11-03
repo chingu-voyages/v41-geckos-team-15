@@ -2,7 +2,7 @@ import ExpenselessLogo from '../../assets/images/expenseless-logo.jpg'
 import NavigationMenu from './NavigationMenu';
 import NavAction from './NavAction';
 import './landingNavigation.css';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Hamburger from '../../assets/images/landing/hamburger.png'
 import { useState } from 'react';
 const LandingNavigation = (props) => {
@@ -20,15 +20,18 @@ const LandingNavigation = (props) => {
     else
         return (
             <header className={`landing-header${!toggleMenu ? `` : ` active-header`}`}>
-                <img src={ExpenselessLogo} alt="Expenseless" onClick={toggleOffMenu} />
+                <Link to="/">
+                    <img src={ExpenselessLogo} alt="Expenseless" onClick={toggleOffMenu} />
+                </Link>
+
                 <img className='hamburger' src={Hamburger} alt="" onClick={toggleHamMenu} />
                 <section className={`nav-section${!toggleMenu ? `` : ` active-menu`}`}>
                     <NavigationMenu toggleOffMenu={toggleOffMenu} />
-                    <NavAction user={props.user} 
-                    onLogout={props.onLogout}
-                     toggleOffMenu={toggleOffMenu}
-                     openLogin={props.openLogin}
-                     openSignup={props.openSignup} />
+                    <NavAction user={props.user}
+                        onLogout={props.onLogout}
+                        toggleOffMenu={toggleOffMenu}
+                        openLogin={props.openLogin}
+                        openSignup={props.openSignup} />
                 </section>
             </header>
         )

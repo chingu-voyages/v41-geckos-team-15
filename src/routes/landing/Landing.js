@@ -13,11 +13,11 @@ const Landing = (props) => {
         <main className="landing-main">
             <Hero openSignup={props.openSignup} />
             <Features />
-            <Cta />
+            <Cta openSignup={props.openSignup} />
             <AppFeatures />
             <StatisticsPreview />
             <TestimonialsPreview />
-            <PricingPreview />
+            <PricingPreview openSignup={props.openSignup} />
         </main>
     )
 }

@@ -6,7 +6,7 @@ import Partner5 from '../../assets/images/partner-logos/company-logo-5.jpg'
 import Partner6 from '../../assets/images/partner-logos/company-logo-6.jpg'
 import { Link } from 'react-router-dom';
 
-const Cta = () => {
+const Cta = ({ openSignup }) => {
     return (
         <section className='cta'>
             <section className='cta-content'>
@@ -16,7 +16,7 @@ const Cta = () => {
                 <p>
                     Our lifetime memebership gives you an all-access pass to almost all the features we have to offer. You change your plan and expand possibilities even further
                 </p>
-                <Link to="/about">Get started</Link>
+                <button type='button' onClick={openSignup}>Get started</button>
             </section>
             <section className='partners'>
                 <img src={Partner1} alt='Expenseless partner' />

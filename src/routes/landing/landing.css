@@ -156,7 +156,7 @@
     width: 8rem;
 }
 
-.cta a {
+.cta button {
     color: var(--primary-bg);
     background-color: var(--primary-font);
     border: 1px solid var(--primary-font);
@@ -164,6 +164,7 @@
     border-radius: 5px;
     width: max-content;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 /* ! App Features */
@@ -385,7 +386,7 @@
 /* ! Transitions */
 .hero-signup button,
 .feature-btn,
-.cta a,
+.cta button,
 .basic-plan button,
 .business-plan button {
     transition: var(--hover-transition);
@@ -394,7 +395,7 @@
 @media (hover: hover) {
     .hero-signup button:hover,
     .feature-btn:hover,
-    .cta a:hover,
+    .cta button:hover,
     .basic-plan button:hover,
     .business-plan button:hover {
         transition: var(--hover-transition);
@@ -410,7 +411,7 @@
         color: var(--primary-font);
     }
 
-    .cta a:hover {
+    .cta button:hover {
         color: var(--primary-font);
         background-color: var(--primary-bg);
     }
