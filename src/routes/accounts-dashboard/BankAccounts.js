@@ -4,6 +4,7 @@ import CardIcon from "../../assets/images/accounts-dashboard/card-icon.png";
 import EditIcon from "../../assets/images/accounts-dashboard/edit-icon.png";
 
 const BankAccounts = (props) => {
+
     return (
         <article className="accounts-and-cards">
             <h2>Accounts & Cards</h2>
@@ -17,7 +18,7 @@ const BankAccounts = (props) => {
                                 <img src={CardIcon} alt="Card icon" />
                                 <h3>{account.name}</h3>
                             </section>
-                            <img src={EditIcon} alt="Edit card icon" />
+                            <img src={EditIcon} alt="Edit card icon" onClick={() => props.toggleCardModal({ account })} />
                         </section>
                         <section className="account-current-balance">
                             <h3 >{account.currentBalance} {account.currency}</h3>

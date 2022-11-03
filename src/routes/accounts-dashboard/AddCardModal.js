@@ -2,7 +2,13 @@ import accounts from "../../data/Accounts"
 import { useState } from "react";
 
 const AddCardModal = (props) => {
-    const [formValue, setFormValue] = useState({ id: "", name: '', currentBalance: '', currency: "$", color: "" });
+
+    let account = { id: accounts.length + 1, name: '', currentBalance: '', currency: "$", color: "" }
+    if (props.cardInfo) { account = props.cardInfo }
+
+    console.log(props.cardInfo)
+
+    const [formValue, setFormValue] = useState(account);
     const [formError, setFormError] = useState({});
     const [successMessage, setSuccessMessage] = useState("");
 
@@ -10,8 +16,9 @@ const AddCardModal = (props) => {
 
     const handleValidation = (e) => {
         const { name, value } = e.target;
-        setFormValue({ ...formValue, id: accounts.length + 1, [name]: value });
+        setFormValue({ ...formValue, [name]: value });
     }
+
     const addCard = (e) => {
         e.preventDefault();
 
@@ -21,6 +28,34 @@ const AddCardModal = (props) => {
         accounts.push(formValue);
         setFormValue({ id: "", name: '', currentBalance: '', currency: "$", color: "" })
         setSuccessMessage("Added Card Successfuly!")
+        setTimeout(() => {
+            setSuccessMessage("")
+            props.closeModal();
+        }, 1000);
+    }
+
+    //Edit Card
+    const updateCard = (e) => {
+        e.preventDefault();
+
+        if (!validateForm(formValue))
+            return false;
+
+        const index = accounts.findIndex(c => c.id === props.cardInfo.id)
+        accounts[index] = Object.assign({}, formValue)
+
+        setSuccessMessage("Updated Card Successfuly!")
+        setTimeout(() => {
+            setSuccessMessage("")
+            props.closeModal();
+        }, 1000);
+    }
+
+    //Delete Card
+    const deleteCard = () => {
+        const index = accounts.findIndex(c => c.id === props.cardInfo.id)
+        accounts.splice(index, 1);
+        setSuccessMessage("Card is deleted successfuly!")
         setTimeout(() => {
             setSuccessMessage("")
             props.closeModal();
@@ -54,7 +89,7 @@ const AddCardModal = (props) => {
                 <button onClick={props.closeModal} className="close-modal">&times;</button>
                 <h2>New account</h2>
                 {successMessage ? <div>{successMessage}</div> :
-                    <form onSubmit={addCard}>
+                    <form onSubmit={props.cardInfo ? updateCard : addCard}>
                         <section className="form-inner">
                             <input type="text"
                                 name="name"
@@ -91,7 +126,14 @@ const AddCardModal = (props) => {
                                 })}
                             </section>
                         </section>
-                        <button type="submit">Create</button>
+                        {props.cardInfo ?
+                            <section className="view-category-buttons">
+                                <button type="submit">Update</button>
+                                <button onClick={deleteCard}>Delete</button>
+                            </section>
+                            :
+                            <button type="submit">Create</button>
+                        }
                     </form>
                 }
             </section>
