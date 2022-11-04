@@ -1,14 +1,12 @@
 import React from "react";
 import "./register.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import users from "../../data/Users"
 
 const Register = (props) => {
     const [values, setValues] = useState({ username: '', email: '', password: '' })
     const [validations, setValidations] = useState({ username: '', email: '', password: '' })
-    const allusers = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [users]
     const navigate = useNavigate();
 
     const validateAll = () => {
@@ -78,12 +76,17 @@ const Register = (props) => {
         }
 
         const newUser = {
-            id: allusers[allusers.length - 1].id + 1,
+            id: users[users.length - 1].id + 1,
+            email: email,
             username: username,
-            password: password
+            password: password,
+            settings: {
+                language: "English (US)",
+                currency: "USD",
+                subscribtion: "Basic"
+            }
         }
-        allusers.push(newUser)
-        localStorage.setItem('users', JSON.stringify(allusers))
+        users.push(newUser)
         localStorage.setItem('token-info', JSON.stringify(username));
         props.closeSignup()
         props.onRegister(username)

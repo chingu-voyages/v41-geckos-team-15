@@ -211,11 +211,6 @@ const Dashboard = (props) => {
         return errors;
     }
 
-
-
-
-
-
     return (
         <div className="dashboard">
             {props.user
@@ -228,7 +223,7 @@ const Dashboard = (props) => {
                             <Route path="accounts" element={<AccountsDashboard />} />
                             <Route path="statistics" element={<StatisticsDashboard />} />
                             <Route path="budget" element={<BudgetDashboard />} />
-                            <Route path="profile" element={<ProfileDashboard />} />
+                            <Route path="profile" element={<ProfileDashboard user={props.user} logout={props.onLogout} />} />
                         </Routes>
                     </div>
                 </div>

@@ -23,8 +23,7 @@ const SignIn = (props) => {
             isValid = false
         }
 
-        const allusers = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [users]
-        const isUserExist = allusers.find(
+        const isUserExist = users.find(
             x => x.username === username && x.password === password
         );
 

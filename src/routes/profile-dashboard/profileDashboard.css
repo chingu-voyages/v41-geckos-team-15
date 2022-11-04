@@ -6,6 +6,10 @@
     width: 60%;
 }
 
+.profile h1 {
+    font-size: 40px;
+}
+
 .profile ul {
     display: flex;
     flex-direction: column;
@@ -13,14 +17,19 @@
 }
 
 .profile ul li {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 3rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.profile ul li button {
+.profile-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-top: 50px;
+    justify-content: center;
+}
+
+.profile-buttons button {
     border-radius: 5px;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -29,38 +38,72 @@
     color: var(--primary-bg);
 }
 
-.profile-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+.profile-buttons .deactivate-btn {
+    background-color: #e24949;
+    border: 1px solid #e24949;
 }
 
-.profile-buttons button {
+.input-err {
     color: red;
-    font-weight: 600;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+    font-size: 13px;
 }
+
+.profile select {
+    cursor: pointer;
+    background-color: var(--primary-input-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+}
+
 
 /* ! Hover */
 
-.profile-buttons button,
-.profile ul li button {
+.profile-buttons button {
     transition: var(--hover-transition);
 }
 
+.profile input {
+    display: inline-block;
+    line-height: inherit;
+    vertical-align: inherit;
+    color: inherit;
+    background-color: var(--primary-input-bg);
+    border: 1px solid var(--primary-input-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+}
+
+.profile p {
+    padding: 0.4rem 0.5rem;
+}
+
+input[disabled] {
+    border: 0;
+    background-color: inherit;
+}
+
+.success-msg {
+    background-color: #8ce4bf;
+    width: 100%;
+    padding: 8px;
+    color: green;
+    border-radius: 5px;
+}
+
 @media (hover: hover) {
-    .profile-buttons button:hover,
-    .profile ul li button:hover {
+
+    .profile-buttons button:hover {
         transition: var(--hover-transition);
     }
+
     .profile-buttons button:hover {
-        color: rgb(184, 23, 23);
-    }
-    .profile ul li button:hover {
         color: var(--primary-font);
         background-color: var(--primary-bg);
+    }
+
+    .profile-buttons .deactivate-btn:hover {
+        color: #e24949;
     }
 }
 
@@ -69,6 +112,7 @@
         width: 80%;
     }
 }
+
 @media screen and (max-width: 970px) {
     .profile {
         width: 95%;
@@ -81,11 +125,13 @@
         width: 100%;
         padding: 1rem;
     }
+
     .profile ul {
         gap: 3rem;
     }
+
     .profile ul li {
-        flex-direction: column;
+        grid-template-columns: auto;
         gap: 1rem;
     }
 }
