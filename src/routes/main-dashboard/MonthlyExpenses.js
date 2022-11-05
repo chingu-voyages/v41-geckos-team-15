@@ -20,7 +20,7 @@ const MonthlyExpenses = () => {
             <div className="micro-charts card">
                 {expenses.map((e, index) => {
                     //if expenese are equal to or greater than the income -> red!
-                    if (e.value >= income[index].value && e.value != 0) {
+                    if (e.value >= income[index].value && e.value !== 0) {
                         return (
                             <div key={index} className={(currentMonth === e.label) ? "current-month red" : null}>
                                 <div className="sum red">{e.value} $</div>
