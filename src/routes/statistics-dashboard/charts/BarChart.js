@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Bar } from '@ant-design/plots';
-import expensesByMonth from '../../../data/ExpensesByMonth';
+import { allTransactions } from '../../../helpers/AllTransactions';
 
 export const BarChart = () => {
 
-    const data = expensesByMonth
+    const data = allTransactions()
 
     const config = {
         data,

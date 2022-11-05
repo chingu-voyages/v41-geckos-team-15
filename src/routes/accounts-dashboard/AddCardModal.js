@@ -6,8 +6,6 @@ const AddCardModal = (props) => {
     let account = { id: accounts.length + 1, name: '', currentBalance: '', currency: "$", color: "" }
     if (props.cardInfo) { account = props.cardInfo }
 
-    console.log(props.cardInfo)
-
     const [formValue, setFormValue] = useState(account);
     const [formError, setFormError] = useState({});
     const [successMessage, setSuccessMessage] = useState("");
