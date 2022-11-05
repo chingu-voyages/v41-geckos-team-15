@@ -1,8 +1,12 @@
 
 import CloseExpenseModal from "../expenses-dashboard/CloseExpenseModal";
 import categories from '../../data/Categories.js'
+import { useEffect } from 'react';
 
 const MainExpenseModal = (props) => {
+    useEffect(() => {
+        props.identifyRecord(1, 'expense');
+    }, [props]);
     return (
         <article className="add-expense-modal">
             <section className="add-expense-popup">

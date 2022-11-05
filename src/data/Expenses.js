@@ -1,18 +1,10 @@
 import Transport from "../assets/images/accounts-dashboard/categories/transport.png";
 import Groceries from "../assets/images/accounts-dashboard/categories/groceries.png";
 import Entertainment from "../assets/images/accounts-dashboard/categories/entertainment.png";
-import Shopping from "../assets/images/accounts-dashboard/categories/shopping.png";
 import Restaurants from "../assets/images/accounts-dashboard/categories/restaurants.png";
 import Utilities from "../assets/images/accounts-dashboard/categories/utilities.png";
-import Clothes from "../assets/images/accounts-dashboard/categories/clothes.png";
 import Gifts from "../assets/images/accounts-dashboard/categories/gifts.png";
-import Travel from "../assets/images/accounts-dashboard/categories/travel.png";
-import Alcohol from "../assets/images/accounts-dashboard/categories/alcohol.png";
-import Health from "../assets/images/accounts-dashboard/categories/health.png";
-import Subscribtions from "../assets/images/accounts-dashboard/categories/subscribtions.png";
-import Savings from "../assets/images/accounts-dashboard/categories/savings.png";
 import Services from "../assets/images/accounts-dashboard/categories/services.png";
-import Investments from "../assets/images/accounts-dashboard/categories/investments.png";
 
 const expenses = [
     {
