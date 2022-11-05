@@ -1,5 +1,7 @@
 import categories from "../../data/Categories";
 import PlusIcon from "../../assets/images/accounts-dashboard/plus-icon.png"
+import { categoryExpenses } from '../../helpers/ExpensesByCategory';
+
 const AccountsCategories = (props) => {
     return (
         <article className="accounts-categories">
@@ -13,7 +15,7 @@ const AccountsCategories = (props) => {
                     <section className="categories-card" key={category.id} onClick={(e) => props.toggleExistingCategoryModal(category)}>
                         <h3>{category.name}</h3>
                         <img src={category.cover} alt="Add card icon" />
-                        <p>0 USD</p>
+                        <p>{categoryExpenses(category.name)}</p>
                     </section>
                 )}
             </section>

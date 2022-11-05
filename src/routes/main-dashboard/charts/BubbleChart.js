@@ -1,13 +1,12 @@
 import { CirclePacking } from '@ant-design/plots';
-import expensesByCategory from '../../../data/ExpensesByCategory';
+import { allCategoriesExpenses } from '../../../helpers/ExpensesByCategory';
 
 export const BubbleChart = () => {
 
     const data = {
         "name": "root",
-        "children": expensesByCategory
+        "children": allCategoriesExpenses()
     }
-
     const config = {
         autoFit: true,
         padding: 0,
@@ -18,7 +17,6 @@ export const BubbleChart = () => {
             formatter: ({ name }) => {
                 return name !== 'root' ? name : '';
             },
-
             offsetY: 8,
             style: {
                 fontSize: 12,

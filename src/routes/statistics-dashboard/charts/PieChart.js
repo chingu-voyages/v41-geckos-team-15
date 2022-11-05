@@ -1,10 +1,9 @@
 import { Pie, measureTextWidth } from '@ant-design/plots';
-import expensesByCategory from '../../../data/ExpensesByCategory';
-
+import { allCategoriesExpenses } from '../../../helpers/ExpensesByCategory';
 
 export const PieChart = () => {
 
-    const data = expensesByCategory
+    const data = allCategoriesExpenses()
 
     function renderStatistic(containerWidth, text, style) {
         const { width: textWidth, height: textHeight } = measureTextWidth(text, style);
@@ -46,7 +45,7 @@ export const PieChart = () => {
                 customHtml: (container, view, datum) => {
                     const { width, height } = container.getBoundingClientRect();
                     const d = Math.sqrt(Math.pow(width / 2, 2) + Math.pow(height / 2, 2));
-                    const text = datum ? datum.type : 'Expenses';
+                    const text = datum ? datum.name : 'Expenses';
                     return renderStatistic(d, text, {
                         fontSize: 28,
                     });
