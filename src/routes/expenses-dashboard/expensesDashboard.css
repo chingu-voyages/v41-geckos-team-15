@@ -112,16 +112,12 @@ table.greyGridTable thead th {
     font-weight: 600;
     align-items: center;
 }
-.pagination ul {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-.pagination button {
-    padding: 0.5rem 1rem;
+
+.pagination li {
     cursor: pointer;
-    background-color: transparent;
-    border: 2px solid var(--primary-black);
+}
+.pagination li.selected {
+    color: var(--primary-font);
 }
 
 /* ! Add Expense Modal */
@@ -350,12 +346,18 @@ table.greyGridTable thead th {
 
 /* ! Transitions */
 .expenses-action-btns button,
-.existing-record-buttons button {
+.existing-record-buttons button,
+.pagination li:hover,
+.pagination .next:hover,
+.pagination .previous:hover {
     transition: var(--hover-transition);
 }
 @media (hover: hover) {
     .expenses-action-btns button:hover,
-    .existing-record-buttons button:hover {
+    .existing-record-buttons button:hover,
+    .pagination li:hover,
+    .pagination .next:hover,
+    .pagination .previous:hover {
         transition: var(--hover-transition);
     }
     .expenses-action-btns button:hover {
@@ -365,6 +367,11 @@ table.greyGridTable thead th {
     .existing-record-buttons button:hover {
         color: var(--primary-bg);
         background-color: var(--primary-font);
+    }
+    .pagination li:hover,
+    .pagination .next:hover,
+    .pagination .previous:hover {
+        color: var(--primary-font);
     }
 }
 

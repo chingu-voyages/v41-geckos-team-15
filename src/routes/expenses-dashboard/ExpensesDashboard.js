@@ -8,7 +8,7 @@ import { useState } from 'react';
 import expenses from '../../data/Expenses';
 import incomes from '../../data/Incomes';
 import ReactPaginate from 'react-paginate';
-
+import ScrollToTop from '../../helpers/ScrollToTop';
 
 const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
     const [itemOffset, setItemOffset] = useState(0);
@@ -21,10 +21,13 @@ const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeM
     const handlePageClickExpenses = (event) => {
         const newOffset = (event.selected * 5) % expenses.length;
         setItemOffset(newOffset);
+        ScrollToTop();
+
     };
     const handlePageClickIncomes = (event) => {
         const newOffset = (event.selected * 5) % incomes.length;
         setItemOffset(newOffset);
+        ScrollToTop();
     };
     return (
         <main className="expenses-dashboard">
