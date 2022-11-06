@@ -10,7 +10,7 @@ import AddCardModal from "../accounts-dashboard/AddCardModal"
 import AddCategoryModal from "../accounts-dashboard/AddCategoryModal"
 
 
-const MainDashboard = ({ submit, formError, user, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
+const MainDashboard = ({ identifyRecord, submit, formError, user, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
     const [toggleAddExpense, setToggleAddToExpense] = useState(false);
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
     const [toggleAddToCard, setToggleAddToCard] = useState(false);
@@ -46,8 +46,8 @@ const MainDashboard = ({ submit, formError, user, resetForm, addIncome, addExpen
                 <PopularCategories />
                 <MonthlyExpenses />
             </div>
-            {toggleAddIncome ? <MainIncomeModal formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> : null}
-            {toggleAddExpense ? <MainExpenseModal formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> : null}
+            {toggleAddIncome ? <MainIncomeModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> : null}
+            {toggleAddExpense ? <MainExpenseModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> : null}
             {toggleAddToCard ?
                 <AddCardModal closeModal={closeModal} /> : null}
             {toggleAddCategory ?

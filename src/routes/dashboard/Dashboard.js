@@ -13,8 +13,8 @@ import { useState, useEffect } from "react";
 
 
 const Dashboard = (props) => {
-    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
-    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
+    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
     const [submit, setSubmit] = useState(false);
     const [formError, setFormError] = useState({});
     const [editFormError, setEditFormError] = useState({});
@@ -33,7 +33,6 @@ const Dashboard = (props) => {
     }, []);
 
     const identifyRecord = (id, type) => {
-
         if (type === 'expense') {
             expenses.map((expense) => {
                 if (expense.id === id) {
@@ -78,8 +77,7 @@ const Dashboard = (props) => {
     const toggleExistingRecords = () => {
         setExistingExpenseIncome(true);
     }
-    //set an object instead of proprites and de-structred it only when needed inside a method or compnent 
-    const getRecordInfo = (id, type, name, category, amount, currency, date, note) => {
+    const getRecordInfo = ({ id, type, name, category, amount, currency, date, note }) => {
         identifyRecord(id, type);
         setRecordInfo({ id: id, type: type, name: name, category: category, amount: amount, currency: currency, date: date, note: note });
     }
@@ -89,24 +87,39 @@ const Dashboard = (props) => {
 
     const handleValidation = (e) => {
         const { name, value } = e.target;
-        setFormValue({ ...formValue, id: incomes.length + 1, [name]: value });
+
+        if (targetRecordType === 'expense') {
+            console.log(name)
+            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", [name]: value });
+
+        }
+        if (targetRecordType === 'income') {
+
+            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", [name]: value });
+        }
+        // setFormValue({ ...formValue, id: incomes.length + 1, [name]: value });
     }
     const addIncome = (e) => {
         e.preventDefault();
         setFormError(validateForm(formValue));
+        // if (!formError && Object.keys(props.formError).length === 0) {
         incomes.push(formValue);
+        // }
         setSubmit(true);
         if (!formError && Object.keys(props.formError).length === 0) {
-            setFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
+            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
         }
     }
     const addExpense = (e) => {
         e.preventDefault();
         setFormError(validateForm(formValue))
         setSubmit(true);
+        console.log(formValue)
+        // if (!formError && Object.keys(props.formError).length === 0) {
         expenses.push(formValue);
+        // }
         if (!formError && Object.keys(props.formError).length === 0) {
-            setFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
+            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
         }
     }
     const resetForm = () => {
@@ -218,8 +231,8 @@ const Dashboard = (props) => {
                     <DashboardNavigation logout={props.onLogout} resetForm={resetForm} />
                     <div className="content">
                         <Routes>
-                            <Route path="/" element={<MainDashboard formError={formError} resetForm={resetForm} user={props.user} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
-                            <Route path="expenses" element={<ExpensesDashboard editFormError={editFormError} recordInfo={recordInfo} closeModal={closeModal} toggleExistingExpenseIncome={toggleExistingExpenseIncome} toggleAddExpense={toggleAddExpense} toggleAddIncome={toggleAddIncome} setIncomeTab={setIncomeTab} getRecordInfo={getRecordInfo} toggleExistingRecords={toggleExistingRecords} expenseTable={expenseTable} setExpenseTab={setExpenseTab} toggleExpenseModal={toggleExpenseModal} toggleIncomeModal={toggleIncomeModal} deleteExistingRecord={deleteExistingRecord} cancelEditExpenseRecord={cancelEditExpenseRecord} handleEditValidation={handleEditValidation} editFormValue={editFormValue} validateEditForm={validateEditForm} updateAddedExpense={updateAddedExpense} editMode={editMode} editExpenseRecord={editExpenseRecord} identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
+                            <Route path="/" element={<MainDashboard identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} user={props.user} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
+                            <Route path="expenses" element={<ExpensesDashboard identifyRecord={identifyRecord} editFormError={editFormError} recordInfo={recordInfo} closeModal={closeModal} toggleExistingExpenseIncome={toggleExistingExpenseIncome} toggleAddExpense={toggleAddExpense} toggleAddIncome={toggleAddIncome} setIncomeTab={setIncomeTab} getRecordInfo={getRecordInfo} toggleExistingRecords={toggleExistingRecords} expenseTable={expenseTable} setExpenseTab={setExpenseTab} toggleExpenseModal={toggleExpenseModal} toggleIncomeModal={toggleIncomeModal} deleteExistingRecord={deleteExistingRecord} cancelEditExpenseRecord={cancelEditExpenseRecord} handleEditValidation={handleEditValidation} editFormValue={editFormValue} validateEditForm={validateEditForm} updateAddedExpense={updateAddedExpense} editMode={editMode} editExpenseRecord={editExpenseRecord} formError={formError} resetForm={resetForm} addIncome={addIncome} addExpense={addExpense} handleValidation={handleValidation} formValue={formValue} submit={submit} />} />
                             <Route path="accounts" element={<AccountsDashboard />} />
                             <Route path="statistics" element={<StatisticsDashboard />} />
                             <Route path="budget" element={<BudgetDashboard />} />

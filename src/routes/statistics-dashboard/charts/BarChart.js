@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Bar } from '@ant-design/plots';
 import { allTransactions } from '../../../helpers/AllTransactions';
 

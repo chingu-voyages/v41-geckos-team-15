@@ -4,7 +4,6 @@ import Partner3 from '../../assets/images/partner-logos/company-logo-3.jpg'
 import Partner4 from '../../assets/images/partner-logos/company-logo-4.jpg'
 import Partner5 from '../../assets/images/partner-logos/company-logo-5.jpg'
 import Partner6 from '../../assets/images/partner-logos/company-logo-6.jpg'
-import { Link } from 'react-router-dom';
 
 const Cta = ({ openSignup }) => {
     return (

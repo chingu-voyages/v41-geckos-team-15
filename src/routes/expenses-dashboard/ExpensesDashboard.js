@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import ExpensesPagination from '../accounts-dashboard/ExpensesPagination';
 import ExistingExpenseincome from './ExistingExpenseincome';
 import ExpenseModal from './ExpenseModal';
 import './expensesDashboard.css';
 import ExpensesTable from './ExpensesTable';
 import IncomeModal from './IncomeModal';
 import IncomesTable from './IncomesTable';
-import expenses from '../../data/Expenses';
+
 
 const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
     return (
@@ -28,10 +26,10 @@ const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeM
 
             </article>
             {toggleAddExpense ?
-                <ExpenseModal formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> :
+                <ExpenseModal identifyRecord={identifyRecord} getRecordInfo={getRecordInfo} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> :
                 null}
             {toggleAddIncome ?
-                <IncomeModal formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> :
+                <IncomeModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> :
                 null}
             {toggleExistingExpenseIncome ?
                 <ExistingExpenseincome editFormError={editFormError} deleteExistingRecord={deleteExistingRecord} cancelEditExpenseRecord={cancelEditExpenseRecord} identifyRecord={identifyRecord} handleEditValidation={handleEditValidation} editFormValue={editFormValue} validateEditForm={validateEditForm} updateAddedExpense={updateAddedExpense} editMode={editMode} editExpenseRecord={editExpenseRecord} closeModal={closeModal} recordInfo={recordInfo} /> :

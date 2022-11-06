@@ -1,8 +1,12 @@
 
 import CloseExpenseModal from "../expenses-dashboard/CloseExpenseModal";
 import categories from '../../data/Categories.js';
+import { useEffect } from 'react';
 
 const MainIncomeModal = (props) => {
+    useEffect(() => {
+        props.identifyRecord(1, 'income');
+    }, [props]);
     return (
         <article className="add-income-modal-main">
             <section className="add-income-popup-main">
