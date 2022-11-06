@@ -4,9 +4,28 @@ import './expensesDashboard.css';
 import ExpensesTable from './ExpensesTable';
 import IncomeModal from './IncomeModal';
 import IncomesTable from './IncomesTable';
+import { useState } from 'react';
+import expenses from '../../data/Expenses';
+import incomes from '../../data/Incomes';
+import ReactPaginate from 'react-paginate';
 
 
 const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
+    const [itemOffset, setItemOffset] = useState(0);
+    const endOffset = itemOffset + 5;
+    const currentExpenses = [...expenses].reverse().slice(itemOffset, endOffset);
+    const currentIncomes = [...incomes].reverse().slice(itemOffset, endOffset);
+    const pageCountExpenses = Math.ceil(expenses.length / 5);
+    const pageCountIncomes = Math.ceil(incomes.length / 5);
+
+    const handlePageClickExpenses = (event) => {
+        const newOffset = (event.selected * 5) % expenses.length;
+        setItemOffset(newOffset);
+    };
+    const handlePageClickIncomes = (event) => {
+        const newOffset = (event.selected * 5) % incomes.length;
+        setItemOffset(newOffset);
+    };
     return (
         <main className="expenses-dashboard">
             <article>
@@ -21,9 +40,33 @@ const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeM
                     <button onClick={setIncomeTab} className={`${expenseTable ? null : 'active-tab'}`}>Incomes</button>
                 </section>
                 {expenseTable ?
-                    <ExpensesTable identifyRecord={identifyRecord} toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} /> :
-                    <IncomesTable toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} />}
-
+                    <>
+                        <ExpensesTable currentExpenses={currentExpenses} identifyRecord={identifyRecord} toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} />
+                        <ReactPaginate
+                            className="pagination"
+                            breakLabel="..."
+                            nextLabel="next &#62;"
+                            onPageChange={handlePageClickExpenses}
+                            pageRangeDisplayed={5}
+                            pageCount={pageCountExpenses}
+                            previousLabel="&#60; previous"
+                            renderOnZeroPageCount={null}
+                        />
+                    </> :
+                    <>
+                        <IncomesTable currentIncomes={currentIncomes} toggleExistingRecords={toggleExistingRecords} getRecordInfo={getRecordInfo} />
+                        <ReactPaginate
+                            className="pagination"
+                            breakLabel="..."
+                            nextLabel="next &#62;"
+                            onPageChange={handlePageClickIncomes}
+                            pageRangeDisplayed={5}
+                            pageCount={pageCountIncomes}
+                            previousLabel="&#60; previous"
+                            renderOnZeroPageCount={null}
+                        />
+                    </>
+                }
             </article>
             {toggleAddExpense ?
                 <ExpenseModal identifyRecord={identifyRecord} getRecordInfo={getRecordInfo} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> :
