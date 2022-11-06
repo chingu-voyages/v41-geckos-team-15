@@ -10,6 +10,7 @@ import "./dashboard.css";
 import incomes from "../../data/Incomes";
 import expenses from "../../data/Expenses";
 import { useState, useEffect } from "react";
+import categories from "../../data/Categories";
 
 
 const Dashboard = (props) => {
@@ -27,6 +28,7 @@ const Dashboard = (props) => {
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
     const [toggleExistingExpenseIncome, setExistingExpenseIncome] = useState(false);
     const [recordInfo, setRecordInfo] = useState([{ id: "", type: '', name: '', category: '', amount: '', currency: '', date: '', note: '' }]);
+    const covers = categories.reduce((c, { ["name"]: x, ["cover"]: cover }) => (c[x] = cover, c), {});
 
     useEffect(() => {
         identifyRecord();
@@ -90,12 +92,11 @@ const Dashboard = (props) => {
 
         if (targetRecordType === 'expense') {
             console.log(name)
-            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", [name]: value });
-
+            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", cover: covers[formValue.category], [name]: value });
         }
         if (targetRecordType === 'income') {
 
-            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", [name]: value });
+            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", cover: covers[formValue.category], [name]: value });
         }
         // setFormValue({ ...formValue, id: incomes.length + 1, [name]: value });
     }
@@ -114,7 +115,6 @@ const Dashboard = (props) => {
         e.preventDefault();
         setFormError(validateForm(formValue))
         setSubmit(true);
-        console.log(formValue)
         // if (!formError && Object.keys(props.formError).length === 0) {
         expenses.push(formValue);
         // }
