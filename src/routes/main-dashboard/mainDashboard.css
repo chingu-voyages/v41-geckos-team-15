@@ -4,93 +4,6 @@
     position: relative;
 }
 
-/* ! Add Income Modal */
-
-.add-income-modal-main::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.add-income-modal-main {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-}
-
-.add-income-popup-main {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    top: 5%;
-    padding: 2rem;
-    height: max-content;
-    width: 80%;
-    background-color: var(--primary-bg);
-}
-
-.add-income-popup-main h2 {
-    font-weight: 400;
-}
-
-.add-income-popup-main form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: max-content;
-    width: 80%;
-    gap: 2rem;
-}
-
-.add-income-popup-main input,
-.add-income-popup-main textarea {
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--secondary-bg);
-    border-radius: 5px;
-    padding: 0.4rem 0.5rem;
-    width: 80%;
-}
-
-.add-income-popup-main input::placeholder,
-.add-income-popup textarea::placeholder {
-    color: var(--primary-black);
-    font-family: ar(--manrope-font);
-}
-
-.add-income-popup-main form select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    background-color: var(--secondary-bg);
-    border: none;
-    border-radius: 5px;
-    padding: 0.4rem 0.5rem;
-    width: 80%;
-}
-
-.add-income-popup-main form select::-ms-expand {
-    display: none;
-}
-
-.add-income-popup-main form button {
-    border-radius: 5px;
-    padding: 0.3rem 1rem;
-    color: var(--primary-font);
-    border: 1px solid var(--primary-font);
-    background-color: var(--primary-bg);
-    cursor: pointer;
-    width: max-content;
-}
-
 .mainDashboard .header {
     margin: 25px;
     font-size: 20px;
@@ -196,14 +109,4 @@
     .sections {
         grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 700px) {
-    /* .sections {
-        grid-template-columns: auto;
-    }
-
-    .buttons {
-        grid-template-columns: auto auto;
-    } */
 }

@@ -3,11 +3,11 @@ import MonthlyExpenses from "./MonthlyExpenses";
 import AddButtons from "./AddButtons";
 import BudgetStatus from "./BudgetStatus";
 import PopularCategories from "./PopularCategories";
-import MainIncomeModal from "./MainIncomeModal";
 import { useState } from "react";
-import MainExpenseModal from "./MainExpenseModal";
 import AddCardModal from "../accounts-dashboard/AddCardModal"
 import AddCategoryModal from "../accounts-dashboard/AddCategoryModal"
+import ExpenseModal from "../expenses-dashboard/ExpenseModal"
+import IncomeModal from "../expenses-dashboard/IncomeModal"
 
 
 const MainDashboard = ({ identifyRecord, submit, formError, user, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
@@ -46,8 +46,8 @@ const MainDashboard = ({ identifyRecord, submit, formError, user, resetForm, add
                 <PopularCategories />
                 <MonthlyExpenses />
             </div>
-            {toggleAddIncome ? <MainIncomeModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> : null}
-            {toggleAddExpense ? <MainExpenseModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> : null}
+            {toggleAddIncome ? <IncomeModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> : null}
+            {toggleAddExpense ? <ExpenseModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addExpense={addExpense} submit={submit} /> : null}
             {toggleAddToCard ?
                 <AddCardModal closeModal={closeModal} /> : null}
             {toggleAddCategory ?
