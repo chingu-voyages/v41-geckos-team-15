@@ -9,20 +9,16 @@ import { ReactComponent as Profile } from '../../assets/images/dashboard-icons/p
 import { ReactComponent as Logout } from '../../assets/images/dashboard-icons/log-out.svg'
 import ExpenselessLogo from '../../assets/images/expenseless-logo.jpg'
 import { useState } from "react";
+import Hamburger from "../hamburger/Hamburger";
 
 const DashboardNavigation = (props) => {
     const [responsive, setResponsive] = useState(false);
 
-    const toggleMenu = () => setResponsive(!responsive)
+    const toggleMenu = () => setResponsive(!responsive);
 
     return (
         <div className={"sidebar " + (responsive && "is-active")}>
-            <div className={"menu-toggle " + (responsive && "is-active")} onClick={toggleMenu}>
-                <div className="dash-hamburger">
-                    <span></span>
-                </div>
-            </div>
-
+            <Hamburger toggleMenu={toggleMenu} responsive={responsive} />
             <div className="logo">
                 <img src={ExpenselessLogo} alt="" />
             </div>

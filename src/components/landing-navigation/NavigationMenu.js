@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
+import ScrollToTop from '../../helpers/ScrollToTop';
 
-const NavigationMenu = (props) => {
+const NavigationMenu = ({ toggleOffMenu }) => {
     return (
         <nav>
             <ul className='navigation-menu'>
-                <li><Link to='/' onClick={props.toggleOffMenu}>Home</Link></li>
-                <li><Link to='/about' onClick={props.toggleOffMenu}>About</Link></li>
-                <li><Link to='/pricing' onClick={props.toggleOffMenu}>Pricing</Link></li>
-                <li><Link to='/faq' onClick={props.toggleOffMenu}>FAQ</Link></li>
-                <li><Link to='/blog' onClick={props.toggleOffMenu}>Blog</Link></li>
-                <li><Link to='/contact' onClick={props.toggleOffMenu}>Contact</Link></li>
+                <li><Link to='/' onClick={() => { toggleOffMenu(); ScrollToTop() }}>Home</Link></li>
+                <li><Link to='/about' onClick={() => { toggleOffMenu(); ScrollToTop() }}>About</Link></li>
+                <li><Link to='/pricing' onClick={() => { toggleOffMenu(); ScrollToTop() }}>Pricing</Link></li>
+                <li><Link to='/faq' onClick={() => { toggleOffMenu(); ScrollToTop() }}>FAQ</Link></li>
+                <li><Link to='/blog' onClick={() => { toggleOffMenu(); ScrollToTop() }}>Blog</Link></li>
+                <li><Link to='/contact' onClick={() => { toggleOffMenu(); ScrollToTop() }}>Contact</Link></li>
             </ul>
         </nav>
     )
