@@ -10,7 +10,6 @@ import "./dashboard.css";
 import incomes from "../../data/Incomes";
 import expenses from "../../data/Expenses";
 import { useState, useEffect } from "react";
-import categories from "../../data/Categories";
 
 
 const Dashboard = (props) => {
@@ -28,7 +27,6 @@ const Dashboard = (props) => {
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
     const [toggleExistingExpenseIncome, setExistingExpenseIncome] = useState(false);
     const [recordInfo, setRecordInfo] = useState([{ id: "", type: '', name: '', category: '', amount: '', currency: '', date: '', note: '' }]);
-    const covers = categories.reduce((c, { ["name"]: x, ["cover"]: cover }) => (c[x] = cover, c), {});
 
     useEffect(() => {
         identifyRecord();
@@ -42,6 +40,7 @@ const Dashboard = (props) => {
                     setTargetRecordIndex(expenses.indexOf(expense));
                     setTargetRecordType(expense.type);
                 }
+                return expense;
             })
         }
         if (type === 'income') {
@@ -51,6 +50,7 @@ const Dashboard = (props) => {
                     setTargetRecordIndex(incomes.indexOf(income));
                     setTargetRecordType(income.type);
                 }
+                return income;
             })
         }
 
@@ -92,20 +92,18 @@ const Dashboard = (props) => {
 
         if (targetRecordType === 'expense') {
             console.log(name)
-            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", cover: covers[formValue.category], [name]: value });
+            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", [name]: value });
+
         }
         if (targetRecordType === 'income') {
 
-            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", cover: covers[formValue.category], [name]: value });
+            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", [name]: value });
         }
-        // setFormValue({ ...formValue, id: incomes.length + 1, [name]: value });
     }
     const addIncome = (e) => {
         e.preventDefault();
         setFormError(validateForm(formValue));
-        // if (!formError && Object.keys(props.formError).length === 0) {
         incomes.push(formValue);
-        // }
         setSubmit(true);
         if (!formError && Object.keys(props.formError).length === 0) {
             setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
@@ -115,7 +113,6 @@ const Dashboard = (props) => {
         e.preventDefault();
         setFormError(validateForm(formValue))
         setSubmit(true);
-        // if (!formError && Object.keys(props.formError).length === 0) {
         expenses.push(formValue);
         // }
         if (!formError && Object.keys(props.formError).length === 0) {
@@ -191,6 +188,7 @@ const Dashboard = (props) => {
                         expense.created = editFormValue.created;
                     }
                 }
+                return expense;
 
             })
         }
@@ -210,6 +208,7 @@ const Dashboard = (props) => {
                         income.created = editFormValue.created;
                     }
                 }
+                return income;
 
             })
         }
