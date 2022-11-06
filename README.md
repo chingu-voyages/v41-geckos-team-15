@@ -7,7 +7,7 @@ Expenseless is a web application that helps people to manage their money and tra
 
 **Deployed Application:** http://expenseless.vercel.app
 
-![Expenseless-cover](https://user-images.githubusercontent.com/24944582/200111598-a277e5d8-63e7-4248-8612-13a4e8467a51.png)
+![Expenseless-cover](https://user-images.githubusercontent.com/24944582/200149557-b0044ea6-9801-4ad3-ba18-1b5a05a80f39.png)
 
 ## Features
 * Landing page that contains information about the app.
