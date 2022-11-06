@@ -42,6 +42,7 @@ npm run build
 - [react-scripts](https://www.npmjs.com/package/react-scripts)
 - [ant-design](https://www.npmjs.com/package/@ant-design/charts)
 - [leaflet](https://react-leaflet.js.org/docs/start-installation/)
+- [react-paginate](https://www.npmjs.com/package/react-paginate)
 
 ## Recources
 - [Category icons](https://icons8.com/icon/set/investments/clouds)
