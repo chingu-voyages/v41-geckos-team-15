@@ -12,8 +12,8 @@ const users = [
     },
     {
         id: 1,
-        email: 'Cath@gmail.com',
-        username: 'Cath',
+        email: 'Catherine@gmail.com',
+        username: 'Catherine',
         password: '123456',
         settings: {
             language: "English (US)",

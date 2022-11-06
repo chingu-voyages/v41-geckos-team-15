@@ -25,7 +25,7 @@ const Hero = (props) => {
             <section className='hero-content'>
                 <p className='tagline'>Expenseless</p>
                 <h1>Save more, Spend <span className='highlight-title'>less</span></h1>
-                <p>Espensless helps you to manage your money and track all your income & expenses effortlessly to reach your financial goals faster</p>
+                <p>Expenseless helps you to manage your money and track all your income & expenses effortlessly to reach your financial goals faster</p>
                 <section className='hero-form'>
                     <form className='hero-signup' onSubmit={submitForm}>
                         <input type="text" name="signUpEmail" placeholder='Enter your email' onChange={saveInputValues} />
