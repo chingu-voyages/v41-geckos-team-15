@@ -117,9 +117,9 @@ const AddCardModal = (props) => {
                                 <h4>Color:</h4>
                                 {cardColors.map((c, index) => {
                                     return (
-                                        <section class="add-card-color">
-                                            <input type="radio" class="sb-checkbox__input" id={index} name="color" value={Object.values(c)} onChange={handleValidation} />
-                                            <label class={`sb-checkbox__label sb-checkbox__label--${Object.keys(c)}`} htmlFor={index}></label>
+                                        <section className="add-card-color" key={index}>
+                                            <input type="radio" className="sb-checkbox__input" id={index} name="color" value={Object.values(c)} onChange={handleValidation} />
+                                            <label className={`sb-checkbox__label sb-checkbox__label--${Object.keys(c)}`} htmlFor={index}></label>
                                         </section>)
                                 })}
                             </section>

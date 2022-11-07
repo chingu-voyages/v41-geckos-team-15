@@ -7,6 +7,7 @@ import BankAccounts from "./BankAccounts";
 import AccountsCategories from "./AccountsCategories";
 
 const AccountsDashboard = () => {
+
     const [toggleAddToCard, setToggleAddToCard] = useState(false);
     const [toggleAddCategory, setToggleAddCategory] = useState(false);
     const [toggleExistingCategory, setExistingCategory] = useState(false);

@@ -8,6 +8,19 @@
   --primary-input-bg: #c0cfe7;
   --primary-black: #000000;
   --hover-transition: all ease-in-out 0.3s;
+  --default-card-gradient-one: linear-gradient(
+    29deg,
+    rgba(58, 104, 180, 1) 0%,
+    rgba(29, 126, 253, 1) 50%,
+    rgba(69, 252, 242, 1) 100%
+  );
+
+  --default-card-gradient-two: linear-gradient(
+    29deg,
+    rgba(180, 58, 135, 1) 0%,
+    rgba(184, 1, 151, 0.7469581582633054) 50%,
+    rgba(252, 190, 69, 1) 100%
+  );
 }
 
 body {

@@ -4,14 +4,13 @@ import CardIcon from "../../assets/images/accounts-dashboard/card-icon.png";
 import EditIcon from "../../assets/images/accounts-dashboard/edit-icon.png";
 
 const BankAccounts = (props) => {
-
     return (
         <article className="accounts-and-cards">
             <h2>Accounts & Cards</h2>
             <section className="accounts">
                 {bankAccounts.map(account =>
                     <section className="account-card"
-                        style={{ backgroundColor: account.color }}
+                        style={{ background: account.color }}
                         key={account.id}>
                         <section className="account-header">
                             <section>
@@ -21,7 +20,9 @@ const BankAccounts = (props) => {
                             <img src={EditIcon} alt="Edit card icon" onClick={() => props.toggleCardModal({ account })} />
                         </section>
                         <section className="account-current-balance">
-                            <h3 >{account.currentBalance} {account.currency}</h3>
+                            <h3>
+                                {account.totalBalance}
+                                {account.currency}</h3>
                         </section>
                     </section>
                 )}
