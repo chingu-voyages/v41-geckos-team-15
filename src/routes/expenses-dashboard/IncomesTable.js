@@ -1,6 +1,6 @@
 import incomes from "../../data/Incomes";
-import ExpensesPagination from "../accounts-dashboard/ExpensesPagination";
 import React from "react";
+
 const IncomesTable = (props) => {
     return (
         <React.Fragment>
@@ -17,7 +17,7 @@ const IncomesTable = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {incomes.map((income) =>
+                            {props.currentIncomes.map((income) =>
                                 <tr key={income.id}>
                                     <td data-label="Expense name"><span><img src={income.cover} alt="" />{income.name}</span></td>
                                     <td data-label="Category">{income.category}</td>
@@ -30,7 +30,6 @@ const IncomesTable = (props) => {
                                 </tr>)}
                         </tbody>
                     </table>
-                    <ExpensesPagination />
                 </section>}
         </React.Fragment>
     )

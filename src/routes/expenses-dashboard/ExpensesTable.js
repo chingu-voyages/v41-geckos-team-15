@@ -1,6 +1,5 @@
 import React from "react";
 import expenses from "../../data/Expenses";
-import ExpensesPagination from "../accounts-dashboard/ExpensesPagination";
 
 const ExpensesTable = (props) => {
     return (
@@ -18,7 +17,7 @@ const ExpensesTable = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {expenses.map((expense) =>
+                            {props.currentExpenses.map((expense) =>
                                 <tr key={expense.id}>
                                     <td data-label="Expense name"><span><img src={expense.cover} alt="" />{expense.name}</span></td>
                                     <td data-label="Category">{expense.category}</td>
@@ -32,9 +31,8 @@ const ExpensesTable = (props) => {
                                 </tr>)}
                         </tbody>
                     </table>
-                    <ExpensesPagination />
                 </section>}
-        </React.Fragment >
+        </React.Fragment>
     )
 }
 

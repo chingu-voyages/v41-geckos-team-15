@@ -50,7 +50,7 @@ a {
     position: fixed;
     height: 100vh;
     z-index: 1;
-    top: 11%;
+    top: 0;
     right: 0;
     left: 0;
     padding-top: 2rem;
@@ -100,7 +100,6 @@ a {
 }
 
 @media (hover: hover) {
-
     .navigation-menu li a:hover,
     .nav-action button:first-child:hover,
     .nav-action button:last-child:hover {
@@ -127,10 +126,33 @@ a {
         display: none;
     }
 
-    .hamburger {
+    .dash-hamburger {
+        position: relative;
+        top: calc(50% - 2px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 32px;
+    }
+
+    .dash-hamburger > span,
+    .dash-hamburger > span::before,
+    .dash-hamburger > span::after {
         display: block;
-        width: 3rem;
-        height: 3rem;
-        cursor: pointer;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 99px;
+        background-color: #fff;
+        transition-duration: 0.25s;
+    }
+
+    .dash-hamburger > span::before {
+        content: "";
+        top: -8px;
+    }
+
+    .dash-hamburger > span::after {
+        content: "";
+        top: 8px;
     }
 }

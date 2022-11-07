@@ -3,33 +3,31 @@ import NavigationMenu from './NavigationMenu';
 import NavAction from './NavAction';
 import './landingNavigation.css';
 import { Link, useLocation } from 'react-router-dom';
-import Hamburger from '../../assets/images/landing/hamburger.png'
+import Hamburger from '../hamburger/Hamburger';
+
+
+
 import { useState } from 'react';
 const LandingNavigation = (props) => {
-    const [toggleMenu, setToggleMeu] = useState(false);
     const { pathname } = useLocation();
-    const toggleHamMenu = () => {
-        toggleMenu ? setToggleMeu(false) : setToggleMeu(true);
-    }
-    const toggleOffMenu = () => {
-        setToggleMeu(false);
-    }
-    /*landing nav bar doesn't show when user go to dashboard*/
+    const [responsive, setResponsive] = useState(false);
+
+    const toggleMenu = () => setResponsive(!responsive);
+
     if (pathname.includes("dashboard") && props.user)
         return <></>
     else
         return (
-            <header className={`landing-header${!toggleMenu ? `` : ` active-header`}`}>
+            <header className={`landing-header${!responsive ? `` : ` is-active`}`}>
                 <Link to="/">
-                    <img src={ExpenselessLogo} alt="Expenseless" onClick={toggleOffMenu} />
+                    <img src={ExpenselessLogo} alt="Expenseless" onClick={toggleMenu} />
                 </Link>
-
-                <img className='hamburger' src={Hamburger} alt="" onClick={toggleHamMenu} />
-                <section className={`nav-section${!toggleMenu ? `` : ` active-menu`}`}>
-                    <NavigationMenu toggleOffMenu={toggleOffMenu} />
+                <Hamburger responsive={responsive} toggleMenu={toggleMenu} />
+                <section className={`nav-section${!responsive ? `` : ` active-menu`}`}>
+                    <NavigationMenu toggleOffMenu={toggleMenu} />
                     <NavAction user={props.user}
                         onLogout={props.onLogout}
-                        toggleOffMenu={toggleOffMenu}
+                        toggleOffMenu={toggleMenu}
                         openLogin={props.openLogin}
                         openSignup={props.openSignup} />
                 </section>
