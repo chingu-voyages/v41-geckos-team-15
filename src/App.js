@@ -13,17 +13,27 @@ import LandingFooter from "./components/landing-footer/LandingFooter";
 import SignIn from "./components/sign-in-modal/SignIn";
 import Register from "./components/register-modal/Register";
 import Dashboard from "./routes/dashboard/Dashboard"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
   const [isLoginModalOpen, setLoginModal] = useState(false);
   const [isSignupModalOpen, setSignupModal] = useState(false);
   const [user, setUser] = useState(null);
 
+  //Keep user logged in when refreshing the page
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('user');
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+  }, []);
+
   const login = (user) => setUser(user)
+
   const logout = () => {
-    localStorage.removeItem('token-info');
     setUser(null);
+    localStorage.clear();
   }
   const openLogin = () => setLoginModal(true);
   const openSignup = () => setSignupModal(true);
