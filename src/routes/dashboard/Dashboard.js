@@ -10,11 +10,12 @@ import "./dashboard.css";
 import incomes from "../../data/Incomes";
 import expenses from "../../data/Expenses";
 import { useState, useEffect } from "react";
+import bankAccounts from "../../data/Accounts";
 
 
 const Dashboard = (props) => {
-    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
-    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", accountName: "", created: '', note: '' });
+    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", accountName: "", created: '', note: '' });
     const [submit, setSubmit] = useState(false);
     const [formError, setFormError] = useState({});
     const [editFormError, setEditFormError] = useState({});
@@ -26,7 +27,7 @@ const Dashboard = (props) => {
     const [toggleAddExpense, setToggleAddToExpense] = useState(false);
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
     const [toggleExistingExpenseIncome, setExistingExpenseIncome] = useState(false);
-    const [recordInfo, setRecordInfo] = useState([{ id: "", type: '', name: '', category: '', amount: '', currency: '', date: '', note: '' }]);
+    const [recordInfo, setRecordInfo] = useState([{ id: "", type: '', name: '', category: '', amount: '', accountName: "", currency: '', date: '', note: '' }]);
 
     useEffect(() => {
         identifyRecord();
@@ -79,9 +80,9 @@ const Dashboard = (props) => {
     const toggleExistingRecords = () => {
         setExistingExpenseIncome(true);
     }
-    const getRecordInfo = ({ id, type, name, category, amount, currency, date, note }) => {
+    const getRecordInfo = ({ id, type, name, category, accountName, amount, currency, date, note }) => {
         identifyRecord(id, type);
-        setRecordInfo({ id: id, type: type, name: name, category: category, amount: amount, currency: currency, date: date, note: note });
+        setRecordInfo({ id: id, type: type, name: name, category: category, accountName: accountName, amount: amount, currency: currency, date: date, note: note });
     }
 
 
@@ -91,7 +92,6 @@ const Dashboard = (props) => {
         const { name, value } = e.target;
 
         if (targetRecordType === 'expense') {
-            console.log(name)
             setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", [name]: value });
 
         }
@@ -106,7 +106,7 @@ const Dashboard = (props) => {
         incomes.push(formValue);
         setSubmit(true);
         if (!formError && Object.keys(props.formError).length === 0) {
-            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", accountName: "", created: '', note: '' });
         }
     }
     const addExpense = (e) => {
@@ -114,15 +114,14 @@ const Dashboard = (props) => {
         setFormError(validateForm(formValue))
         setSubmit(true);
         expenses.push(formValue);
-        // }
         if (!formError && Object.keys(props.formError).length === 0) {
-            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", accountName: "", created: '', note: '' });
         }
     }
     const resetForm = () => {
         setSubmit(false);
-        setFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
-        setEditFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
+        setFormValue({ id: "", type: '', name: '', amount: '', category: "", accountName: "", created: '', note: '' });
+        setEditFormValue({ id: "", type: '', name: '', amount: '', category: "", accountName: "", created: '', note: '' });
         setFormError({});
     }
     const validateForm = (value) => {
@@ -138,6 +137,9 @@ const Dashboard = (props) => {
         }
         if (!value.category) {
             errors.category = "Please enter category";
+        }
+        if (!value.accountName) {
+            errors.accountName = "Please enter account name";
         }
         if (!value.created) {
             errors.created = "Please enter date";
@@ -222,6 +224,45 @@ const Dashboard = (props) => {
         }
         return errors;
     }
+
+    // Count Totals on Cards/Accounts
+    useEffect(() => {
+        const countSum = () => {
+            incomes.map(income => {
+                bankAccounts.map(acc => {
+                    if (income.bankAccount === acc.name) {
+                        acc.incomes.push(Number(income.amount));
+                        acc.totalIncomes = acc.incomes.reduce((a, v) => a = a + v, 0);
+                    }
+                    return acc;
+                })
+                return income;
+            })
+
+        }
+
+        const countExpense = () => {
+            expenses.map(expense => {
+                bankAccounts.map(acc => {
+                    if (expense.bankAccount === acc.name) {
+                        acc.expenses.push(Number(expense.amount));
+                        acc.totalExpenses = acc.expenses.reduce((a, v) => a = a + v, 0);
+                    }
+                    return acc;
+                })
+                return expense;
+            })
+        }
+
+        const countTotals = () => {
+            bankAccounts.map(acc => {
+                return acc.totalBalance = acc.totalIncomes - acc.totalExpenses;
+            })
+        }
+        countSum();
+        countExpense();
+        countTotals();
+    }, []);
 
     return (
         <div className="dashboard">

@@ -1,6 +1,3 @@
-import incomes from "./Incomes";
-import expenses from './Expenses';
-
 const bankAccounts = [
     {
         id: 1,
@@ -25,43 +22,6 @@ const bankAccounts = [
         totalBalance: 0,
     }
 ]
-const countSum = () => {
-    incomes.map(income => {
-        bankAccounts.map(acc => {
-            if (income.bankAccount === acc.name) {
-                acc.incomes.push(Number(income.amount));
-                acc.totalIncomes = acc.incomes.reduce((a, v) => a = a + v, 0);
-            }
-            return acc;
-        })
-        return income;
-    })
-
-}
-
-const countExpense = () => {
-    expenses.map(expense => {
-        bankAccounts.map(acc => {
-            if (expense.bankAccount === acc.name) {
-                acc.expenses.push(Number(expense.amount));
-                acc.totalExpenses = acc.expenses.reduce((a, v) => a = a + v, 0);
-            }
-            return acc;
-        })
-        return expense;
-    })
-}
-
-const countTotals = () => {
-    bankAccounts.map(acc => {
-        return acc.totalBalance = acc.totalIncomes - acc.totalExpenses;
-    })
-}
-
-
-countSum();
-countExpense();
-countTotals();
 
 
 

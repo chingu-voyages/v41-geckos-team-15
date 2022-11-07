@@ -2,6 +2,7 @@
 import React from "react";
 import CloseRecordModal from "./CloseRecordModal";
 import categories from '../../data/Categories.js';
+import bankAccounts from "../../data/Accounts";
 
 const ExistingExpenseincome = (props) => {
     return (
@@ -17,6 +18,13 @@ const ExistingExpenseincome = (props) => {
                                 <select onChange={props.handleEditValidation} value={props.recordInfo.category} name="category">
                                     <option defaultChecked>Select category</option>
                                     {categories.map((category) => <option key={category.id} >{category.name}</option>)}
+                                </select>
+                            </label>
+                            <label htmlFor="accountName">
+                                Account:
+                                <select onChange={props.handleEditValidation} value={props.recordInfo.accountName} name="accountName">
+                                    <option defaultChecked>Select account</option>
+                                    {bankAccounts.map((account, index) => <option key={index} >{account.name}</option>)}
                                 </select>
                             </label>
                             <label htmlFor="amount">
@@ -44,6 +52,7 @@ const ExistingExpenseincome = (props) => {
                     <h2>{props.recordInfo.name}</h2>
                     <section className="recording-data">
                         <p>Category: <span>{props.recordInfo.category}</span></p>
+                        <p>Account: <span>{props.recordInfo.accountName}</span></p>
                         <p>Amount: <span>{props.recordInfo.amount} {props.recordInfo.currency}</span></p>
                         <p>Date: <span>{props.recordInfo.date}</span></p>
                         <p>Note: <span>{props.recordInfo.note}</span></p>
