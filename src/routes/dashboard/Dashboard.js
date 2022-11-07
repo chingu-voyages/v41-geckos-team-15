@@ -102,22 +102,26 @@ const Dashboard = (props) => {
     }
     const addIncome = (e) => {
         e.preventDefault();
-        setFormError(validateForm(formValue));
-        if (!formError && Object.keys(props.formError).length === 0) {
-            incomes.push(formValue);
-            setSubmit(true);
-            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
-        }
+        if (!validateForm(formValue))
+            return false;
+
+        incomes.push(formValue);
+        setSubmit(true);
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
     }
+
     const addExpense = (e) => {
         e.preventDefault();
-        setFormError(validateForm(formValue))
-        if (!formError && Object.keys(props.formError).length === 0) {
-            expenses.push(formValue);
-            setSubmit(true);
-            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
-        }
+        if (!validateForm(formValue))
+            return false;
+
+        expenses.push(formValue);
+        setSubmit(true);
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+
     }
+
+
     const resetForm = () => {
         setSubmit(false);
         setFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
@@ -126,22 +130,32 @@ const Dashboard = (props) => {
     }
     const validateForm = (value) => {
         let errors = {};
+        let isValid = true;
         if (!value.name) {
             errors.name = "Please enter name";
+            isValid = false
         }
         if (!value.amount) {
             errors.amount = "Please enter amount";
+            isValid = false
         }
         else if (isNaN(value.amount)) {
             errors.amount = "Please enter a valid amount in numbers";
+            isValid = false
         }
         if (!value.category) {
             errors.category = "Please enter category";
+            isValid = false
         }
         if (!value.created) {
             errors.created = "Please enter date";
+            isValid = false
         }
-        return errors;
+
+        if (!isValid)
+            setFormError(errors)
+
+        return isValid;
     }
 
     ////////////// * Edit Exisitng Expense
