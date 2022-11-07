@@ -8,7 +8,7 @@
     border-radius: 99px;
     background-color: var(--primary-font);
     cursor: pointer;
-    z-index: 4;
+    z-index: 2;
 }
 
 .dash-hamburger {
@@ -19,9 +19,9 @@
     width: 32px;
 }
 
-.dash-hamburger > span,
-.dash-hamburger > span::before,
-.dash-hamburger > span::after {
+.dash-hamburger>span,
+.dash-hamburger>span::before,
+.dash-hamburger>span::after {
     display: block;
     position: absolute;
     width: 100%;
@@ -31,17 +31,17 @@
     transition-duration: 0.25s;
 }
 
-.dash-hamburger > span::before {
+.dash-hamburger>span::before {
     content: "";
     top: -8px;
 }
 
-.dash-hamburger > span::after {
+.dash-hamburger>span::after {
     content: "";
     top: 8px;
 }
 
-.menu-toggle.is-active .dash-hamburger > span {
+.menu-toggle.is-active .dash-hamburger>span {
     transform: rotate(45deg);
 }
 
@@ -49,12 +49,12 @@
     z-index: 4;
 }
 
-.menu-toggle.is-active .dash-hamburger > span::before {
+.menu-toggle.is-active .dash-hamburger>span::before {
     top: 0;
     transform: rotate(0deg);
 }
 
-.menu-toggle.is-active .dash-hamburger > span::after {
+.menu-toggle.is-active .dash-hamburger>span::after {
     top: 0;
     transform: rotate(90deg);
 }

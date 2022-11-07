@@ -64,8 +64,8 @@ const DashboardNavigation = (props) => {
                 </ul>
                 <div className="bottom-content">
                     <li className="">
-                        <Link to="/" onClick={props.logout}>
-                            <button className="logout-button" onClick={() => { props.logout(); toggleMenu(); props.resetForm(); ScrollToTop() }}>
+                        <Link to="/">
+                            <button className="logout-button" onClick={() => { toggleMenu(); props.logout(); props.resetForm(); ScrollToTop() }}>
                                 <Logout className="icon" />
                                 <span className="item-name">Logout</span>
                             </button>
