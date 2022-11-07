@@ -103,19 +103,18 @@ const Dashboard = (props) => {
     const addIncome = (e) => {
         e.preventDefault();
         setFormError(validateForm(formValue));
-        incomes.push(formValue);
-        setSubmit(true);
         if (!formError && Object.keys(props.formError).length === 0) {
+            incomes.push(formValue);
+            setSubmit(true);
             setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
         }
     }
     const addExpense = (e) => {
         e.preventDefault();
         setFormError(validateForm(formValue))
-        setSubmit(true);
-        expenses.push(formValue);
-        // }
         if (!formError && Object.keys(props.formError).length === 0) {
+            expenses.push(formValue);
+            setSubmit(true);
             setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
         }
     }
