@@ -9,6 +9,7 @@ import MainDashboard from "../main-dashboard/MainDashboard";
 import "./dashboard.css";
 import incomes from "../../data/Incomes";
 import expenses from "../../data/Expenses";
+import categories from "../../data/Categories";
 import { useState, useEffect } from "react";
 
 
@@ -27,6 +28,7 @@ const Dashboard = (props) => {
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
     const [toggleExistingExpenseIncome, setExistingExpenseIncome] = useState(false);
     const [recordInfo, setRecordInfo] = useState([{ id: "", type: '', name: '', category: '', amount: '', currency: '', date: '', note: '' }]);
+    const covers = categories.reduce((c, { ["name"]: x, ["cover"]: cover }) => (c[x] = cover, c), {});
 
     useEffect(() => {
         identifyRecord();
@@ -92,12 +94,12 @@ const Dashboard = (props) => {
 
         if (targetRecordType === 'expense') {
             console.log(name)
-            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", [name]: value });
+            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", cover: covers[formValue.category], [name]: value });
 
         }
         if (targetRecordType === 'income') {
 
-            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", [name]: value });
+            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", cover: covers[formValue.category], [name]: value });
         }
     }
     const addIncome = (e) => {
