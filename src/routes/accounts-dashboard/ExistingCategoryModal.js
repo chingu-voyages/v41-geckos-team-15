@@ -47,7 +47,7 @@ const ExistingCategoryModal = (props) => {
             {editForm ?
                 //View edit category 
                 <section className="add-category-popup">
-                    <button onClick={props.closeModal} className="close-modal">&times;</button>
+                    <button onClick={props.closeModal} className="close-modal">&#10005;</button>
                     {successMessage ? <div>{successMessage}</div> :
                         <form onSubmit={updateCategory}>
                             <section>
@@ -73,7 +73,7 @@ const ExistingCategoryModal = (props) => {
                 :
                 //View selected category
                 <section className="view-category-popup">
-                    <button onClick={props.closeModal} className="close-modal">&times;</button>
+                    <button onClick={props.closeModal} className="close-modal">&#10005;</button>
                     {successMessage ? <div>{successMessage}</div>
                         :
                         <>

@@ -84,7 +84,7 @@ const AddCardModal = (props) => {
     return (
         <article className="add-card-modal" >
             <section className="add-card-popup">
-                <button onClick={props.closeModal} className="close-modal">&times;</button>
+                <button onClick={props.closeModal} className="close-modal">&#10005;</button>
                 <h2>New account</h2>
                 {successMessage ? <div>{successMessage}</div> :
                     <form onSubmit={props.cardInfo ? updateCard : addCard}>
