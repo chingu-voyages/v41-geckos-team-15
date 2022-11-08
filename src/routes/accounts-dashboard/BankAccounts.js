@@ -7,7 +7,9 @@ const BankAccounts = (props) => {
 
     return (
         <article className="accounts-and-cards">
-            <h2>Accounts & Cards</h2>
+            <div className="acc-header">
+                <h1 >Accounts & Cards</h1>
+            </div>
             <section className="accounts">
                 {bankAccounts.map(account =>
                     <section className="account-card"

@@ -1,9 +1,13 @@
 .accounts-dashboard {
     display: flex;
     flex-direction: column;
-    gap: 8rem;
-    padding: 3rem;
+    gap: 5rem;
+    padding: 2rem;
     position: relative;
+}
+
+.acc-header {
+    font-size: 25px;
 }
 
 .close-modal {
@@ -23,9 +27,6 @@
     gap: 4rem;
 }
 
-.accounts-and-cards h2 {
-    font-size: 2.5rem;
-}
 
 .accounts {
     display: flex;
@@ -95,9 +96,6 @@
     gap: 8rem;
 }
 
-.accounts-categories h2 {
-    font-size: 2.5rem;
-}
 
 .empty-category {
     background-color: var(--primary-bg);

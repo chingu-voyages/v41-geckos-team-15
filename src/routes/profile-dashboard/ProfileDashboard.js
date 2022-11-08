@@ -84,8 +84,11 @@ const ProfileDashboard = (props) => {
 
     return (
         <main className="profile-dashboard">
-            <article className="profile">
+            <div className="header">
                 <h1>Profile</h1>
+            </div>
+            <article className="profile">
+
                 {successMessage ? <div className="success-msg">{successMessage}</div> : null}
                 <form onSubmit={(e) => e.preventDefault()}>
                     <ul>

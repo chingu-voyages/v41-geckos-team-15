@@ -5,7 +5,9 @@ import { categoryTransactions } from '../../helpers/ExpensesByCategory';
 const AccountsCategories = (props) => {
     return (
         <article className="accounts-categories">
-            <h2>Categories</h2>
+            <div className="acc-header">
+                <h1 >Categories</h1>
+            </div>
             <section className="categories">
                 <button className="empty-category" onClick={props.toggleCategoryModal}>
                     <img src={PlusIcon} alt="Add category icon" />

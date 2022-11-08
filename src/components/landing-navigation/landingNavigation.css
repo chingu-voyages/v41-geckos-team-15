@@ -17,6 +17,7 @@ a {
     padding: 1.5rem;
     justify-content: space-between;
     background-color: var(--primary-bg);
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.1);
 }
 
 .landing-header.active-header {
