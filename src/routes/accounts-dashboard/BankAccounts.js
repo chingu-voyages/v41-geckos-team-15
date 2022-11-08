@@ -13,7 +13,7 @@ const BankAccounts = (props) => {
             <section className="accounts">
                 {bankAccounts.map(account =>
                     <section className="account-card"
-                        style={{ backgroundColor: account.color }}
+                        style={{ background: account.color }}
                         key={account.id}>
                         <section className="account-header">
                             <section>

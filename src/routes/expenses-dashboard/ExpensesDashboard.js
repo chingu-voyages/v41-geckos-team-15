@@ -5,30 +5,29 @@ import ExpensesTable from './ExpensesTable';
 import IncomeModal from './IncomeModal';
 import IncomesTable from './IncomesTable';
 import { useState } from 'react';
-import expenses from '../../data/Expenses';
-import incomes from '../../data/Incomes';
 import ReactPaginate from 'react-paginate';
 import ScrollToTop from '../../helpers/ScrollToTop';
 
-const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
+const ExpensesDashboard = ({ allExpenses, allIncomes, editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + 5;
-    const currentExpenses = [...expenses].reverse().slice(itemOffset, endOffset);
-    const currentIncomes = [...incomes].reverse().slice(itemOffset, endOffset);
-    const pageCountExpenses = Math.ceil(expenses.length / 5);
-    const pageCountIncomes = Math.ceil(incomes.length / 5);
+    const currentExpenses = [...allExpenses].reverse().slice(itemOffset, endOffset);
+    const currentIncomes = [...allIncomes].reverse().slice(itemOffset, endOffset);
+    const pageCountExpenses = Math.ceil(allExpenses.length / 5);
+    const pageCountIncomes = Math.ceil(allIncomes.length / 5);
 
     const handlePageClickExpenses = (event) => {
-        const newOffset = (event.selected * 5) % expenses.length;
+        const newOffset = (event.selected * 5) % allExpenses.length;
         setItemOffset(newOffset);
         ScrollToTop();
 
     };
     const handlePageClickIncomes = (event) => {
-        const newOffset = (event.selected * 5) % incomes.length;
+        const newOffset = (event.selected * 5) % allIncomes.length;
         setItemOffset(newOffset);
         ScrollToTop();
     };
+
     return (
         <main className="expenses-dashboard">
             <article>

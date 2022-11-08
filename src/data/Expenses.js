@@ -22,7 +22,7 @@ const expenses = [
         amount: (5).toFixed(2),
         currency: "$",
         cover: Transport,
-        note: '',
+        note: '', bankAccount: 'Card',
     },
     {
         id: 2, type: 'expense',
@@ -32,7 +32,7 @@ const expenses = [
         amount: (8).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card',
     },
     {
         id: 3, type: 'expense',
@@ -42,7 +42,7 @@ const expenses = [
         amount: (15).toFixed(2),
         currency: "$",
         cover: Entertainment,
-        note: '',
+        note: '', bankAccount: 'Card',
     },
     {
         id: 4, type: 'expense',
@@ -52,7 +52,7 @@ const expenses = [
         amount: (12).toFixed(2),
         currency: "$",
         cover: Restaurants,
-        note: '',
+        note: '', bankAccount: 'Card',
     },
     {
         id: 5, type: 'expense',
@@ -62,7 +62,7 @@ const expenses = [
         amount: (10).toFixed(2),
         currency: "$",
         cover: Transport,
-        note: '',
+        note: '', bankAccount: 'Card',
     },
 
     {
@@ -73,7 +73,7 @@ const expenses = [
         amount: (22).toFixed(2),
         currency: "$",
         cover: Gifts,
-        note: '',
+        note: '', bankAccount: 'Savings',
     },
     {
         id: 7, type: 'expense',
@@ -83,7 +83,7 @@ const expenses = [
         amount: (5).toFixed(2),
         currency: "$",
         cover: Transport,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 8, type: 'expense',
@@ -93,7 +93,7 @@ const expenses = [
         amount: (11).toFixed(2),
         currency: "$",
         cover: Restaurants,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 9, type: 'expense',
@@ -103,7 +103,7 @@ const expenses = [
         amount: (8).toFixed(2),
         currency: "$",
         cover: Services,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 10, type: 'expense',
@@ -113,7 +113,7 @@ const expenses = [
         amount: (1000).toFixed(2),
         currency: "$",
         cover: Services,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 11, type: 'expense',
@@ -123,7 +123,7 @@ const expenses = [
         amount: (30).toFixed(2),
         currency: "$",
         cover: Utilities,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 12, type: 'expense',
@@ -133,7 +133,7 @@ const expenses = [
         amount: (100).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 13, type: 'expense',
@@ -143,7 +143,7 @@ const expenses = [
         amount: (10).toFixed(2),
         currency: "$",
         cover: Restaurants,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 14, type: 'expense',
@@ -153,7 +153,7 @@ const expenses = [
         amount: (2).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 15, type: 'expense',
@@ -163,7 +163,7 @@ const expenses = [
         amount: (7).toFixed(2),
         currency: "$",
         cover: Entertainment,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 16, type: 'expense',
@@ -173,7 +173,7 @@ const expenses = [
         amount: (20).toFixed(2),
         currency: "$",
         cover: Restaurants,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 17, type: 'expense',
@@ -183,7 +183,7 @@ const expenses = [
         amount: (5).toFixed(2),
         currency: "$",
         cover: Transport,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 18, type: 'expense',
@@ -193,7 +193,7 @@ const expenses = [
         amount: (50).toFixed(2),
         currency: "$",
         cover: Health,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 19, type: 'expense',
@@ -203,7 +203,7 @@ const expenses = [
         amount: (12).toFixed(2),
         currency: "$",
         cover: Health,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 20, type: 'expense',
@@ -213,7 +213,7 @@ const expenses = [
         amount: (21).toFixed(2),
         currency: "$",
         cover: Health,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 21, type: 'expense',
@@ -223,7 +223,7 @@ const expenses = [
         amount: (9).toFixed(2),
         currency: "$",
         cover: Clothes,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 22, type: 'expense',
@@ -233,7 +233,7 @@ const expenses = [
         amount: (18).toFixed(2),
         currency: "$",
         cover: Clothes,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 23, type: 'expense',
@@ -243,7 +243,7 @@ const expenses = [
         amount: (10).toFixed(2),
         currency: "$",
         cover: Transport,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 24, type: 'expense',
@@ -253,7 +253,7 @@ const expenses = [
         amount: (100).toFixed(2),
         currency: "$",
         cover: Subscribtions,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 25, type: 'expense',
@@ -263,7 +263,7 @@ const expenses = [
         amount: (13).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 26, type: 'expense',
@@ -273,7 +273,7 @@ const expenses = [
         amount: (130).toFixed(2),
         currency: "$",
         cover: Transport,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 27, type: 'expense',
@@ -283,7 +283,7 @@ const expenses = [
         amount: (10).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 28, type: 'expense',
@@ -293,7 +293,7 @@ const expenses = [
         amount: (18).toFixed(2),
         currency: "$",
         cover: Alcohol,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 29, type: 'expense',
@@ -303,7 +303,7 @@ const expenses = [
         amount: (11).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 30, type: 'expense',
@@ -313,7 +313,7 @@ const expenses = [
         amount: (500).toFixed(2),
         currency: "$",
         cover: Travel,
-        note: '',
+        note: '', bankAccount: 'Savings',
     },
     {
         id: 31, type: 'expense',
@@ -323,7 +323,7 @@ const expenses = [
         amount: (14).toFixed(2),
         currency: "$",
         cover: Restaurants,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 32, type: 'expense',
@@ -333,7 +333,7 @@ const expenses = [
         amount: (20).toFixed(2),
         currency: "$",
         cover: Shopping,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 33, type: 'expense',
@@ -343,7 +343,7 @@ const expenses = [
         amount: (43).toFixed(2),
         currency: "$",
         cover: Shopping,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 34, type: 'expense',
@@ -353,7 +353,7 @@ const expenses = [
         amount: (9).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 35, type: 'expense',
@@ -363,7 +363,7 @@ const expenses = [
         amount: (12).toFixed(2),
         currency: "$",
         cover: Alcohol,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 36, type: 'expense',
@@ -373,7 +373,7 @@ const expenses = [
         amount: (2).toFixed(2),
         currency: "$",
         cover: Clothes,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 37, type: 'expense',
@@ -383,7 +383,7 @@ const expenses = [
         amount: (400).toFixed(2),
         currency: "$",
         cover: Shopping,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 38, type: 'expense',
@@ -393,7 +393,7 @@ const expenses = [
         amount: (14).toFixed(2),
         currency: "$",
         cover: Groceries,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 39, type: 'expense',
@@ -403,7 +403,7 @@ const expenses = [
         amount: (8).toFixed(2),
         currency: "$",
         cover: Transport,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
     {
         id: 40, type: 'expense',
@@ -413,7 +413,7 @@ const expenses = [
         amount: (13).toFixed(2),
         currency: "$",
         cover: Restaurants,
-        note: '',
+        note: '', bankAccount: 'Card'
     },
 ]
 

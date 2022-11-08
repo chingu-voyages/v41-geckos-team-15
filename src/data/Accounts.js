@@ -2,17 +2,27 @@ const bankAccounts = [
     {
         id: 1,
         name: "Card",
-        currentBalance: (1200).toFixed(2),
+        totalIncomes: 0,
+        incomes: [],
+        totalExpenses: 0,
+        expenses: [],
         currency: "$",
-        color: "var(--primary-font)"
+        color: "var(--default-card-gradient-one)",
+        totalBalance: 0,
     },
     {
         id: 2,
         name: "Savings",
-        currentBalance: (10000).toFixed(2),
+        totalIncomes: 0,
+        incomes: [],
+        totalExpenses: 0,
+        expenses: [],
         currency: "$",
-        color: "var(--primary-font)"
+        color: "var(--default-card-gradient-two)",
+        totalBalance: 0,
     }
 ]
+
+
 
 export default bankAccounts;
