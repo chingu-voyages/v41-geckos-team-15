@@ -1,6 +1,6 @@
 const CloseRecordModal = (props) => {
     return (
-        <button onClick={() => { props.closeModal(); }} className="close-modal">X</button>
+        <button onClick={() => { props.closeModal(); }} className="close-modal">&#10005;</button>
     )
 }
 

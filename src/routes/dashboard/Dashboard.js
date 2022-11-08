@@ -9,6 +9,7 @@ import MainDashboard from "../main-dashboard/MainDashboard";
 import "./dashboard.css";
 import incomes from "../../data/Incomes";
 import expenses from "../../data/Expenses";
+import categories from "../../data/Categories";
 import { useState, useEffect } from "react";
 
 
@@ -27,6 +28,7 @@ const Dashboard = (props) => {
     const [toggleAddIncome, setToggleAddToIncome] = useState(false);
     const [toggleExistingExpenseIncome, setExistingExpenseIncome] = useState(false);
     const [recordInfo, setRecordInfo] = useState([{ id: "", type: '', name: '', category: '', amount: '', currency: '', date: '', note: '' }]);
+    const covers = categories.reduce((c, { ["name"]: x, ["cover"]: cover }) => (c[x] = cover, c), {});
 
     useEffect(() => {
         identifyRecord();
@@ -92,33 +94,36 @@ const Dashboard = (props) => {
 
         if (targetRecordType === 'expense') {
             console.log(name)
-            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", [name]: value });
+            setFormValue({ ...formValue, id: expenses.length + 1, type: "expense", currency: "$", cover: covers[formValue.category], [name]: value });
 
         }
         if (targetRecordType === 'income') {
 
-            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", [name]: value });
+            setFormValue({ ...formValue, id: incomes.length + 1, type: "income", currency: "$", cover: covers[formValue.category], [name]: value });
         }
     }
     const addIncome = (e) => {
         e.preventDefault();
-        setFormError(validateForm(formValue));
+        if (!validateForm(formValue))
+            return false;
+
         incomes.push(formValue);
         setSubmit(true);
-        if (!formError && Object.keys(props.formError).length === 0) {
-            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
-        }
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
     }
+
     const addExpense = (e) => {
         e.preventDefault();
-        setFormError(validateForm(formValue))
-        setSubmit(true);
+        if (!validateForm(formValue))
+            return false;
+
         expenses.push(formValue);
-        // }
-        if (!formError && Object.keys(props.formError).length === 0) {
-            setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
-        }
+        setSubmit(true);
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+
     }
+
+
     const resetForm = () => {
         setSubmit(false);
         setFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
@@ -127,22 +132,32 @@ const Dashboard = (props) => {
     }
     const validateForm = (value) => {
         let errors = {};
+        let isValid = true;
         if (!value.name) {
             errors.name = "Please enter name";
+            isValid = false
         }
         if (!value.amount) {
             errors.amount = "Please enter amount";
+            isValid = false
         }
         else if (isNaN(value.amount)) {
             errors.amount = "Please enter a valid amount in numbers";
+            isValid = false
         }
         if (!value.category) {
             errors.category = "Please enter category";
+            isValid = false
         }
         if (!value.created) {
             errors.created = "Please enter date";
+            isValid = false
         }
-        return errors;
+
+        if (!isValid)
+            setFormError(errors)
+
+        return isValid;
     }
 
     ////////////// * Edit Exisitng Expense

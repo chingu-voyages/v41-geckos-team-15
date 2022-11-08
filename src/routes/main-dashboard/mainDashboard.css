@@ -31,6 +31,7 @@
     cursor: pointer;
     background-color: var(--secondary-bg);
     color: var(--primary-font);
+    box-shadow: 0px 0px 5px -3px #000000;
 }
 
 .buttons button.active,
@@ -42,6 +43,7 @@
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 5px -3px #000000;
+
 }
 
 .card-content {

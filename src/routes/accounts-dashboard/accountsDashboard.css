@@ -1,16 +1,19 @@
 .accounts-dashboard {
     display: flex;
     flex-direction: column;
-    gap: 8rem;
-    padding: 3rem;
+    gap: 5rem;
     position: relative;
+}
+
+.acc-header {
+    font-size: 25px;
 }
 
 .close-modal {
     position: absolute;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     right: 5%;
-    top: 2%;
+    top: 3%;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -21,11 +24,9 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    padding: 3rem;
 }
 
-.accounts-and-cards h2 {
-    font-size: 2.5rem;
-}
 
 .accounts {
     display: flex;
@@ -93,11 +94,9 @@
     display: flex;
     flex-direction: column;
     gap: 8rem;
+    padding: 3rem;
 }
 
-.accounts-categories h2 {
-    font-size: 2.5rem;
-}
 
 .empty-category {
     background-color: var(--primary-bg);
@@ -154,27 +153,37 @@
 }
 
 .add-card-modal {
-    position: absolute;
+    position: fixed;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-left: -15px;
+    z-index: 1000;
 }
 
 .add-card-popup {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    top: 20%;
-    padding: 2rem;
+    padding: 40px;
     height: max-content;
+    max-height: 100%;
+    border-radius: 10px;
     width: 35rem;
+    max-width: 100%;
+    align-items: center;
     background-color: var(--primary-bg);
+    margin-left: -250px;
+    overflow: auto;
+}
+
+.add-card-popup::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
 
 .add-card-popup h2 {
@@ -386,27 +395,37 @@
 }
 
 .add-category-modal {
-    position: absolute;
+    position: fixed;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-left: -15px;
+    z-index: 1000;
 }
 
 .add-category-popup {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    top: 20%;
-    padding: 2rem;
+    padding: 40px;
     height: max-content;
+    max-height: 100%;
+    border-radius: 10px;
     width: 35rem;
+    max-width: 100%;
+    align-items: center;
     background-color: var(--primary-bg);
+    margin-left: -250px;
+    overflow: auto;
+}
+
+.add-category-popup::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
 
 .add-category-popup h2 {
@@ -456,29 +475,28 @@
     height: 100%;
 }
 
-.view-category-modal {
-    position: absolute;
+.view-category-popup {
+    position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    padding: 40px;
+    gap: 2rem;
+    border-radius: 10px;
+    padding: 40px;
+    height: max-content;
+    max-height: 100%;
+    width: 35rem;
+    max-width: 100%;
+    background-color: var(--primary-bg);
+    margin-left: -250px;
+    overflow: auto;
 }
 
-.view-category-popup {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    top: 20%;
-    padding: 2rem;
-    height: max-content;
-    width: 35rem;
-    background-color: var(--primary-bg);
+.view-category-popup:-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
+
 
 .view-category-popup h2 {
     font-weight: 400;
@@ -542,6 +560,20 @@
 }
 
 @media screen and (max-width: 700px) {
+
+    .add-category-popup,
+    .add-card-popup,
+    .view-category-popup {
+        margin-left: 0;
+    }
+
+    .add-card-popup form {
+        width: 100%;
+    }
+
+    .add-card-color {
+        margin: 5px;
+    }
 
     .accounts,
     .accounts-and-cards {

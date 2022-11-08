@@ -43,7 +43,7 @@ const AddCategoryModal = (props) => {
     return (
         <article className="add-category-modal">
             <section className="add-category-popup">
-                <button onClick={props.closeModal} className="close-modal">&times;</button>
+                <button onClick={props.closeModal} className="close-modal">&#10005;</button>
                 <h2>New category</h2>
                 {successMessage ? <div>{successMessage}</div> :
                     <form onSubmit={addCategory}>

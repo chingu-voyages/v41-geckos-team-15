@@ -87,7 +87,7 @@ const Register = (props) => {
             }
         }
         users.push(newUser)
-        localStorage.setItem('token-info', JSON.stringify(username));
+        localStorage.setItem('user', JSON.stringify(username));
         props.closeSignup()
         props.onRegister(username)
         navigate('/dashboard')
