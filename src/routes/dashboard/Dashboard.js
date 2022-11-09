@@ -10,12 +10,13 @@ import "./dashboard.css";
 import incomes from "../../data/Incomes";
 import expenses from "../../data/Expenses";
 import categories from "../../data/Categories";
+import bankAccounts from "../../data/Accounts";
 import { useState, useEffect } from "react";
 
 
 const Dashboard = (props) => {
-    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
-    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
+    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
     const [submit, setSubmit] = useState(false);
     const [formError, setFormError] = useState({});
     const [editFormError, setEditFormError] = useState({});
@@ -81,9 +82,9 @@ const Dashboard = (props) => {
     const toggleExistingRecords = () => {
         setExistingExpenseIncome(true);
     }
-    const getRecordInfo = ({ id, type, name, category, amount, currency, date, note }) => {
+    const getRecordInfo = ({ id, type, name, category, paymentMethod, amount, currency, date, note }) => {
         identifyRecord(id, type);
-        setRecordInfo({ id: id, type: type, name: name, category: category, amount: amount, currency: currency, date: date, note: note });
+        setRecordInfo({ id: id, type: type, name: name, category: category, paymentMethod: paymentMethod, amount: amount, currency: currency, date: date, note: note });
     }
 
 
@@ -108,8 +109,9 @@ const Dashboard = (props) => {
             return false;
 
         incomes.push(formValue);
+        updateBankBalance(formValue, "add")
         setSubmit(true);
-        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
     }
 
     const addExpense = (e) => {
@@ -118,16 +120,17 @@ const Dashboard = (props) => {
             return false;
 
         expenses.push(formValue);
+        updateBankBalance(formValue, "substract")
         setSubmit(true);
-        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", created: '', note: '' });
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
 
     }
 
 
     const resetForm = () => {
         setSubmit(false);
-        setFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
-        setEditFormValue({ id: "", type: '', name: '', amount: '', category: "", created: '', note: '' });
+        setFormValue({ id: "", type: '', name: '', amount: '', category: "", paymentMethod: '', created: '', note: '' });
+        setEditFormValue({ id: "", type: '', name: '', amount: '', category: "", paymentMethod: '', created: '', note: '' });
         setFormError({});
     }
     const validateForm = (value) => {
@@ -169,10 +172,11 @@ const Dashboard = (props) => {
     }
     const deleteExistingRecord = () => {
         if (targetRecordType === 'expense') {
+            updateBankBalance(recordInfo, "add")
             expenses.splice(targetRecordIndex, 1);
-
         }
         if (targetRecordType === 'income') {
+            updateBankBalance(recordInfo, "substract")
             incomes.splice(targetRecordIndex, 1);
         }
         resetForm();
@@ -194,6 +198,7 @@ const Dashboard = (props) => {
                         expense.name = editFormValue.name;
                     }
                     if (editFormValue.amount.length > 0 && !isNaN(editFormValue.amount)) {
+                        updateBankBalance(expense, "edit");
                         expense.amount = editFormValue.amount;
                     }
                     if (editFormValue.category.length > 0 && expense.category !== editFormValue.category) {
@@ -214,6 +219,7 @@ const Dashboard = (props) => {
                         income.name = editFormValue.name;
                     }
                     if (editFormValue.amount.length > 0 && !isNaN(editFormValue.amount)) {
+                        updateBankBalance(income, "edit");
                         income.amount = editFormValue.amount;
                     }
                     if (editFormValue.category.length > 0 && income.category !== editFormValue.category) {
@@ -228,6 +234,33 @@ const Dashboard = (props) => {
             })
         }
 
+    }
+
+    //Update Bank Account Balance when add new transaction, edit them or delete them.
+    const updateBankBalance = (transaction, action) => {
+        const card = bankAccounts.find(b => b.name === transaction.paymentMethod)
+        if (card) {
+            if (action === "add") {
+                card.currentBalance = Number(card.currentBalance) + Number(transaction.amount)
+            }
+            if (action === "substract") {
+                card.currentBalance = Number(card.currentBalance) - Number(transaction.amount)
+            }
+            if (action === "edit") {
+                if (transaction.type === "expense") {
+                    (Number(transaction.amount < editFormValue.amount)) ?
+                        card.currentBalance = Number(card.currentBalance) - Number(editFormValue.amount - transaction.amount)
+                        :
+                        card.currentBalance = Number(card.currentBalance) + Number(transaction.amount - editFormValue.amount)
+                }
+                if (transaction.type === "income") {
+                    (Number(transaction.amount < editFormValue.amount)) ?
+                        card.currentBalance = Number(card.currentBalance) + Number(editFormValue.amount - transaction.amount)
+                        :
+                        card.currentBalance = Number(card.currentBalance) - Number(transaction.amount - editFormValue.amount)
+                }
+            }
+        }
     }
 
     const validateEditForm = (value) => {
