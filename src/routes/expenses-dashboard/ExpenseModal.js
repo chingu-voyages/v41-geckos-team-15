@@ -23,7 +23,7 @@ const ExpenseModal = (props) => {
                             <option defaultChecked>Select category</option>
                             {categories.map((category) => <option key={category.id} >{category.name}</option>)}
                         </select>
-                        <select onChange={props.handleValidation} value={props.formValue.paymentMethod} name="paymentMethod">
+                        <select onChange={props.handleValidation} value={props.formValue.bankAccount} name="bankAccount">
                             <option defaultChecked>Select bank account</option>
                             {bankAccounts.map((account, index) => <option key={index} >{account.name}</option>)}
                         </select>
