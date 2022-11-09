@@ -272,7 +272,7 @@ table.greyGridTable thead th {
     overflow: auto;
 }
 
-.add-expense-popup::-webkit-scrollbar {
+.add-income-popup::-webkit-scrollbar {
     width: 0;
     background: transparent;
 }

@@ -13,6 +13,7 @@ const ExpensesTable = (props) => {
                                 <th scope="col">Category</th>
                                 <th scope="col">Created</th>
                                 <th scope="col">Amount</th>
+                                <th scope="col">Account</th>
                                 <th scope="col">More</th>
                             </tr>
                         </thead>
@@ -23,6 +24,7 @@ const ExpensesTable = (props) => {
                                     <td data-label="Category">{expense.category}</td>
                                     <td data-label="Created">{expense.created}</td>
                                     <td data-label="Amount" className="expense-amount">-{expense.amount}{expense.currency}</td>
+                                    <td data-label="Account">{expense.paymentMethod}</td>
                                     <td data-label="More" onClick={() => {
                                         props.toggleExistingRecords();
                                         props.getRecordInfo(expense);

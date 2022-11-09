@@ -2,6 +2,7 @@
 import CloseExpenseModal from "./CloseExpenseModal";
 import categories from '../../data/Categories.js';
 import { useEffect } from 'react';
+import bankAccounts from "../../data/Accounts";
 
 const IncomeModal = (props) => {
     useEffect(() => {
@@ -23,6 +24,11 @@ const IncomeModal = (props) => {
                             {categories.map((category) => <option key={category.id} >{category.name}</option>)}
                         </select>
                         {props.formError.category ? <span className="modal-input-err">{props.formError.category}</span> : null}
+                        <select onChange={props.handleValidation} value={props.formValue.paymentMethod} name="paymentMethod">
+                            <option defaultChecked>Select bank account</option>
+                            {bankAccounts.map((account, index) => <option key={index} >{account.name}</option>)}
+                        </select>
+                        {props.formError.bankAccount ? <span className="modal-input-err">{props.formError.bankAccount}</span> : null}
                         <input onChange={props.handleValidation} value={props.formValue.created} name="created" type="date" id="date" />
                         {props.formError.created ? <span className="modal-input-err">{props.formError.created}</span> : null}
                         <textarea onChange={props.handleValidation} value={props.formValue.note} name="note" type="textarea" placeholder="Note" rows="5" />

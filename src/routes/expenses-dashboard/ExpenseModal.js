@@ -2,6 +2,7 @@
 import CloseExpenseModal from "./CloseExpenseModal";
 import categories from '../../data/Categories.js'
 import { useEffect } from 'react';
+import bankAccounts from "../../data/Accounts";
 
 const ExpenseModal = (props) => {
     useEffect(() => {
@@ -21,6 +22,10 @@ const ExpenseModal = (props) => {
                         <select onChange={props.handleValidation} value={props.formValue.category} name="category">
                             <option defaultChecked>Select category</option>
                             {categories.map((category) => <option key={category.id} >{category.name}</option>)}
+                        </select>
+                        <select onChange={props.handleValidation} value={props.formValue.paymentMethod} name="paymentMethod">
+                            <option defaultChecked>Select bank account</option>
+                            {bankAccounts.map((account, index) => <option key={index} >{account.name}</option>)}
                         </select>
                         {props.formError.category ? <span className="modal-input-err">{props.formError.category}</span> : null}
                         <input onChange={props.handleValidation} value={props.formValue.created} name="created" type="date" id="date" />
