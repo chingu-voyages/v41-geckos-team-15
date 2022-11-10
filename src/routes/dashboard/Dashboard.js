@@ -15,8 +15,8 @@ import { useState, useEffect } from "react";
 
 
 const Dashboard = (props) => {
-    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
-    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
+    const [formValue, setFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", bankAccount: '', created: '', note: '' });
+    const [editFormValue, setEditFormValue] = useState({ id: "", type: '', name: '', amount: '', currency: "$", category: "", bankAccount: '', created: '', note: '' });
     const [submit, setSubmit] = useState(false);
     const [formError, setFormError] = useState({});
     const [editFormError, setEditFormError] = useState({});
@@ -82,9 +82,9 @@ const Dashboard = (props) => {
     const toggleExistingRecords = () => {
         setExistingExpenseIncome(true);
     }
-    const getRecordInfo = ({ id, type, name, category, paymentMethod, amount, currency, date, note }) => {
+    const getRecordInfo = ({ id, type, name, category, bankAccount, amount, currency, date, note }) => {
         identifyRecord(id, type);
-        setRecordInfo({ id: id, type: type, name: name, category: category, paymentMethod: paymentMethod, amount: amount, currency: currency, date: date, note: note });
+        setRecordInfo({ id: id, type: type, name: name, category: category, bankAccount: bankAccount, amount: amount, currency: currency, date: date, note: note });
     }
 
 
@@ -111,7 +111,7 @@ const Dashboard = (props) => {
         incomes.push(formValue);
         updateBankBalance(formValue, "add")
         setSubmit(true);
-        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", bankAccount: '', created: '', note: '' });
     }
 
     const addExpense = (e) => {
@@ -122,15 +122,15 @@ const Dashboard = (props) => {
         expenses.push(formValue);
         updateBankBalance(formValue, "substract")
         setSubmit(true);
-        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", paymentMethod: '', created: '', note: '' });
+        setFormValue({ id: "", type: '', name: '', amount: '', currency: "$", category: "", bankAccount: '', created: '', note: '' });
 
     }
 
 
     const resetForm = () => {
         setSubmit(false);
-        setFormValue({ id: "", type: '', name: '', amount: '', category: "", paymentMethod: '', created: '', note: '' });
-        setEditFormValue({ id: "", type: '', name: '', amount: '', category: "", paymentMethod: '', created: '', note: '' });
+        setFormValue({ id: "", type: '', name: '', amount: '', category: "", bankAccount: '', created: '', note: '' });
+        setEditFormValue({ id: "", type: '', name: '', amount: '', category: "", bankAccount: '', created: '', note: '' });
         setFormError({});
     }
     const validateForm = (value) => {
@@ -238,7 +238,7 @@ const Dashboard = (props) => {
 
     //Update Bank Account Balance when add new transaction, edit them or delete them.
     const updateBankBalance = (transaction, action) => {
-        const card = bankAccounts.find(b => b.name === transaction.paymentMethod)
+        const card = bankAccounts.find(b => b.name === transaction.bankAccount)
         if (card) {
             if (action === "add") {
                 card.currentBalance = Number(card.currentBalance) + Number(transaction.amount)

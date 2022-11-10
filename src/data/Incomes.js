@@ -12,6 +12,7 @@ const incomes = [
         amount: (5000).toFixed(2),
         currency: "$",
         cover: Investments,
+        bankAccount: "Card"
     },
     {
         id: 2, type: 'income',
@@ -21,6 +22,7 @@ const incomes = [
         amount: (200).toFixed(2),
         currency: "$",
         cover: Savings,
+        bankAccount: "Savings"
     },
     {
 
@@ -31,6 +33,8 @@ const incomes = [
         amount: (5000).toFixed(2),
         currency: "$",
         cover: Investments,
+        bankAccount: "Card"
+
     },
 
     {
@@ -42,6 +46,7 @@ const incomes = [
         amount: (500).toFixed(2),
         currency: "$",
         cover: Investments,
+        bankAccount: "Card"
     },
     {
         id: 5, type: 'income',
@@ -51,6 +56,7 @@ const incomes = [
         amount: (200).toFixed(2),
         currency: "$",
         cover: Investments,
+        bankAccount: "Card"
     },
 
     {
@@ -61,6 +67,7 @@ const incomes = [
         amount: (200).toFixed(2),
         currency: "$",
         cover: Investments,
+        bankAccount: "Card"
     },
     {
         id: 7, type: 'income',
@@ -69,7 +76,7 @@ const incomes = [
         created: "2022-08-16",
         amount: (5000).toFixed(2),
         currency: "$",
-        cover: Investments,
+        cover: Investments, bankAccount: "Card"
     },
     {
 
@@ -79,7 +86,7 @@ const incomes = [
         created: "2022-08-21",
         amount: (350).toFixed(2),
         currency: "$",
-        cover: Savings,
+        cover: Savings, bankAccount: "Savings"
     },
     {
         id: 9, type: 'income',
@@ -88,7 +95,7 @@ const incomes = [
         created: "2022-08-29",
         amount: (150).toFixed(2),
         currency: "$",
-        cover: Services,
+        cover: Services, bankAccount: "Card"
     },
     {
         id: 10, type: 'income',
@@ -97,7 +104,7 @@ const incomes = [
         created: "2022-09-16",
         amount: (5000).toFixed(2),
         currency: "$",
-        cover: Investments,
+        cover: Investments, bankAccount: "Card"
     },
     {
         id: 11, type: 'income',
@@ -106,7 +113,7 @@ const incomes = [
         created: "2022-09-30",
         amount: (200).toFixed(2),
         currency: "$",
-        cover: Investments,
+        cover: Investments, bankAccount: "Card"
     },
     {
         id: 12, type: 'income',
@@ -115,7 +122,7 @@ const incomes = [
         created: "2022-10-02",
         amount: (200).toFixed(2),
         currency: "$",
-        cover: Investments,
+        cover: Investments, bankAccount: "Card"
     },
     {
         id: 13, type: 'income',
@@ -124,7 +131,7 @@ const incomes = [
         created: "2022-10-16",
         amount: (5000).toFixed(2),
         currency: "$",
-        cover: Savings,
+        cover: Savings, bankAccount: "Card"
     },
     {
         id: 14, type: 'income',
@@ -133,7 +140,7 @@ const incomes = [
         created: "2022-10-29",
         amount: (150).toFixed(2),
         currency: "$",
-        cover: Savings,
+        cover: Savings, bankAccount: "Savings"
     },
     {
         id: 15, type: 'income',
@@ -142,7 +149,7 @@ const incomes = [
         created: "2022-11-11",
         amount: (300).toFixed(2),
         currency: "$",
-        cover: Investments,
+        cover: Investments, bankAccount: "Card"
     },
     {
         id: 16, type: 'income',
@@ -151,7 +158,7 @@ const incomes = [
         created: "2022-11-16",
         amount: (5000).toFixed(2),
         currency: "$",
-        cover: Savings,
+        cover: Savings, bankAccount: "Card"
     },
     {
         id: 17, type: 'income',
@@ -160,7 +167,7 @@ const incomes = [
         created: "2022-11-31",
         amount: (100).toFixed(2),
         currency: "$",
-        cover: Savings,
+        cover: Savings, bankAccount: "Savings"
     },
     {
         id: 18, type: 'income',
@@ -169,7 +176,7 @@ const incomes = [
         created: "2022-12-02",
         amount: (200).toFixed(2),
         currency: "$",
-        cover: Investments,
+        cover: Investments, bankAccount: "Card"
     }, {
         id: 19,
         type: 'income',
@@ -178,7 +185,7 @@ const incomes = [
         created: "2022-12-16",
         amount: (5000).toFixed(2),
         currency: "$",
-        cover: Investments,
+        cover: Investments, bankAccount: "Card"
     },
     {
         id: 20, type: 'income',
@@ -187,7 +194,7 @@ const incomes = [
         created: "2022-11-31",
         amount: (100).toFixed(2),
         currency: "$",
-        cover: Savings,
+        cover: Savings, bankAccount: "Savings"
     },
 
 ]

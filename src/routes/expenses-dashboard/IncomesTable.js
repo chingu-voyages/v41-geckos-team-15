@@ -24,7 +24,7 @@ const IncomesTable = (props) => {
                                     <td data-label="Category">{income.category}</td>
                                     <td data-label="Created">{income.created}</td>
                                     <td data-label="Amount" className="income-amount">{income.amount}{income.currency}</td>
-                                    <td data-label="Account">{income.paymentMethod}</td>
+                                    <td data-label="Account">{income.bankAccount}</td>
                                     <td data-label="More" onClick={() => {
                                         props.toggleExistingRecords();
                                         props.getRecordInfo(income);
