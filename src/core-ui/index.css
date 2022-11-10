@@ -8,6 +8,7 @@
   --primary-input-bg: #c0cfe7;
   --primary-black: #000000;
   --hover-transition: all ease-in-out 0.3s;
+  --default-card-color: #a69305;
 }
 
 body {

@@ -27,66 +27,11 @@
     padding: 3rem;
 }
 
-
 .accounts {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
-.account-card {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 22rem;
-    height: 12rem;
-    opacity: 0.8;
-    box-shadow: 0px 0px 5px -3px #000000;
-    position: relative;
-}
-
-.empty-card {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 22rem;
-    height: 12rem;
-    background-color: var(--primary-bg);
-    box-shadow: 0px 0px 5px -3px #000000;
-    border-style: dashed;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.empty-card img {
-    width: 2.5rem;
-}
-
-.account-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.account-header section {
-    display: flex;
-    flex-direction: row;
     gap: 1rem;
-}
-
-.account-header img {
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-}
-
-.account-current-balance {
-    font-size: 1.3rem;
-    position: absolute;
-    top: 50%;
-    left: 30%;
+    flex-wrap: wrap;
 }
 
 /* ! Categories */
@@ -96,7 +41,6 @@
     gap: 8rem;
     padding: 3rem;
 }
-
 
 .empty-category {
     background-color: var(--primary-bg);
@@ -209,12 +153,12 @@
     gap: 1.5rem;
 }
 
-.form-inner>input {
+.form-inner > input {
     background-color: var(--primary-input-bg);
     border: 1px solid var(--primary-input-bg);
     border-radius: 5px;
     padding: 0.4rem 0.5rem;
-    width: max-content;
+    width: 70%;
 }
 
 .form-inner input::placeholder {
@@ -236,7 +180,7 @@
     width: max-content;
 }
 
-.add-card-popup form>section select {
+.add-card-popup form > section select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -247,7 +191,7 @@
     padding: 0.4rem 0.5rem;
 }
 
-.add-card-popup form>section select::-ms-expand {
+.add-card-popup form > section select::-ms-expand {
     display: none;
 }
 
@@ -281,7 +225,7 @@
     display: none;
 }
 
-.sb-checkbox__input:checked+.sb-checkbox__label:after {
+.sb-checkbox__input:checked + .sb-checkbox__label:after {
     opacity: 1;
 }
 
@@ -497,7 +441,6 @@
     background: transparent;
 }
 
-
 .view-category-popup h2 {
     font-weight: 400;
 }
@@ -518,9 +461,173 @@
     width: max-content;
 }
 
+/* ! Bank Cards */
+.empty-card {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 15px;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+    background-image: linear-gradient(to right, #111, #555);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.empty-card img {
+    width: 65px;
+}
+.card {
+    width: 350px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+}
+.front {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 15px;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+    background-image: linear-gradient(to right, #111, #555);
+    overflow: hidden;
+}
+.front {
+    transform: translateZ(0);
+}
+.strip-bottom,
+.strip-top {
+    position: absolute;
+    right: 0;
+    height: inherit;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+}
+.strip-bottom {
+    width: 200px;
+    transform: skewX(-15deg) translateX(50px);
+}
+.strip-top {
+    width: 180px;
+    transform: skewX(20deg) translateX(50px);
+}
+.add-card-logo {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width: 2rem;
+    cursor: pointer;
+}
+.investor {
+    position: relative;
+    top: 30px;
+    left: 25px;
+    text-transform: uppercase;
+}
+.chip {
+    position: relative;
+    top: 60px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+    overflow: hidden;
+}
+.chip .chip-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+}
+.chip .chip-line:nth-child(1) {
+    top: 13px;
+}
+.chip .chip-line:nth-child(2) {
+    top: 20px;
+}
+.chip .chip-line:nth-child(3) {
+    top: 28px;
+}
+.chip .chip-line:nth-child(4) {
+    left: 25px;
+    width: 1px;
+    height: 50px;
+}
+.chip .chip-main {
+    width: 20px;
+    height: 25px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom left, #efdbab, #e1cb94);
+    z-index: 1;
+}
+.wave {
+    position: relative;
+    top: 20px;
+    left: 100px;
+}
+.card-number {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 25px 15px;
+    font-size: 23px;
+}
+.card-number section {
+    position: relative;
+    letter-spacing: 2.5rem;
+}
+.end {
+    margin-left: 25px;
+    text-transform: uppercase;
+}
+.card-holder {
+    margin: 10px 25px;
+    text-transform: uppercase;
+}
+.master {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+}
+.master .circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.master .master-red {
+    background-color: #eb001b;
+}
+.master .master-yellow {
+    margin-left: -10px;
+    background-color: rgba(255, 209, 0, 0.6);
+}
+.add-card-logo {
+    background: none;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+
 /* ! Hover Effects */
 
-.account-card,
+.card,
 .categories-card,
 .add-card-popup form button,
 .add-category-popup form button,
@@ -530,8 +637,7 @@
 }
 
 @media (hover: hover) {
-
-    .account-card:hover,
+    .card:hover,
     .categories-card:hover,
     .add-card-popup form button:hover,
     .add-category-popup form button:hover,
@@ -540,7 +646,7 @@
         transition: var(--hover-transition);
     }
 
-    .account-card:hover,
+    .card:hover,
     .categories-card:hover {
         box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
         -webkit-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
@@ -560,7 +666,6 @@
 }
 
 @media screen and (max-width: 700px) {
-
     .add-category-popup,
     .add-card-popup,
     .view-category-popup {

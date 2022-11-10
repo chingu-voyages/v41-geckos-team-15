@@ -6,7 +6,7 @@ import ExistingCategoryModal from "./ExistingCategoryModal";
 import BankAccounts from "./BankAccounts";
 import AccountsCategories from "./AccountsCategories";
 
-const AccountsDashboard = () => {
+const AccountsDashboard = ({ user }) => {
     const [toggleAddToCard, setToggleAddToCard] = useState(false);
     const [toggleAddCategory, setToggleAddCategory] = useState(false);
     const [toggleExistingCategory, setExistingCategory] = useState(false);
@@ -31,7 +31,7 @@ const AccountsDashboard = () => {
     }
     return (
         <main className="accounts-dashboard" >
-            <BankAccounts toggleCardModal={toggleCardModal} />
+            <BankAccounts toggleCardModal={toggleCardModal} user={user} />
             <AccountsCategories toggleCategoryModal={toggleCategoryModal} toggleExistingCategoryModal={toggleExistingCategoryModal} />
             {toggleAddToCard ?
                 <AddCardModal closeModal={closeModal} cardInfo={cardInfo} /> : null}

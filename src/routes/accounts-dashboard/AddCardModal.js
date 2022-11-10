@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const AddCardModal = (props) => {
 
-    let account = { id: accounts.length + 1, name: '', currentBalance: '', currency: "$", color: "" }
+    let account = { id: accounts.length + 1, name: '', currentBalance: '', currency: "$", color: "", expiration: "", cardNum: "" }
     if (props.cardInfo) { account = props.cardInfo }
 
     const [formValue, setFormValue] = useState(account);
@@ -24,12 +24,13 @@ const AddCardModal = (props) => {
             return false;
 
         accounts.push(formValue);
-        setFormValue({ id: "", name: '', currentBalance: '', currency: "$", color: "" })
+        setFormValue({ id: "", name: '', currentBalance: '', currency: "$", color: "", expiration: "", cardNum: "" })
         setSuccessMessage("Added Card Successfuly!")
         setTimeout(() => {
             setSuccessMessage("")
             props.closeModal();
         }, 1000);
+        console.log(accounts)
     }
 
     //Edit Card
@@ -67,10 +68,6 @@ const AddCardModal = (props) => {
             errors.name = "Please enter name";
             isValid = false;
         }
-        if (!value.currentBalance) {
-            errors.currentBalance = "Please enter current balance";
-            isValid = false;
-        }
         else if (isNaN(value.currentBalance)) {
             errors.currentBalance = "Please enter a valid amount in numbers";
             isValid = false;
@@ -95,6 +92,17 @@ const AddCardModal = (props) => {
                                 value={formValue.name}
                                 onChange={handleValidation} />
                             {formError.name ? <span className="modal-input-err">{formError.name}</span> : null}
+                            <input type="text"
+                                name="cardNum"
+                                placeholder="Account number (optional)"
+                                value={formValue.cardNum}
+                                onChange={handleValidation} />
+                            <input
+                                name="expiration"
+                                type="text"
+                                placeholder="Expiration date (optional)"
+                                value={formValue.expiration}
+                                onChange={handleValidation} />
                             <section className="card-cover">
                                 <input
                                     className="add-card-amount"
@@ -117,9 +125,9 @@ const AddCardModal = (props) => {
                                 <h4>Color:</h4>
                                 {cardColors.map((c, index) => {
                                     return (
-                                        <section class="add-card-color">
-                                            <input type="radio" class="sb-checkbox__input" id={index} name="color" value={Object.values(c)} onChange={handleValidation} />
-                                            <label class={`sb-checkbox__label sb-checkbox__label--${Object.keys(c)}`} htmlFor={index}></label>
+                                        <section className="add-card-color" key={index}>
+                                            <input type="radio" className="sb-checkbox__input" id={index} name="color" value={Object.values(c)} onChange={handleValidation} />
+                                            <label className={`sb-checkbox__label sb-checkbox__label--${Object.keys(c)}`} htmlFor={index}></label>
                                         </section>)
                                 })}
                             </section>
