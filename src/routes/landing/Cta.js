@@ -15,7 +15,7 @@ const Cta = ({ openSignup }) => {
                 <p>
                     Our lifetime memebership gives you an all-access pass to almost all the features we have to offer. You change your plan and expand possibilities even further
                 </p>
-                <button type='button' onClick={openSignup}>Get started</button>
+                <button type='button' className='basic-button' onClick={openSignup}>Get started</button>
             </section>
             <section className='partners'>
                 <img src={Partner1} alt='Expenseless partner' />

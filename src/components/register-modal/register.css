@@ -21,7 +21,8 @@
 
 .modal__box {
     position: relative;
-    max-width: 400px;
+    width: 400px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     margin: 0 10%;
@@ -45,7 +46,7 @@
 .modal__content {
     font-size: 16px;
     margin: 10px auto;
-    max-width: 400px;
+    width: 90%;
     padding: 20px 12px 10px 20px;
 }
 
@@ -59,14 +60,9 @@
 }
 
 .modal__content .submit-btn {
-    border-radius: 5px;
-    border: 1px solid var(--primary-font);
-    padding: 0.5rem 1rem;
-    cursor: pointer;
     background-color: var(--primary-font);
     color: var(--primary-bg);
     width: 100%;
-    margin: 10px 0 10px 0;
 }
 
 .modal__close button {
@@ -78,19 +74,11 @@
     border: none;
     opacity: 0.8;
     cursor: pointer;
-    transition: var(--hover-transition);
-}
-
-.modal__close:hover {
-    transition: var(--hover-transition);
-    font-weight: 800;
 }
 
 .login-btn {
     border: none;
     background-color: inherit;
-    font-size: 16px;
-    cursor: pointer;
     display: inline-block;
 }
 
@@ -98,7 +86,37 @@
     color: red;
     font-size: 14px;
 }
+.have-account {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+/* ! Hover Effects */
+.modal__close,
+.login-btn,
+.modal__content .submit-btn {
+    transition: var(--hover-transition);
+}
 
+@media (hover: hover) {
+    .modal__close:hover {
+        font-weight: 800;
+    }
+    .login-btn :hover,
+    .modal__content .submit-btn:hover,
+    .modal__close:hover {
+        transition: var(--hover-transition);
+    }
+    .login-btn:hover {
+        background-color: var(--primary-font);
+        color: var(--primary-bg);
+    }
+    .modal__content .submit-btn:hover {
+        background-color: var(--primary-bg);
+        color: var(--primary-font);
+    }
+}
 @media screen and (min-width: 800px) {
     .modal__box {
         max-width: 600px;

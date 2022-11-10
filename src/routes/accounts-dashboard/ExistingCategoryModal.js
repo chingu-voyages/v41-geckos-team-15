@@ -65,8 +65,8 @@ const ExistingCategoryModal = (props) => {
                                     onChange={handleValidation} />
                             </section>
                             <section className="view-category-buttons">
-                                <button>Update</button>
-                                <button onClick={props.closeModal}>Cancel</button>
+                                <button className="dash-button">Update</button>
+                                <button  className="dash-button" onClick={props.closeModal}>Cancel</button>
                             </section>
                         </form>}
                 </section>
@@ -83,8 +83,8 @@ const ExistingCategoryModal = (props) => {
                                 <p>{props.categoryInfo.description}</p>
                             </section>
                             <section className="view-category-buttons">
-                                <button onClick={() => setEditFrom(true)}>Edit</button>
-                                <button onClick={deleteCategory}>Delete</button>
+                                <button  className="dash-button" onClick={() => setEditFrom(true)}>Edit</button>
+                                <button className="dash-button"  onClick={deleteCategory}>Delete</button>
                             </section>
                         </>
                     }

@@ -15,12 +15,12 @@ const Register = (props) => {
         let isValid = true
 
         if (!username) {
-            validations.username = 'username is required'
+            validations.username = 'Username is required'
             isValid = false
         }
 
         if (username && username.length < 3) {
-            validations.username = 'username must be at least 3 characters'
+            validations.username = 'Username must be at least 3 characters'
             isValid = false
         }
         const isUsernameExist = users.find(
@@ -137,10 +137,10 @@ const Register = (props) => {
                             onChange={handleChange}
                         />
                         <div className="error-msg">{passwordVal}</div>
-                        <button className="submit-btn" type="submit">Sign up</button>
+                        <button className="submit-btn basic-button" type="submit">Sign up</button>
                     </form>
-                    <div>Already have an account?
-                        <button className="login-btn"
+                    <div className="have-account">Already have an account?
+                        <button className="login-btn basic-button"
                             onClick={() => { props.closeSignup(); props.openLogin() }}>
                             Log in</button></div>
                 </div>

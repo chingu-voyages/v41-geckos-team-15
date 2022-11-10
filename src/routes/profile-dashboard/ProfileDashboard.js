@@ -134,13 +134,13 @@ const ProfileDashboard = (props) => {
                     </ul>
                     {editModeEnabled ?
                         <section className='profile-buttons'>
-                            <button onClick={updateProfile}>Save</button>
-                            <button onClick={cancelUpdate}>Cancel</button>
+                            <button className='dash-button' onClick={updateProfile}>Save</button>
+                            <button className='dash-button' onClick={cancelUpdate}>Cancel</button>
                         </section>
                         :
                         <section className='profile-buttons'>
-                            <button onClick={() => setEditModeEnabled(true)}>Edit</button>
-                            <button className='deactivate-btn' onClick={deactivate}>Deactivate account</button>
+                            <button className='dash-button' onClick={() => setEditModeEnabled(true)}>Edit</button>
+                            <button className='deactivate-btn dash-button' onClick={deactivate}>Deactivate account</button>
                         </section>
                     }
                 </form>

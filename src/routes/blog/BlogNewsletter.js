@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import ScrollToTop from '../../helpers/ScrollToTop';
 
 const BlogNewsletter = () => {
     const [inputValue, setInputValue] = useState('');
@@ -31,7 +32,7 @@ const BlogNewsletter = () => {
                     {invalidInput ? <p className='blog-input-error'>Please enter a valid email</p> : null}
                     <button type='submit'>Subscribe</button>
                 </section>
-                <span>By clicking Sign Up you're confirming that you agree with our  <Link to='/terms'>Terms and Conditions.</Link></span>
+                <span>By clicking subscribe you're confirming that you agree with our  <Link to='/terms' onClick={ScrollToTop}>Terms and Conditions.</Link></span>
             </form>
 
         </article>

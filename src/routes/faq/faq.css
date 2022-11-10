@@ -30,29 +30,27 @@ table.faqsQuestions tr td:first-child {
 }
 
 .CTA-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     margin: 60px;
     width: 50%;
 }
 
 .CTA-content a {
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     color: var(--primary-bg);
-    cursor: pointer;
-    transition: var(--hover-transition);
-}
-
-.CTA-button {
-    margin: 30px auto;
+    width: max-content;
 }
 
 .faqs-pic {
     margin: 0 auto;
     width: 80%;
 }
-
+/* ! Hover Effects */
+.CTA-content a {
+    transition: var(--hover-transition);
+}
 @media (hover: hover) {
     .CTA-content a:hover {
         transition: var(--hover-transition);

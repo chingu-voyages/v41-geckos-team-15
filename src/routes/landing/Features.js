@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import ScrollToTop from '../../helpers/ScrollToTop';
 const Features = () => {
     return (
         <article className='features'>
@@ -10,7 +10,7 @@ const Features = () => {
                         What <span className='highlight-title'>Expenseless</span> brings to the table
                     </h2>
                     <p>With our personal finance app you do not need any experience! Just open the app, enter you income and add new expenses on the way! Very simple registration and tons of benefits lifetime!</p>
-                    <Link className='feature-btn' to="./about">Read more &gt;</Link>
+                    <Link className='feature-btn basic-button' to="./about" onClick={ScrollToTop}>Read more &gt;</Link>
                 </section>
                 <section className='features-list'>
                     <section>
