@@ -1,0 +1,33 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin: 0 auto;
+}
+.post-header {
+    background-color: var(--secondary-bg);
+    text-align: center;
+    padding: 4rem 5rem;
+}
+.post-header h2 {
+    font-size: 3rem;
+}
+.post img {
+    object-fit: cover;
+    width: 60%;
+}
+.post-content {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 2.2rem;
+    letter-spacing: 1px;
+}
+.post-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+    font-weight: 500;
+}
