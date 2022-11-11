@@ -17,7 +17,9 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormError(validateForm(formValue))
+        if (!validateForm(formValue))
+            return false;
+
         setSubmit(true);
         setFormValue({ name: '', email: '', message: '' });
     }
@@ -29,21 +31,28 @@ const Contact = () => {
 
     const validateForm = (value) => {
         let errors = {}
+        let isValid = true;
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         if (!value.name) {
             errors.name = "Please enter a valid name"
+            isValid = false;
         }
         if (!value.email) {
             errors.email = "Please enter email"
+            isValid = false;
         }
         else if (!emailRegex.test(value.email)) {
             errors.email = "Please enter valid email"
+            isValid = false;
         }
         if (!value.message) {
             errors.message = "Please enter a valid message"
+            isValid = false;
         }
+        if (!isValid)
+            setFormError(errors);
 
-        return errors;
+        return isValid;
     }
     return (
         <main className="contact">

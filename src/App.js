@@ -15,10 +15,12 @@ import Register from "./components/register-modal/Register";
 import Dashboard from "./routes/dashboard/Dashboard"
 import { useState, useEffect } from "react";
 import SingleBlogPost from "./routes/blog-post/SingleBlogPost";
+import ForgotPassword from "./components/forgot-password/ForgotPasswor";
 
 const App = () => {
   const [isLoginModalOpen, setLoginModal] = useState(false);
   const [isSignupModalOpen, setSignupModal] = useState(false);
+  const [isForgotPasswordOpen, setForgotPassword] = useState(false);
   const [user, setUser] = useState(null);
 
   //Keep user logged in when refreshing the page
@@ -38,16 +40,20 @@ const App = () => {
   }
   const openLogin = () => setLoginModal(true);
   const openSignup = () => setSignupModal(true);
+  const openForgotPassword = () => setForgotPassword(true);
+
   const closeModal = () => {
     setLoginModal(false);
     setSignupModal(false);
+    setForgotPassword(false);
   }
 
   return (
 
     <Router>
-      {isLoginModalOpen && <SignIn onLogin={login} openSignup={openSignup} closeLogin={closeModal} />}
+      {isLoginModalOpen && <SignIn onLogin={login} openSignup={openSignup} closeLogin={closeModal} openForgotPassword={openForgotPassword} />}
       {isSignupModalOpen && <Register onRegister={login} openLogin={openLogin} closeSignup={closeModal} />}
+      {isForgotPasswordOpen && <ForgotPassword closeForgotPassword={closeModal} />}
 
       <LandingNavigation user={user} onLogout={logout} openLogin={openLogin} openSignup={openSignup} />
       <Routes>
@@ -59,7 +65,7 @@ const App = () => {
         <Route path="/pricing" element={<Pricing openSignup={openSignup} />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
-         <Route path="/blog/:id" element={<SingleBlogPost />} />
+        <Route path="/blog/:id" element={<SingleBlogPost />} />
         <Route path="/dashboard/*" element={<Dashboard user={user} onLogout={logout} />} />
       </Routes>
       <LandingFooter openSignup={openSignup} />
