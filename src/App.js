@@ -14,6 +14,7 @@ import SignIn from "./components/sign-in-modal/SignIn";
 import Register from "./components/register-modal/Register";
 import Dashboard from "./routes/dashboard/Dashboard"
 import { useState, useEffect } from "react";
+import SingleBlogPost from "./routes/blog-post/SingleBlogPost";
 import ForgotPassword from "./components/forgot-password/ForgotPasswor";
 
 const App = () => {
@@ -64,6 +65,7 @@ const App = () => {
         <Route path="/pricing" element={<Pricing openSignup={openSignup} />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/blog/:id" element={<SingleBlogPost />} />
         <Route path="/dashboard/*" element={<Dashboard user={user} onLogout={logout} />} />
       </Routes>
       <LandingFooter openSignup={openSignup} />

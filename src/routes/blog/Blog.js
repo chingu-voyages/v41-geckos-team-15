@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import blogPosts from "../../data/BlogPosts";
 import './blog.css';
 import BlogNewsletter from "./BlogNewsletter";
+import ScrollToTop from "../../helpers/ScrollToTop";
 
 const Blog = () => {
     return (
@@ -15,8 +17,10 @@ const Blog = () => {
                     {blogPosts.map(post =>
                         <section className="blog-post" key={post.id}>
                             <img className="blog-cover" src={post.img} alt={post.title} />
+                            <Link to={`${post.title}`} className="link-to-post" onClick={ScrollToTop}>
                             <h3>{post.title}</h3>
                             <p>{post.snippet}</p>
+                            </Link>
                             <section className="blog-info">
                                 <img src={post.authorImg} alt={post.author} />
                                 <section>

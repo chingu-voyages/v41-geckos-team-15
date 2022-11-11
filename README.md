@@ -68,6 +68,6 @@ These are only the pre-existing default accounts; users are also able to create 
 * **routes**: here we have components that represent a separate route/page. Inside of each of them is respective components and CSS
 
 ## Contributors 
-This project was jointly creataed by [@catherineisonline](https://www.github.com/catherineisonline) and [@NawalKH](https://www.github.com/NawalKH)
+This project was jointly created by [@catherineisonline](https://www.github.com/catherineisonline) and [@NawalKH](https://www.github.com/NawalKH)
 
  
