@@ -99,6 +99,7 @@ const PricingComparison = (props) => {
             </table>
             <section className="pricing-responsive">
                 <table className='pricingComparisonResponsive'>
+                <tbody>
                     <tr>
                         <th className='th-1'>
                             <h3>Basic Plan</h3>
@@ -180,8 +181,10 @@ const PricingComparison = (props) => {
                         <td>&nbsp;</td>
 
                     </tr>
+                    </tbody>
                 </table>
                 <table className='pricingComparisonResponsive'>
+                <tbody>
                     <tr>
                         <th className='th-2'>
                             <h3>Business Plan</h3>
@@ -265,6 +268,7 @@ const PricingComparison = (props) => {
 
                         <td>✔️</td>
                     </tr>
+                    </tbody>
                 </table>
             </section>
         </>

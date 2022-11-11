@@ -9,6 +9,7 @@ const FaqsQuestions = () => {
             </div>
 
             <table className='faqsQuestions'>
+            <tbody>
                 <tr>
                     <td>Is this online, or do I download software?</td>
                     <td>Expenseless Online is accessible securely from any web browser or through the mobile app. No download of software is required.</td>
@@ -29,6 +30,7 @@ const FaqsQuestions = () => {
                     <td>Can I add my accountant, bookkeeper, or tax pro?</td>
                     <td>Yes, you can invite an accountant to collaborate with you for free with Expenseless. Once they accept your invitation, they can work in your account. You can delete their access anytime.</td>
                 </tr>
+                </tbody>
             </table>
 
         </div>
