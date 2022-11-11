@@ -58,7 +58,7 @@
     color: red;
 }
 
-.hero-signup button,
+/* .hero-signup button, */
 .hero-signup input {
     border: 1px solid var(--primary-black);
     border-radius: 5px;
@@ -67,9 +67,7 @@
 
 .hero-signup button {
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     color: var(--primary-bg);
-    cursor: pointer;
 }
 
 .hero-signup input {
@@ -103,10 +101,7 @@
 
 .feature-btn {
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     color: var(--primary-bg);
-    border-radius: 5px;
-    padding: 0.3rem 1rem;
     width: max-content;
     font-size: 1rem;
 }
@@ -156,15 +151,9 @@
     width: 8rem;
 }
 
-.cta button {
+.cta-content button {
     color: var(--primary-bg);
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    width: max-content;
-    font-size: 1rem;
-    cursor: pointer;
 }
 
 /* ! App Features */
@@ -374,13 +363,7 @@
 .basic-plan button,
 .business-plan button {
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     color: var(--primary-bg);
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
 }
 
 /* ! Transitions */

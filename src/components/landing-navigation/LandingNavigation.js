@@ -20,7 +20,7 @@ const LandingNavigation = (props) => {
         return (
             <header className={`landing-header${!responsive ? `` : ` is-active`}`}>
                 <Link to="/">
-                    <img className="logo" src={ExpenselessLogo} alt="Expenseless" onClick={toggleMenu} />
+                    <img className="logo" src={ExpenselessLogo} alt="Expenseless" />
                 </Link>
                 <Hamburger responsive={responsive} toggleMenu={toggleMenu} />
                 <section className={`nav-section${!responsive ? `` : ` active-menu`}`}>

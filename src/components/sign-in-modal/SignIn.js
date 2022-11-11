@@ -15,7 +15,7 @@ const SignIn = (props) => {
         let isValid = true
 
         if (!username) {
-            validations.username = 'username is required'
+            validations.username = 'Username is required'
             isValid = false
         }
         if (!password) {
@@ -102,13 +102,15 @@ const SignIn = (props) => {
                             </li>
                         </ul>
                     </form>
-                    <div><Link to="/forgotPassword">forgot your password?</Link></div>
-                    <div>Don't have an account?  <button className="signup-btn"
+                    <section className="signin-forgotpass">
+                    <Link to="/forgotPassword" className="forgot-pass-link">Forgot your password?</Link>
+                    <button className="signup-btn basic-button"
                         onClick={() => { props.closeLogin(); props.openSignup() }}>
-                        Sign Up</button></div>
+                  Don't have an account?</button>
+                    </section>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 

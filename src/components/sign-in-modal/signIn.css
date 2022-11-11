@@ -47,7 +47,6 @@
     margin: 10px auto;
     max-width: 400px;
     padding: 20px 12px 10px 20px;
-
 }
 
 .modal__content label {
@@ -79,21 +78,44 @@
     border: none;
     opacity: 0.8;
     cursor: pointer;
-    transition: var(--hover-transition);
-
-}
-
-.modal__close:hover {
-    transition: var(--hover-transition);
-    font-weight: 800;
 }
 
 .signup-btn {
     border: none;
     background-color: inherit;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
+}
+.signin-forgotpass {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+.forgot-pass-link {
+    color: var(--primary-black);
+}
+/* ! Hover Effects */
+.modal__close,
+.forgot-pass-link,
+.signup-btn {
+    transition: var(--hover-transition);
+}
+
+@media (hover: hover) {
+    .forgot-pass-link:hover,
+    .modal__close:hover,
+    .signup-btn:hover {
+        transition: var(--hover-transition);
+    }
+    .modal__close:hover {
+        font-weight: 800;
+    }
+    .forgot-pass-link:hover {
+        color: var(--primary-font);
+    }
+    .signup-btn:hover {
+        background-color: var(--primary-font);
+        color: var(--primary-bg);
+    }
 }
 
 @media screen and (min-width: 800px) {

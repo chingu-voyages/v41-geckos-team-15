@@ -36,8 +36,10 @@
 }
 
 .sidebar-items li a {
-    display: block;
+    display: flex;
+    flex-direction: row;
     padding: 16px;
+    align-items: center;
 }
 
 .sidebar-items li .icon {
@@ -51,12 +53,14 @@
     font-size: 18px;
 }
 
-.sidebar li.active,
-.sidebar li:hover {
+.sidebar li.active {
     background-color: var(--secondary-bg);
 }
 
 .logout-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background: none;
     color: inherit;
     border: none;
@@ -64,7 +68,19 @@
     cursor: pointer;
     outline: inherit;
 }
+/* ! Hover Effects */
+.sidebar li {
+    transition: var(--hover-transition);
+}
 
+@media (hover: hover) {
+    .sidebar li:hover {
+        transition: var(--hover-transition);
+    }
+    .sidebar li:hover {
+        background-color: var(--secondary-bg);
+    }
+}
 @media (max-width: 700px) {
     .sidebar {
         left: -250px;

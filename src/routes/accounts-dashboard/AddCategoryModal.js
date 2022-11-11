@@ -58,7 +58,7 @@ const AddCategoryModal = (props) => {
                             rows="5" name="description"
                             value={formValue.description}
                             onChange={handleValidation} />
-                        <button type="submit">Create</button>
+                        <button className="dash-button"  type="submit">Create</button>
                     </form>
                 }
             </section>

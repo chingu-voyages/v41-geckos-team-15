@@ -73,8 +73,7 @@ footer {
     gap: 1rem;
 }
 
-.form-input input,
-.form-input button {
+.form-input input {
     border-radius: 5px;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -82,7 +81,6 @@ footer {
 .form-input button {
     background-color: transparent;
     color: var(--primary-font);
-    border: 1px solid var(--primary-font);
 }
 
 .form-input input {

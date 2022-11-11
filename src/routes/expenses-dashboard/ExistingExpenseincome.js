@@ -6,7 +6,7 @@ import categories from '../../data/Categories.js';
 const ExistingExpenseincome = (props) => {
     return (
         <article className="add-existing-modal">
-            {props.editMode ?
+            {props.successMessage ? <section className="add-existing-popup"><p>{props.successMessage}</p></section> : props.editMode ?
                 <section className="add-existing-popup">
                     <CloseRecordModal closeModal={props.closeModal} />
                     <form onSubmit={props.updateAddedExpense}>
@@ -45,7 +45,7 @@ const ExistingExpenseincome = (props) => {
                     <section className="recording-data">
                         <p>Category: <span>{props.recordInfo.category}</span></p>
                         <p>Amount: <span>{props.recordInfo.amount} {props.recordInfo.currency}</span></p>
-                        <p>Date: <span>{props.recordInfo.date}</span></p>
+                        <p>Date: <span>{props.recordInfo.created}</span></p>
                         <p>Note: <span>{props.recordInfo.note}</span></p>
                     </section>
                     <section className="existing-record-buttons">

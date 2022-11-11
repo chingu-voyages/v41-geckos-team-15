@@ -31,12 +31,9 @@
 }
 
 .profile-buttons button {
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     color: var(--primary-bg);
+    width: max-content;
 }
 
 .profile-buttons .deactivate-btn {
@@ -55,13 +52,6 @@
     border: none;
     border-radius: 5px;
     padding: 0.4rem 0.5rem;
-}
-
-
-/* ! Hover */
-
-.profile-buttons button {
-    transition: var(--hover-transition);
 }
 
 .profile input {
@@ -92,15 +82,19 @@ input[disabled] {
     border-radius: 5px;
 }
 
-@media (hover: hover) {
+/* ! Hover */
 
+.profile-buttons button {
+    transition: var(--hover-transition);
+}
+@media (hover: hover) {
     .profile-buttons button:hover {
         transition: var(--hover-transition);
     }
 
     .profile-buttons button:hover {
         color: var(--primary-font);
-        background-color: var(--primary-bg);
+        background-color: var(--secondary-bg);
     }
 
     .profile-buttons .deactivate-btn:hover {

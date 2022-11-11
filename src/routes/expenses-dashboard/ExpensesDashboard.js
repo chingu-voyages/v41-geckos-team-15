@@ -10,7 +10,7 @@ import incomes from '../../data/Incomes';
 import ReactPaginate from 'react-paginate';
 import ScrollToTop from '../../helpers/ScrollToTop';
 
-const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
+const ExpensesDashboard = ({ successMessage, editFormError, recordInfo, toggleAddExpense, closeModal, toggleExistingExpenseIncome, toggleAddIncome, toggleExpenseModal, toggleIncomeModal, setExpenseTab, expenseTable, getRecordInfo, toggleExistingRecords, setIncomeTab, deleteExistingRecord, cancelEditExpenseRecord, handleEditValidation, editFormValue, validateEditForm, updateAddedExpense, editMode, editExpenseRecord, identifyRecord, submit, formError, resetForm, addIncome, addExpense, handleValidation, formValue }) => {
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + 5;
     const currentExpenses = [...expenses].reverse().slice(itemOffset, endOffset);
@@ -33,8 +33,8 @@ const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeM
         <main className="expenses-dashboard">
             <article>
                 <section className="expenses-action-btns">
-                    <button onClick={toggleExpenseModal}>Add expense &#65291;</button>
-                    <button onClick={toggleIncomeModal}>Add Income &#65291;</button>
+                    <button className='dash-button' onClick={toggleExpenseModal}>Add expense &#65291;</button>
+                    <button className='dash-button'  onClick={toggleIncomeModal}>Add Income &#65291;</button>
                 </section>
             </article>
             <article className='expenses-grid'>
@@ -78,7 +78,7 @@ const ExpensesDashboard = ({ editFormError, recordInfo, toggleAddExpense, closeM
                 <IncomeModal identifyRecord={identifyRecord} formError={formError} resetForm={resetForm} closeModal={closeModal} handleValidation={handleValidation} formValue={formValue} addIncome={addIncome} submit={submit} /> :
                 null}
             {toggleExistingExpenseIncome ?
-                <ExistingExpenseincome editFormError={editFormError} deleteExistingRecord={deleteExistingRecord} cancelEditExpenseRecord={cancelEditExpenseRecord} identifyRecord={identifyRecord} handleEditValidation={handleEditValidation} editFormValue={editFormValue} validateEditForm={validateEditForm} updateAddedExpense={updateAddedExpense} editMode={editMode} editExpenseRecord={editExpenseRecord} closeModal={closeModal} recordInfo={recordInfo} /> :
+                <ExistingExpenseincome successMessage={successMessage} editFormError={editFormError} deleteExistingRecord={deleteExistingRecord} cancelEditExpenseRecord={cancelEditExpenseRecord} identifyRecord={identifyRecord} handleEditValidation={handleEditValidation} editFormValue={editFormValue} validateEditForm={validateEditForm} updateAddedExpense={updateAddedExpense} editMode={editMode} editExpenseRecord={editExpenseRecord} closeModal={closeModal} recordInfo={recordInfo} /> :
                 null}
         </main>
     )

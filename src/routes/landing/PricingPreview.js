@@ -28,7 +28,7 @@ const PricingPreview = ({ openSignup }) => {
 
                     <hr />
                     <h4>$0/mo</h4>
-                    <button type="button" onClick={openSignup}>Get Started</button>
+                    <button type="button" className='basic-button' onClick={openSignup}>Get Started</button>
                     <hr />
                     <ul className='pricing-features-preview'>
                         <li><img src={Check} alt="" /> <p>App Store or Play Store</p></li>
@@ -43,7 +43,7 @@ const PricingPreview = ({ openSignup }) => {
                     </section>
                     <hr />
                     {activePlan === 'monthly' ? <h4>$29/mo</h4> : <h4><span className='old-pricing'>$348/y </span> $260/y</h4>}
-                    <button type="button" onClick={openSignup}>Get Started</button>
+                    <button type="button" className='basic-button' onClick={openSignup}>Get Started</button>
                     <hr />
                     <ul className='pricing-features-preview'>
                         <li><img src={Check} alt="" /> <p>App Store or Play Store</p></li>

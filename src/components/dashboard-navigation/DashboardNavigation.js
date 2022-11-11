@@ -34,31 +34,31 @@ const DashboardNavigation = (props) => {
                     <li>
                         <Link to="accounts" onClick={() => { toggleMenu(); props.resetForm(); ScrollToTop() }}>
                             <Accounts className="icon" />
-                            <span className="item-name">accounts</span>
+                            <span className="item-name">Accounts</span>
                         </Link>
                     </li>
                     <li>
                         <Link to="expenses" onClick={() => { toggleMenu(); props.resetForm(); ScrollToTop() }}>
                             <Expenses className="icon" />
-                            <span className="item-name">expenses</span>
+                            <span className="item-name">Expenses</span>
                         </Link>
                     </li>
                     <li>
                         <Link to="budget" onClick={() => { toggleMenu(); props.resetForm(); ScrollToTop() }}>
                             <Budget className="icon" />
-                            <span className="item-name">budget</span>
+                            <span className="item-name">Budget</span>
                         </Link>
                     </li>
                     <li>
                         <Link to="statistics" onClick={() => { toggleMenu(); props.resetForm(); ScrollToTop() }}>
                             <Statistics className="icon" />
-                            <span className="item-name">statistics</span>
+                            <span className="item-name">Statistics</span>
                         </Link>
                     </li>
                     <li>
                         <Link to="profile" onClick={() => { toggleMenu(); props.resetForm(); ScrollToTop() }}>
                             <Profile className="icon" />
-                            <span className="item-name">profile</span>
+                            <span className="item-name">Profile</span>
                         </Link>
                     </li>
                 </ul>

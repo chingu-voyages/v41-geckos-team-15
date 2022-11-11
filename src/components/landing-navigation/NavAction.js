@@ -6,19 +6,20 @@ const NavAction = (props) => {
         <section className="nav-action">
             {props.user
                 ? <>
-                    <button type="button">
+                    <button type="button" className='basic-button'>
                         <Link to='/dashboard' onClick={props.toggleOffMenu}>Dashboard</Link>
                     </button>
                     <button type="button"
+                    className='basic-button '
                         onClick={props.onLogout}>
                         <Link to='/' onClick={props.toggleOffMenu}>Log out</Link>
                     </button>
                 </>
                 : <>
-                    <button onClick={() => { props.toggleOffMenu(); props.openSignup() }}>
+                    <button className='basic-button' onClick={() => { props.toggleOffMenu(); props.openSignup() }}>
                         Register
                     </button>
-                    <button type="button" onClick={() => { props.toggleOffMenu(); props.openLogin() }}>
+                    <button className='basic-button' type="button" onClick={() => { props.toggleOffMenu(); props.openLogin() }}>
                         Login
                     </button>
                 </>

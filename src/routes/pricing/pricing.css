@@ -165,12 +165,8 @@ table.pricingComparison {
 }
 .pricingComparison .th-1 button,
 .pricingComparison .th-2 button {
-    border-radius: 5px;
-    padding: 0.3rem 1rem;
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     color: var(--primary-bg);
-    cursor: pointer;
     width: 100%;
 }
 table.pricingComparison tbody td {
@@ -201,13 +197,8 @@ table.pricingComparison tbody tr td:last-child {
     text-align: center;
 }
 .have-questions a {
-    border-radius: 5px;
-    padding: 0.3rem 1rem;
     background-color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     color: var(--primary-bg);
-    cursor: pointer;
-    width: max-content;
 }
 
 /* ! Transitions */

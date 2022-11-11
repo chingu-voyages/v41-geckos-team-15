@@ -29,12 +29,8 @@
 }
 
 .expenses-action-btns button {
-    border-radius: 5px;
-    border: 1px solid var(--primary-font);
-    padding: 1rem 1rem;
-    cursor: pointer;
-    color: var(--secondary-bg);
-    background-color: var(--primary-font);
+    color: var(--primary-font);
+    background-color: var(--secondary-bg);
 }
 
 .expenses-grid {
@@ -169,6 +165,7 @@ table.greyGridTable thead th {
     background-color: var(--primary-bg);
     margin-left: -250px;
     overflow: auto;
+    gap: 2rem;
 }
 
 .add-expense-popup::-webkit-scrollbar {
@@ -204,7 +201,7 @@ table.greyGridTable thead th {
 .add-expense-popup input::placeholder,
 .add-expense-popup textarea::placeholder {
     color: var(--primary-black);
-    font-family: ar(--manrope-font);
+    font-family: var(--manrope-font);
 }
 
 .add-expense-popup form select,
@@ -225,13 +222,9 @@ table.greyGridTable thead th {
 }
 
 .add-expense-popup form button {
-    border-radius: 5px;
-    padding: 0.3rem 1rem;
     color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     background-color: var(--primary-bg);
-    cursor: pointer;
-    width: max-content;
+    width: 80%;
 }
 
 /* ! Add Income Modal */
@@ -270,6 +263,7 @@ table.greyGridTable thead th {
     background-color: var(--primary-bg);
     margin-left: -250px;
     overflow: auto;
+    gap: 2rem;
 }
 
 .add-income-popup::-webkit-scrollbar {
@@ -322,13 +316,9 @@ table.greyGridTable thead th {
 }
 
 .add-income-popup form button {
-    border-radius: 5px;
-    padding: 0.3rem 1rem;
     color: var(--primary-font);
-    border: 1px solid var(--primary-font);
     background-color: var(--primary-bg);
-    cursor: pointer;
-    width: max-content;
+    width: 80%;
 }
 
 /* ! Add Income Modal */
@@ -419,29 +409,31 @@ table.greyGridTable thead th {
     opacity: 0.8;
 }
 
-
 /* ! Transitions */
 .expenses-action-btns button,
 .existing-record-buttons button,
-.pagination li:hover,
-.pagination .next:hover,
-.pagination .previous:hover {
+.pagination li,
+.pagination .next,
+.pagination .previous,
+.add-income-popup form button,
+.add-expense-popup form button {
     transition: var(--hover-transition);
 }
 
 @media (hover: hover) {
-
     .expenses-action-btns button:hover,
     .existing-record-buttons button:hover,
     .pagination li:hover,
     .pagination .next:hover,
-    .pagination .previous:hover {
+    .pagination .previous:hover,
+    .add-income-popup form button:hover,
+    .add-expense-popup form button:hover {
         transition: var(--hover-transition);
     }
 
     .expenses-action-btns button:hover {
-        background-color: var(--primary-bg);
-        color: var(--primary-font);
+        background-color: var(--primary-font);
+        color: var(--secondary-bg);
     }
 
     .existing-record-buttons button:hover {
@@ -453,6 +445,11 @@ table.greyGridTable thead th {
     .pagination .next:hover,
     .pagination .previous:hover {
         color: var(--primary-font);
+    }
+    .add-income-popup form button:hover,
+    .add-expense-popup form button:hover {
+        background-color: var(--primary-font);
+        color: var(--secondary-bg);
     }
 }
 
@@ -519,10 +516,17 @@ table.greyGridTable thead th {
         font-weight: bold;
         text-transform: uppercase;
     }
+    .add-expense-popup,
+    .add-income-popup {
+        width: 400px;
+    }
+    .add-expense-popup form,
+    .add-income-popup form {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 700px) {
-
     .add-expense-popup,
     .add-income-popup,
     .add-existing-popup {
@@ -536,11 +540,27 @@ table.greyGridTable thead th {
     .expenses-action-btns button {
         width: 100%;
     }
+    .add-expense-popup,
+    .add-income-popup {
+        width: 500px;
+    }
+    .add-expense-popup form,
+    .add-income-popup form {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 500px) {
     .active-tab::after {
         width: 100%;
         left: 0;
+    }
+    .add-expense-popup,
+    .add-income-popup {
+        width: 380px;
+    }
+    .add-expense-popup form,
+    .add-income-popup form {
+        width: 90%;
     }
 }

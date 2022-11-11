@@ -30,7 +30,7 @@ const Hero = (props) => {
                     <form className='hero-signup' onSubmit={submitForm}>
                         <input type="text" name="signUpEmail" placeholder='Enter your email' onChange={saveInputValues} />
                         {invalidInput ? <p className='hero-input-error'>Please enter a valid email</p> : null}
-                        <button type='submit'>Sign Up</button>
+                        <button type='submit' className='basic-button'>Sign up</button>
                     </form>
                     <span>By clicking Sign Up you're confirming that you agree with our Terms and Conditions.</span>
                 </section>

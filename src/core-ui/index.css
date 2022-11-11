@@ -8,9 +8,31 @@
   --primary-input-bg: #c0cfe7;
   --primary-black: #000000;
   --hover-transition: all ease-in-out 0.3s;
+  --default-card-color: #a69305;
 }
 
 body {
   font-family: var(--manrope-font);
   background-color: var(--primary-bg);
+}
+
+.basic-button {
+  border-radius: 5px;
+  border: 1px solid var(--primary-font);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 1px 5px 20px -8px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 1px 5px 20px -8px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 1px 5px 20px -8px rgba(0, 0, 0, 0.55);
+}
+
+.dash-button {
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  color: var(--primary-font);
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--primary-font);
 }
