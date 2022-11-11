@@ -7,7 +7,6 @@ const BudgetDashboard = () => {
     const [needs, setNeeds] = useState(Array(budget.needs.length).fill(0));
     const [wants, setWants] = useState(Array(budget.wants.length).fill(0));
     const [savings, setSavings] = useState(Array(budget.savings.length).fill(0));
-    // const [monthlyIncome, setMonthlyIncome] = useState(0);
 
     const updateNeeds = (index) => (e) => {
         const newArr = needs.map((item, i) => {

@@ -80,6 +80,7 @@
     border: none;
     background-color: inherit;
     display: inline-block;
+    color: var(--primary-black);
 }
 
 .error-msg {

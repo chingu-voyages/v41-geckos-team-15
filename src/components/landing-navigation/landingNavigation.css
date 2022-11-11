@@ -65,7 +65,8 @@ a {
     color: var(--primary-bg);
 }
 
-.nav-action button:first-child a {
+.nav-action button:first-child a,
+.nav-action button:first-child a:visited {
     color: var(--primary-bg);
 }
 
@@ -74,7 +75,8 @@ a {
     color: var(--primary-font);
 }
 
-.nav-action button:last-child a {
+.nav-action button:last-child a,
+.nav-action button:last-child a:visited {
     color: var(--primary-font);
 }
 
@@ -86,7 +88,6 @@ a {
 }
 
 @media (hover: hover) {
-
     .navigation-menu li a:hover,
     .nav-action button:first-child:hover,
     .nav-action button:last-child:hover {

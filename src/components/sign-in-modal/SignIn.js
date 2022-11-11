@@ -1,7 +1,7 @@
 import React from "react";
 import "./signIn.css"
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import users from "../../data/Users"
 
 const SignIn = (props) => {

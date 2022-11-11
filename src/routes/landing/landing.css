@@ -439,6 +439,9 @@
     .pricing-grid {
         width: 100%;
     }
+    .pricing-preview-content {
+        padding: 1rem;
+    }
 }
 
 @media screen and (max-width: 770px) {
