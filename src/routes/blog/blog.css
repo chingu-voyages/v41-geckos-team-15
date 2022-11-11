@@ -36,6 +36,9 @@
 .blog-post h3 {
     font-size: 2rem;
 }
+.link-to-post {
+    color: inherit;
+}
 .blog-cover {
     height: 17rem;
     object-fit: cover;
