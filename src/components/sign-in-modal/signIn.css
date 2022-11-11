@@ -83,6 +83,7 @@
 .signup-btn {
     border: none;
     background-color: inherit;
+    color: var(--primary-black);
 }
 
 .signin-forgotpass {
@@ -107,7 +108,6 @@
 }
 
 @media (hover: hover) {
-
     .forgot-pass-link:hover,
     .modal__close:hover,
     .signup-btn:hover {

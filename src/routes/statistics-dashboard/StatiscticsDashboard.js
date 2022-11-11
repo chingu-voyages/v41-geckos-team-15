@@ -28,7 +28,7 @@ const StatisticsDashboard = () => {
                 </div>
             </div>
 
-        </div >
+        </div>
     )
 }
 

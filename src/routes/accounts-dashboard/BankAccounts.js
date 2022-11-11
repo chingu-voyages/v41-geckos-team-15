@@ -1,7 +1,3 @@
-// import bankAccounts from "../../data/Accounts";
-// import PlusIcon from "../../assets/images/accounts-dashboard/plus-icon.png"
-// import CardIcon from "../../assets/images/accounts-dashboard/card-icon.png";
-// import EditIcon from "../../assets/images/accounts-dashboard/edit-icon.png";
 import PlusIcon from "../../assets/images/accounts-dashboard/white-plus-icon.png";
 import BankCards from "./BankCards";
 

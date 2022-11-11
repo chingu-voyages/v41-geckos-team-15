@@ -16,6 +16,14 @@ body {
   background-color: var(--primary-bg);
 }
 
+::-moz-selection {
+  color: var(--primary-black);
+}
+
+::selection {
+  color: var(--primary-black);
+}
+
 .basic-button {
   border-radius: 5px;
   border: 1px solid var(--primary-font);

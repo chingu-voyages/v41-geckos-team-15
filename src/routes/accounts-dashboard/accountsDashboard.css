@@ -613,6 +613,9 @@
     .add-card-colors {
         flex-wrap: wrap;
     }
+    .categories {
+        justify-content: space-between;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -635,6 +638,7 @@
     .accounts-categories {
         text-align: center;
     }
+
     .add-category-popup,
     .add-card-popup,
     .view-category-popup {
