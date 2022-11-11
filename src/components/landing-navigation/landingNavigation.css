@@ -31,6 +31,7 @@ a {
     justify-content: space-between;
     top: 0;
 }
+
 .landing-header a {
     height: max-content;
 }
@@ -61,14 +62,18 @@ a {
 
 .nav-action button:first-child {
     background-color: var(--primary-font);
+    color: var(--primary-bg);
 }
+
 .nav-action button:first-child a {
     color: var(--primary-bg);
 }
 
 .nav-action button:last-child {
     background-color: var(--primary-bg);
+    color: var(--primary-font);
 }
+
 .nav-action button:last-child a {
     color: var(--primary-font);
 }
@@ -81,6 +86,7 @@ a {
 }
 
 @media (hover: hover) {
+
     .navigation-menu li a:hover,
     .nav-action button:first-child:hover,
     .nav-action button:last-child:hover {
@@ -101,12 +107,14 @@ a {
         color: var(--primary-font);
     }
 }
+
 @media screen and (max-width: 890px) {
     .nav-action {
         display: flex;
         flex-direction: column;
     }
 }
+
 @media screen and (max-width: 800px) {
     .nav-section.active-menu .navigation-menu {
         flex-direction: column;

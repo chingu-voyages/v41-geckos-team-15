@@ -103,10 +103,10 @@ const SignIn = (props) => {
                         </ul>
                     </form>
                     <section className="signin-forgotpass">
-                    <Link to="/forgotPassword" className="forgot-pass-link">Forgot your password?</Link>
-                    <button className="signup-btn basic-button"
-                        onClick={() => { props.closeLogin(); props.openSignup() }}>
-                  Don't have an account?</button>
+                        <button onClick={() => { props.closeLogin(); props.openForgotPassword() }} className="forgot-pass-link">Forgot your password?</button>
+                        <button className="signup-btn basic-button"
+                            onClick={() => { props.closeLogin(); props.openSignup() }}>
+                            Don't have an account?</button>
                     </section>
                 </div>
             </div>

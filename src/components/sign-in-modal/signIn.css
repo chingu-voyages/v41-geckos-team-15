@@ -84,15 +84,21 @@
     border: none;
     background-color: inherit;
 }
+
 .signin-forgotpass {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     text-align: center;
 }
+
 .forgot-pass-link {
     color: var(--primary-black);
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
 }
+
 /* ! Hover Effects */
 .modal__close,
 .forgot-pass-link,
@@ -101,17 +107,21 @@
 }
 
 @media (hover: hover) {
+
     .forgot-pass-link:hover,
     .modal__close:hover,
     .signup-btn:hover {
         transition: var(--hover-transition);
     }
+
     .modal__close:hover {
         font-weight: 800;
     }
+
     .forgot-pass-link:hover {
         color: var(--primary-font);
     }
+
     .signup-btn:hover {
         background-color: var(--primary-font);
         color: var(--primary-bg);
